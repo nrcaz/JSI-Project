@@ -8,7 +8,9 @@
         <title>JSI Project</title>
         <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"> -->
         <link href="https://bootswatch.com/4/lux/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
         <link rel="stylesheet" href="css/nicho.css">
+        <link rel="stylesheet" href="css/flo.css">
     </head>
 
     <body>
