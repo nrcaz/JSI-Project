@@ -1,0 +1,51 @@
+#template-annonce {
+    border: 1px solid black;
+}
+#template-annonce h1 {
+    text-transform: uppercase;
+    text-align: center;
+    padding: 20px;
+}
+#template-annonce .divider {
+    width:200px;
+    height: 5px;
+    margin: 0 auto;
+    background: rgb(255, 128, 64);
+}
+#template-annonce .row {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.fa-phone-square, .fa-envelope {
+    font-size: 50px;
+}
+.fas.fa-chevron-left, .fas.fa-chevron-right{
+    background-image: none;
+    color: #d82c2e;
+}
+.carousel-indicators{
+    bottom: 0px;
+}
+.carousel-indicators li{
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    border: 1px solid #d82c2e;
+}
+.carousel-indicators li.active{
+    background-color: #d82c2e;
+}
+#template-annonce .bas {
+    text-align:center;
+}
+#template-annonce i {
+    margin-bottom: 20px;
+    color:rgb(255, 128, 64);
+}
+
+.col-lg-6 {
+    border:3px solid green;
+}
+#template-annonce table {
+    border:2px solid red;
+}
