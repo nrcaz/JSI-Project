@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
         <link rel="stylesheet" href="css/nicho.css">
         <link rel="stylesheet" href="css/flo.css">
+        <link rel="stylesheet" href="css/steph.css">
     </head>
 
     <body>
