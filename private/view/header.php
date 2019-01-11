@@ -12,21 +12,22 @@
         <link rel="stylesheet" href="css/nicho.css">
         <link rel="stylesheet" href="css/flo.css">
         <link rel="stylesheet" href="css/steph.css">
+        <link rel="stylesheet" href="css/home.css">
     </head>
 
     <body>
-        <header class="bg-dark">
+        <header>
             <nav class="navbar navbar-expand-lg navbar-dark">
-                <a class="navbar-brand" href="#"><img src="assets/Logo.png" alt=""></a>
+                <a class="navbar-brand" href="#"><img src="assets/img/Logo.png" alt=""></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
                     aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <a class="nav-item nav-link" href="#">Services <span class="sr-only">(current)</span></a>
-                        <a class="nav-item nav-link" href="#">Recherche</a>
-                        <a class="nav-item nav-link" href="#">Contact</a>
+                        <a class="nav-item nav-link" href="#services">Services <span class="sr-only">(current)</span></a>
+                        <a class="nav-item nav-link" href="#recherche">Recherche</a>
+                        <a class="nav-item nav-link" href="#contact">Contact</a>
                     </div>
                 </div>
             </nav>

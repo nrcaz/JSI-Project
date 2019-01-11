@@ -1,8 +1,5 @@
 <section id="home">
-    <h1>Ma section home comprenant :</h1>
-    <ul>
-        <li>Une photo (faite par Stéphane), avec un calque noir</li>
-        <li>Nom de l'entreprise et phrase d'accroche</li>
-        <li>Une partie où il faudra combler pour éviter trop de vide (un rapide tour des services par exemple)</li>
-    </ul>
+    <h1>JSI PARTNERS</h1>
+    <strong>Cabinet conseil en immobilier</strong>
+    <a class="btn btn-primary" href="#recherche">Rechercher un bien<a>
 </section>
