@@ -70,7 +70,7 @@
                 <!-- sidebar menu start-->
                 <ul class="sidebar-menu" id="nav-accordion">
                     <p class="centered">
-                        <a href=""><img src="" class="img-circle" width="80"></a>
+                        <a href=""><img class="img-circle" width="80"></a>
                     </p>
                     <h5 class="centered">Admin</h5>
                     <li class="mt">
@@ -96,7 +96,7 @@
                             <span>Article</span>
                         </a>
                         <ul class="sub">
-                            <li><a href="back-article-template.html">Mes article</a></li>
+                            <li><a href="back-article-liste.html">Mes article</a></li>
                             <li><a href="back-article-new.html">Ajout Article</a></li>
 
                         </ul>
@@ -127,7 +127,6 @@
                 <div class="row mt">
                     <div class="col-lg-12">
                         <div class="form-panel">
-
                             <form class="form-horizontal style-form" method="get">
                                 <div class="form-group">
                                     <label class="col-sm-2 col-sm-2 control-label">Titre</label>
@@ -182,172 +181,121 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 col-sm-2 control-label">Type</label>
-                                    <div class="col-sm-8">
+                                    <div class="col-sm-4">
                                         <input type="number" class="form-control">
+                                    </div>
+                                    <label class="col-sm-2 col-sm-2 control-label">Lieux</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <form class="form-inline" role="form">
-                                        <label class="col-sm-1 col-sm-1 control-label"></label>
+                                        <label class="col-sm-1 col-sm-1 control-label">Etage</label>
                                         <div class=" col-sm-2">
-                                            <input type="number" class="form-control" id="etage" placeholder="Etage">
+                                            <input type="number" class="form-control" id="etage" placeholder="">
                                         </div>
-                                        <label class="col-sm-1 col-sm-1 control-label"></label>
+                                        <label class="col-sm-1 col-sm-1 control-label">Surface</label>
                                         <div class=" col-sm-2">
-                                            <input type="number" class="form-control" id="exampleInputPassword2" placeholder="Surface">
+                                            <input type="number" class="form-control" id="surface" placeholder="">
                                         </div>
-                                        <label class="col-sm-1 col-sm-1 control-label"></label>
+
+                                        <label class="col-sm-1 col-sm-1 control-label">Loyer</label>
                                         <div class=" col-sm-2">
-                                            <input type="number" class="form-control" id="exampleInputPassword2" placeholder="Loyer">
+                                            <input type="number" class="form-control" id="loyer" placeholder="">
                                         </div>
-                                        <label class="col-sm-1 col-sm-1 control-label"></label>
+                                        <label class="col-sm-1 col-sm-1 control-label">Charges</label>
                                         <div class=" col-sm-2">
-                                            <input type="number" class="form-control" id="exampleInputPassword2" placeholder="Charges">
+                                            <input type="number" class="form-control" id="charges" placeholder="">
                                         </div>
                                     </form>
                                 </div>
 
-                                <div class="form-group ">
-                                    <div class="row">
 
-                                        <label class="col-sm-1 col-sm-1 control-label"></label>
-                                        <div class=" col-sm-2 mr-1">
-                                            <input type="number" class="form-control" id="etage" placeholder="Bureau">
-                                        </div>
-                                        <label class="col-sm-2 col-sm-2 control-label"></label>
-                                        <div class=" col-sm-2">
-                                            <input type="number" class="form-control" id="exampleInputPassword2" placeholder="Open Space">
-                                        </div>
-                                        <label class="col-sm-2 col-sm-2 control-label"></label>
-                                        <div class=" col-sm-2">
-                                            <input type="number" class="form-control" id="exampleInputPassword2" placeholder="Salle de Reunion">
-                                        </div>
-                                    </div>
-                                </div>
+
 
                                 <div class="form-group">
-                                    <div class="row">
-                                        <label class="col-sm-2 col-sm-2 control-label"></label>
-                                        <div class=" col-sm-2">
-                                            <input type="number" class="form-control" id="exampleInputPassword2" placeholder="Cuisine">
+                                    <div class="form-inline ">
+
+                                        <label for="" class="col-sm-3 col-sm-3 "> Disponibilité</label>
+                                        <div class="">
+                                            <div class="switch has-switch">
+                                                <div class="switch-on switch-animate">
+                                                    <input type="checkbox" checked="" data-toggle="switch"><span class="switch-left">OUI</span><label>&nbsp;</label><span class="switch-right">NON</span>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <label class="col-sm-2 col-sm-2 control-label"></label>
-                                        <div class=" col-sm-2">
-                                            <input type="number" class="form-control" id="exampleInputPassword2" placeholder="Espace Détente">
-                                        </div>
+
+                                        <!--
+
+                                            
+                                            <div class="col-sm-2 radio">
+                                                <label class="col-sm-2 col-sm-2 control-label">
+                                                    Actuellement Disponible
+                                                    <input type="radio" name="disponibilité" id="disponibilite" value="disponible" checked="">
+                                                </label>
+                                            </div>
+                                            <div class=" radio">
+                                                <label class="col-sm-2 col-sm-2 control-label">
+                                                    Non Disponible
+                                                    <input type="radio" name="disponibilité" id="disponibilite" value="non-disponible" >
+                                                </label>
+                                            </div>
+                                        -->
                                     </div>
                                 </div>
-
-
-                                <div class="form-group form-inline">
-                                    <label for="" class="col-sm-2 col-sm-2"> Disponibilité</label>
-                                    <div class="radio">
-                                        <label class="col-sm-2 col-sm-2 control-label">
-                                            Actuellement Disponible
-                                            <input type="radio" name="disponibilité" id="disponibilite" value="disponible" checked="">
-                                        </label>
-                                    </div>
-                                    <div class="radio">
-                                        <label class="col-sm-2 col-sm-2 control-label">
-                                            Non Disponible
-                                            <input type="radio" name="disponibilité" id="disponibilite" value="non-disponible" >
-                                        </label>
-                                    </div>
-                                </div>
-
-
                                 <!-- Caractéristisque Local-->
                             </form>
                         </div>
+                        <!-- col-lg-12-->
                     </div>
-                    <!-- col-lg-12-->
-                </div>
-                <div class="row mt">
-                    <div class="col-lg-12">
-                        <div class="form-panel">
-
-                            <div class="form-group ">
-                                <label class="col-sm-1 col-sm-1 control-label"></label>
-                                <div class=" col-sm-2 mr-1">
-                                    <input type="number" class="form-control" id="etage" placeholder="Bureau">
-                                </div>
-                                <label class="col-sm-2 col-sm-2 control-label"></label>
-                                <div class=" col-sm-2">
-                                    <input type="number" class="form-control" id="exampleInputPassword2" placeholder="Open Space">
-                                </div>
-                                <label class="col-sm-2 col-sm-2 control-label"></label>
-                                <div class=" col-sm-2">
-                                    <input type="number" class="form-control" id="exampleInputPassword2" placeholder="Salle de Reunion">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="col-sm-2 col-sm-2 control-label"></label>
-                                <div class=" col-sm-2">
-                                    <input type="number" class="form-control" id="exampleInputPassword2" placeholder="Cuisine">
-                                </div>
-                                <label class="col-sm-2 col-sm-2 control-label"></label>
-                                <div class=" col-sm-2">
-                                    <input type="number" class="form-control" id="exampleInputPassword2" placeholder="Espace Détente">
-                                </div>
-                            </div>
-
-
-                        </div>
-                        <!-- /form-panel -->
-                    </div>
-                    <!-- /col-lg-12 -->
-                </div>
-                <!-- /row -->
-
-                <!-- CUSTOM TOGGLES -->
-                <div class="col-lg-12">
+                    <!-- /row -->
+                    <h3><i class="fa fa-angle-right"></i>Info pour Simulateur</h3>
                     <div class="form-panel">
-                        <h4 class="mb"><i class="fa fa-angle-right"></i> Custom Toggles</h4>
                         <div class="row mt">
-                            <div class="col-sm-6 text-center">
-                                <div class="switch has-switch">
-                                    <div class="switch-animate switch-on"><input type="checkbox" checked="" data-toggle="switch"><span class="switch-left">ON</span><label>&nbsp;</label><span class="switch-right">OFF</span></div>
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <form class="form-inline" role="form">
+
+                                        <label class="col-sm-8 col-sm-offset-4 control-label">Bureau</label>
+                                        <div class="col-sm-2 col-sm-offset-4">
+                                            <input type="number" class="form-control" id="Bureau" placeholder="">
+                                        </div>
+
+                                        <label class="col-sm-8 col-sm-offset-4 control-label">Open space</label>
+                                        <div class="col-sm-2 col-sm-offset-4">
+                                            <input type="number" class="form-control" id="Open-space" placeholder="">
+                                        </div>
+
+                                        <label class="col-sm-8 col-sm-offset-4 control-label">Salle de Réunion</label>
+                                        <div class="col-sm-2 col-sm-offset-4">
+                                            <input type="number" class="form-control" id="salle-de-reunion" placeholder="">
+                                        </div>
+
+                                        <label class="col-sm-8 col-sm-offset-4 control-label">Cuisine Espace Détente </label>
+                                        <div class="col-sm-2 col-sm-offset-4">
+                                            <input type="number" class="form-control" id="cuisine/espace-detente " placeholder="">
+                                        </div>
+                                    </form>
                                 </div>
-                            </div>
-                            <div class="col-sm-6 text-center">
-                                <div class="switch has-switch">
-                                    <div class="switch-animate switch-off"><input type="checkbox" data-toggle="switch"><span class="switch-left">ON</span><label>&nbsp;</label><span class="switch-right">OFF</span></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row mt">
-                            <div class="col-sm-6 text-center">
-                                <div class="switch switch-square has-switch" data-on-label="<i class=' fa fa-check'></i>" data-off-label="<i class='fa fa-times'></i>">
-                                    <div class="switch-animate switch-off"><input type="checkbox"><span class="switch-left"><i
-                                                class=" fa fa-check"></i></span><label>&nbsp;</label><span class="switch-right"><i
-                                                class="fa fa-times"></i></span></div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 text-center">
-                                <div class="switch switch-square has-switch" data-on-label="<i class=' fa fa-check'></i>" data-off-label="<i class='fa fa-times'></i>">
-                                    <div class="switch-animate switch-on"><input type="checkbox" checked=""><span class="switch-left"><i
-                                                class=" fa fa-check"></i></span><label>&nbsp;</label><span class="switch-right"><i
-                                                class="fa fa-times"></i></span></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row mt">
-                            <div class="col-sm-6 text-center">
-                                <div class="switch has-switch deactivate">
-                                    <div class="switch-animate switch-off"><input type="checkbox" disabled="" data-toggle="switch"><span class="switch-left">ON</span><label>&nbsp;</label><span class="switch-right">OFF</span></div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 text-center">
-                                <div class="switch has-switch deactivate">
-                                    <div class="switch-animate switch-on"><input type="checkbox" checked="" disabled="" data-toggle="switch"><span class="switch-left">ON</span><label>&nbsp;</label><span class="switch-right">OFF</span></div>
+                                <div class="form-group last-group">
+                                    <div class="row mt">
+                                        <label for="" class="col-sm-8 col-sm-offset-4 control-label">Hotesse</label>
+                                        <div class="col-sm-2 col-sm-offset-4">
+                                            <div class="switch has-switch">
+                                                <div class="switch-animate switch-on"><input type="checkbox" checked="" data-toggle="switch"><span class="switch-left">ON</span><label>&nbsp;</label><span class="switch-right">OFF</span></div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                </div>
-                <!-- /row -->
+                    <!-- CUSTOM TOGGLES -->
+
+                    <!-- /row -->
             </section>
             <!-- /wrapper -->
         </section>
