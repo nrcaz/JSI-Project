@@ -1,64 +1,82 @@
 #template-annonce {
-    border: 1px solid black;
+  border: 1px solid black;
+  margin-top: 150px;
 }
 
 #template-annonce h1 {
-    text-transform: uppercase;
-    text-align: center;
-    padding: 20px;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 20px;
 }
 
 #template-annonce .divider {
-    width: 200px;
-    height: 5px;
-    margin: 0 auto;
-    background: rgb(255, 128, 64);
+  width: 200px;
+  height: 5px;
+  margin: 0 auto;
+  background: rgb(255, 128, 64);
 }
 
 #template-annonce .row {
-    margin-top: 50px;
-    margin-bottom: 50px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
-.fa-phone-square,
-.fa-envelope {
-    font-size: 50px;
+#template-annonce .fa-phone-square,
+#template-annonce .fa-envelope {
+  font-size: 50px;
 }
 
-.fas.fa-chevron-left,
-.fas.fa-chevron-right {
-    background-image: none;
-    color: #d82c2e;
+#template-annonce .fas.fa-chevron-left,
+#template-annonce .fas.fa-chevron-right {
+  background-image: none;
+  color: #d82c2e;
 }
 
-.carousel-indicators {
-    bottom: 0px;
+#template-annonce .carousel-indicators {
+  bottom: 0px;
 }
 
-.carousel-indicators li {
-    width: 10px;
-    height: 10px;
-    border-radius: 100%;
-    border: 1px solid #d82c2e;
+#template-annonce .carousel-indicators li {
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  border: 1px solid #d82c2e;
 }
 
-.carousel-indicators li.active {
-    background-color: #d82c2e;
+#template-annonce .carousel-indicators li.active {
+  background-color: #d82c2e;
 }
 
 #template-annonce .bas {
-    text-align: center;
+  text-align: center;
 }
 
 #template-annonce i {
-    margin-bottom: 20px;
-    color: rgb(255, 128, 64);
+  margin-bottom: 20px;
+  color: rgb(255, 128, 64);
 }
 
 #template-annonce.col-lg-6 {
-    border: 3px solid green;
+  border: 3px solid green;
 }
 
-#template-annonce table {
-    border: 2px solid red;
+@media screen and (max-width: 800px) {
+  #template-annonce table {
+    width: auto;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+  }
+  #template-annonce tr {
+    display: flex;
+    flex-direction: column;
+  }
+  #template-annonce .divider {
+    margin-top: 50px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  #template-annonce #myCarousel {
+    margin-bottom: 50px;
+  }
 }

@@ -33,29 +33,6 @@
                 </div>
                 <div class="col-lg-6">
 
-                        <table class="table">
-                                <thead class="table-dark">
-                                        <tr>
-                                                <th scope="col">Type</th>
-                                                <th scope="col">Etage</th>
-                                                <th scope="col">Surface</th>
-                                                <th scope="col">Disponibilité</th>
-                                                <th scope="col">Loyer</th>
-                                                <th scope="col">Charges</th>
-                                        </tr>
-                                </thead>
-                                <tbody>
-                                        <tr class="table-dark">
-                                                <td>Bureau</td>
-                                                <td>2éme</td>
-                                                <td>123m²</td>
-                                                <td>Disponible</td>
-                                                <td>5000€/m</td>
-                                                <td>400€/m</td>
-                                        </tr>
-                                </tbody>
-                        </table> 
-
                         <h3>description</h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum deserunt, itaque quae quidem, tempore alias, sequi fugiat perspiciatis ad distinctio maiores doloribus doloremque officia officiis. Earum aut maiores quisquam consequatur. Iste obcaecati sit doloribus amet vitae fugiat explicabo, veniam est voluptatibus accusantium temporibus, suscipit consequuntur quasi earum? Quibusdam, ex nam.</p>
                         <h3>Equipement</h3>
@@ -64,6 +41,29 @@
                         <p>Hic quidem maiores voluptas labore et, earum debitis repellendus fuga ullam adipisci, ab impedit cum iure commodi dolorum magnam facere quo harum? Nesciunt, laudantium nemo? Minus laudantium amet enim repellat, saepe temporibus voluptatibus? Ipsum excepturi libero rem distinctio, fuga quisquam incidunt! Esse eius dolore magni harum ex ad inventore aspernatur.</p>
                 </div>
         </div>
+
+        <table class="table">
+                <thead class="table-dark">
+                        <tr>
+                                <th scope="col">Type</th>
+                                <th scope="col">Etage</th>
+                                <th scope="col">Surface</th>
+                                <th scope="col">Disponibilité</th>
+                                <th scope="col">Loyer</th>
+                                <th scope="col">Charges</th>
+                        </tr>
+                </thead>
+                <tbody>
+                        <tr class="table-dark">
+                                <td>Bureau</td>
+                                <td>2éme</td>
+                                <td>123m²</td>
+                                <td>Disponible</td>
+                                <td>5000€/m</td>
+                                <td>400€/m</td>
+                        </tr>
+                </tbody>
+        </table> 
 
         <div class="divider"></div>
 
@@ -82,4 +82,3 @@
                 </div>
         </div>
 </section>
-</div>
