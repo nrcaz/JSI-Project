@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}UserAdmin index{% endblock %}
+
+{% block body %}
+    <h1>UserAdmin index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Login</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>PasswordKey</th>
+                <th>PasswordExpirationKey</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for user_admin in user_admins %}
+            <tr>
+                <td>{{ user_admin.id }}</td>
+                <td>{{ user_admin.login }}</td>
+                <td>{{ user_admin.email }}</td>
+                <td>{{ user_admin.password }}</td>
+                <td>{{ user_admin.passwordKey }}</td>
+                <td>{{ user_admin.passwordExpirationKey ? user_admin.passwordExpirationKey|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('user_admin_show', {'id': user_admin.id}) }}">show</a>
+                    <a href="{{ path('user_admin_edit', {'id': user_admin.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('user_admin_new') }}">Create new</a>
+{% endblock %}

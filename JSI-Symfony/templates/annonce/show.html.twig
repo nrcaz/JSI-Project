@@ -1,0 +1,90 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Annonce{% endblock %}
+
+{% block body %}
+    <h1>Annonce</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ annonce.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ annonce.titre }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ annonce.description }}</td>
+            </tr>
+            <tr>
+                <th>Equipement</th>
+                <td>{{ annonce.equipement }}</td>
+            </tr>
+            <tr>
+                <th>Images</th>
+                <td>{{ annonce.images ? annonce.images|join(', ') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>{{ annonce.type }}</td>
+            </tr>
+            <tr>
+                <th>Lieu</th>
+                <td>{{ annonce.lieu }}</td>
+            </tr>
+            <tr>
+                <th>Surface</th>
+                <td>{{ annonce.surface }}</td>
+            </tr>
+            <tr>
+                <th>Loyer</th>
+                <td>{{ annonce.loyer }}</td>
+            </tr>
+            <tr>
+                <th>Charges</th>
+                <td>{{ annonce.charges }}</td>
+            </tr>
+            <tr>
+                <th>Disponibilite</th>
+                <td>{{ annonce.disponibilite }}</td>
+            </tr>
+            <tr>
+                <th>Bureaux</th>
+                <td>{{ annonce.bureaux }}</td>
+            </tr>
+            <tr>
+                <th>OpenSpace</th>
+                <td>{{ annonce.openSpace }}</td>
+            </tr>
+            <tr>
+                <th>SalleReunion</th>
+                <td>{{ annonce.salleReunion }}</td>
+            </tr>
+            <tr>
+                <th>EspaceDetente</th>
+                <td>{{ annonce.espaceDetente }}</td>
+            </tr>
+            <tr>
+                <th>Accueil</th>
+                <td>{{ annonce.accueil }}</td>
+            </tr>
+            <tr>
+                <th>DateCreation</th>
+                <td>{{ annonce.dateCreation ? annonce.dateCreation|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Note</th>
+                <td>{{ annonce.note }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('annonce_index') }}">back to list</a>
+
+    <a href="{{ path('annonce_edit', {'id': annonce.id}) }}">edit</a>
+
+    {{ include('annonce/_delete_form.html.twig') }}
+{% endblock %}
