@@ -83,6 +83,22 @@ class PublicController extends AbstractController
     public function recrutement() 
     {
         // TRAITEMENT DU FORMULAIRE RECRUTEMENT A LA MAIN (INSERTION BDD) => TABLE RECRUTEMENT
+        $candidature = new Candidature();
+
+        $form = $this->createFormBuilder(ContactType::class, $contact);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($contact);
+            $entityManager->flush();
+            $messageRetour = "Ok fait !";
+        }
+
+        return $this->render('public/contact.html.twig', [
+            'formRecherche' => $form->createView(),
+            'messageRetour' => $messageRetour ?? "",
+        ]);
         return $this->render('public/recrutement.html.twig', [
             'controller_name' => 'PublicController',
             // variableTwig => $variablePHPconfirmationEnvoi
