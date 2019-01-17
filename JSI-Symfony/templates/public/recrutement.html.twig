@@ -1,5 +1,16 @@
 {% extends 'base.html.twig' %}
 
     {% block body %}
+
         <h1>Ma partie recrutement</h1>
+        {{ form_start(formCandidature) }}
+
+            {{ form_widget(formCandidature) }}
+
+            <button class="btn btn-success">Valider</button>
+
+        {{ form_end(formCandidature) }}
+        {{ messageRetour ?? "" }}
+
     {% endblock body %}
+

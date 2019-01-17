@@ -7,6 +7,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
+use App\Entity\Candidature;
 use App\Entity\Contact;
 use App\Form\ContactType;
 use App\Repository\ContactRepository;
@@ -80,28 +81,30 @@ class PublicController extends AbstractController
     /**
      * @Route("/recrutement", name="recrutement")
      */
-    public function recrutement() 
+    public function recrutement(Request $request) 
     {
-        // TRAITEMENT DU FORMULAIRE RECRUTEMENT A LA MAIN (INSERTION BDD) => TABLE RECRUTEMENT
         $candidature = new Candidature();
 
-        $form = $this->createFormBuilder(ContactType::class, $contact);
+        $form = $this->createFormBuilder($candidature)
+                ->add('nom')
+                ->add('prenom')
+                ->add('email')
+                ->add('cv')
+                ->add('message')
+                ->getForm();
+
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($contact);
+            $entityManager->persist($candidature);
             $entityManager->flush();
             $messageRetour = "Ok fait !";
         }
 
-        return $this->render('public/contact.html.twig', [
-            'formRecherche' => $form->createView(),
-            'messageRetour' => $messageRetour ?? "",
-        ]);
         return $this->render('public/recrutement.html.twig', [
-            'controller_name' => 'PublicController',
-            // variableTwig => $variablePHPconfirmationEnvoi
+            'formCandidature' => $form->createView(),
+            'messageRetour' => $messageRetour ?? "",
         ]);
     }
 
