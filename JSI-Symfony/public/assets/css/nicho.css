@@ -1,0 +1,35 @@
+/*****************************/
+/****** HEADER
+/*****************************/
+/* NAV */
+/* logo */
+header {
+  display: flex;
+  justify-content: center;
+}
+header .navbar-brand > img {
+  width: 4rem;
+  margin-left: auto;
+}
+header #navbarNavAltMarkup {
+  margin-left: 12rem;
+}
+header .nav-link {
+  border-bottom: solid 5px transparent;
+  margin-top: 5px;
+}
+header .nav-link:hover {
+  border-bottom: solid 5px orange;
+}
+
+@media screen and (max-width: 991px) {
+  header {
+    display: block;
+  }
+  header #navbarNavAltMarkup {
+    margin-left: 0;
+  }
+  header nav {
+    margin: 0 2rem 0 2rem;
+  }
+}

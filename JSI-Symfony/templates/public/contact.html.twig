@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+    {% block body %}
+        <h1>Ma partie contact</h1>
+
+        {{ form_start(formRecherche) }}
+            {{ form_widget(formRecherche) }}
+        <button class="btn">{{ button_label|default('Save') }}</button>
+        {{ form_end(formRecherche) }}
+        
+        {{ messageRetour ?? "" }}
+    {% endblock body %}
