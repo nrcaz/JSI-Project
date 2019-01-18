@@ -36,7 +36,6 @@
 
             <div class="form-group col-lg-6 col-md-6 col-sm-4">
               <fieldset>
-               <!-- <label class="control-label" for="readOnlyInput">Votre mobilier</label> -->
                 <input class="form-control-plaintext" id="readOnlyInput" type="text" placeholder="BUREAU" readonly="">
               </fieldset>
             </div>
