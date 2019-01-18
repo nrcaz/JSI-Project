@@ -18,7 +18,7 @@ $('header .nav-link').on('click', function() {
 //// HOME
 /////////////////////
 
-$('#home').css({
+$('#home, #contact, #recherche, #recrutement, #template-annonce').css({
 	marginTop : $('header').height()
 });
 // parallax
