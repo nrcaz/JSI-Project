@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
         <link rel="stylesheet" href="{{ absolute_url(asset('assets/css/style.css')) }} ">
         <link rel="stylesheet" href="{{ absolute_url(asset('assets/css/nicho.css')) }} ">
+        <link rel="stylesheet" href="{{ absolute_url(asset('assets/css/flo.css')) }} ">
     </head>
     <body>
         <header class="bg-dark">
@@ -19,9 +20,8 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <a class="nav-item nav-link" href="{{ url("accueil") }}">Services <span class="sr-only">(current)</span></a>
-                        <a class="nav-item nav-link" href="{{ url("recherche") }}">Recherche</a>
-                        <a class="nav-item nav-link" href="{{ url("contact") }}">Contact</a>
+                        <a class="nav-item nav-link" href="{{ url("recherche") }}">Rechercher un bien</a>
+                        <a class="nav-item nav-link" href="{{ url("contact") }}">Contactez-nous </a>
                         <a class="nav-item nav-link" href="{{ url("back_office") }}">Backoffice</a>
                     </div>
                 </div>
@@ -32,8 +32,8 @@
         
         <footer>
             <nav>
-                <a class="nav-link" href="#contact">Contactez-nous</a> | <a class="nav-link" href="#references">Nos references</a>
-                | <a class="nav-link" href="#recrutement">Recrutement</a>
+                <a class="nav-link" href="{{ url("contact") }}">Contactez-nous</a> | <a class="nav-link" href="#references">Nos references</a>
+                | <a class="nav-link" href="{{ url("recrutement") }}">Recrutement</a>
             </nav>
             <div id=references>
                 <img src="assets/img/logo.png" alt="">
