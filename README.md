@@ -35,6 +35,7 @@ ________________________________________________________________________________
 - Intégrer le template annonce.
 - Gérer l’Ajax
 - Intégrer la gestion des envoies de mails pour la partie contact et recrutement 
+- Animation JavaScript Scroll
 # Partie BACK
 - Intégrer la navigation du back office dans le template back-office.html.twig
 - Intégrer une page home dans le back-office
