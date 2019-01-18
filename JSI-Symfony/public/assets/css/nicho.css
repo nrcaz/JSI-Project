@@ -20,6 +20,7 @@ header {
 	top: 0;
 	display: flex;
 	justify-content: center;
+	z-index: 20;
 }
 header .navbar-brand > img {
 	width: 4rem;
@@ -100,12 +101,17 @@ footer .nav-link {
 	color: white;
 	display: inline;
 }
+footer nav i:hover {
+	color: orange;
+}
 .fa-linkedin {
 	font-size: 3rem;
 	color: black;
 	margin-right: 1rem;
+	transition: all 0.5s;
 }
 .fa-google-plus {
 	font-size: 3rem;
 	color: black;
+	transition: all 0.5s;
 }
