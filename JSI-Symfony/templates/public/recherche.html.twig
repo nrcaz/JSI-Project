@@ -11,7 +11,7 @@
                 <h4 class="title">Votre Simulation</h4>
                 <div id="message"></div>
                 
-                <form class="contact-form php-mail-form" role="form" action="contactform/contactform.php" method="POST">
+                <form id="simulation" class="contact-form php-mail-form" role="form" action="contactform/contactform.php" method="POST">
                 
                 <!-- Ligne Nb bureau -->
                 <div class="row mt-2 justify-content-center ">
@@ -242,7 +242,22 @@
 
             </div>
 
-        
         </section>
 
     {% endblock body %}
+
+    {% block javascripts %}
+    
+    <script>
+
+        {# Rajouter le code Ajax ici en Vanilla JS #}
+        {# Ne pas oublier de gérer l'ajout du texte dans l'input "demande" #}
+
+        document.querySelector('#simulation').addEventListener('submit',function(e) {
+            e.preventDefault();
+            console.log('coucou');
+        })
+
+    </script>
+    
+    {% endblock %}
