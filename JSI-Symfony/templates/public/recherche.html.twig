@@ -212,12 +212,13 @@
             <h1>Les annonces correspondant à vos résultats</h1>
             <div class="card-deck">
 
+                {# FAIRE UNE BOUCLE TWIG #}
                 <div class="card">
                     <img class="card-img-top" src="https://placehold.it/400x300" alt="Card image cap">
                     <div class="card-body">
                     <h5 class="card-title">Card title</h5>
                     <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <a href="#" class="btn btn-primary">Voir l'annonce</a>
+                    <a href="{{ path('annonce', {'id':2}) }}" class="btn btn-primary">Voir l'annonce</a>
                     </div>
                 </div>
 
@@ -226,7 +227,7 @@
                     <div class="card-body">
                     <h5 class="card-title">Card title</h5>
                     <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">Voir l'annonce</a>
+                    <a href="{{ path('annonce', {'id':3}) }}" class="btn btn-primary">Voir l'annonce</a>
                     </div>
                 </div>
 
@@ -235,7 +236,7 @@
                     <div class="card-body">
                     <h5 class="card-title">Card title</h5>
                     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                    <a href="#" class="btn btn-primary">Voir l'annonce</a>
+                    <a href="{{ path('annonce', {'id':4}) }}" class="btn btn-primary">Voir l'annonce</a>
                     </div>
                 </div>
 

@@ -9,6 +9,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 use App\Entity\Candidature;
 use App\Entity\Contact;
+use App\Entity\Annonce;
 use App\Form\ContactType;
 use App\Repository\ContactRepository;
 
@@ -109,12 +110,12 @@ class PublicController extends AbstractController
     }
 
     /**
-     * @Route("/annonce", name="annonce")
+     * @Route("/annonce/{id}", name="annonce")
      */
-    public function annonce() 
+    public function annonce(Annonce $annonce) 
     {
         return $this->render('public/annonce.html.twig', [
-            'controller_name' => 'PublicController',
+            'annonce' => $annonce
         ]);
     }
 }
