@@ -1,12 +1,247 @@
 {% extends 'base.html.twig' %}
 
     {% block body %}
-        <h1>Ma recherche</h1>
 
-        {{ form_start(formRecherche) }}
-            {{ form_widget(formRecherche) }}
-        <button class="btn">{{ button_label|default('Save') }}</button>
-        {{ form_end(formRecherche) }}
+        <section id="recherche">
         
-        {{ messageRetour ?? "" }}
+            <div class="row justify-content-around">
+
+                <div class="col-lg-4 col-md-4 col-sm-4 ">
+
+                <h4 class="title">Votre Simulation</h4>
+                <div id="message"></div>
+                
+                <form class="contact-form php-mail-form" role="form" action="contactform/contactform.php" method="POST">
+                
+                <!-- Ligne Nb bureau -->
+                <div class="row mt-2 justify-content-center ">
+                    <div class="form-group col-lg-2 col-md-2 col-sm-2 d-flex align-items-center">
+                
+                        <select class="form-control" id="exampleSelect1">
+                        <option selected disabled >Nombre de</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group col-lg-6 col-md-6 col-sm-4">
+                    <fieldset>
+                    <!-- <label class="control-label" for="readOnlyInput">Votre mobilier</label> -->
+                        <input class="form-control-plaintext" id="readOnlyInput" type="text" placeholder="BUREAU" readonly="">
+                    </fieldset>
+                    </div>
+                
+                    <blockquote class="blockquote text-center d-flex align-items-basline">
+                    <p class="mb-0 mt-2">pour</p>
+                    </blockquote>
+
+                    <div class="form-group-inline col-lg-2 col-md-2 col-sm-2 d-flex align-items-center">
+                    <div class="form-group form-group-inline ">
+                        <select class="form-control" id="exampleSelect1">
+                            <option selected disabled >Personne</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                        
+                    </div>
+                    </div>
+
+                <!-- FIN Ligne Nb bureau -->
+                </div>
+
+                <!-- Ligne Nb OPEN SPACE -->
+                <div class="row mt-2 justify-content-center ">
+                    <div class="form-group col-lg-2 col-md-2 col-sm-2 d-flex align-items-center">
+                    
+                        <select class="form-control" id="exampleSelect1">
+                        <option selected disabled >Nombre de</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group col-lg-6 col-md-6 ">
+                    <fieldset>
+                    <!-- <label class="control-label" for="readOnlyInput">Votre mobilier</label> -->
+                        <input class="form-control-plaintext" id="readOnlyInput" type="text" placeholder="OPEN SPACE" readonly="">
+                    </fieldset>
+                    </div>
+
+                    <blockquote class="blockquote text-center">
+                    <p class="mb-0 mt-2">pour</p>
+                    </blockquote>
+
+                    <div class="form-group-inline col-lg-2 col-md-2 col-sm-2 d-flex align-items-center">
+                    <div class="form-group form-group-inline ">
+                        <select class="form-control" id="exampleSelect1">
+                            <option selected disabled >Personne</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                        
+                    </div>
+                    </div>
+
+                <!-- FIN Ligne Nb OPEN SPACE -->
+                </div>
+
+                    <!-- Ligne Nb SALLE DE REUNION -->
+                <div class="row mt-2 justify-content-center ">
+                    <div class="form-group col-lg-2 col-md-2 col-sm-2 d-flex align-items-center">
+                    
+                        <select class="form-control" id="exampleSelect1">
+                        <option selected disabled >Nombre de</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group col-lg-6 col-md-6 ">
+                    <fieldset>
+                    <!-- <label class="control-label" for="readOnlyInput">Votre mobilier</label> -->
+                        <input class="form-control-plaintext" id="readOnlyInput" type="text" placeholder="SALLE DE REUNION" readonly="">
+                    </fieldset>
+                    </div>
+
+                    <blockquote class="blockquote text-center">
+                    <p class="mb-0 mt-2">pour</p>
+                    </blockquote>
+
+                    <div class="form-group-inline col-lg-2 col-md-2 col-sm-2 d-flex align-items-center">
+                    <div class="form-group form-group-inline ">
+                        <select class="form-control" id="exampleSelect1">
+                            <option selected disabled >Personne</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                        
+                    </div>
+                    </div>
+
+                <!-- FIN Ligne Nb SALLE DE REUNION -->
+                </div>
+
+                <!-- Ligne Nb CUISINE / ESPACE DETENTE -->
+                <div class="row mt-2 justify-content-center ">
+                    <div class="form-group col-lg-2 col-md-2 col-sm-2 d-flex align-items-center">
+                    
+                        <select class="form-control" id="exampleSelect1">
+                        <option selected disabled >Nombre de</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group col-lg-6 col-md-6 ">
+                    <fieldset>
+                    <!-- <label class="control-label" for="readOnlyInput">Votre mobilier</label> -->
+                        <input class="form-control-plaintext" id="readOnlyInput" type="text" placeholder="CUISINE / ESPACE DETENTE" readonly="">
+                    </fieldset>
+                    </div>
+
+                    <blockquote class="blockquote text-center">
+                    <p class="mb-0 mt-2">pour</p>
+                    </blockquote>
+
+                    <div class="form-group-inline col-lg-2 col-md-2 col-sm-2 d-flex align-items-center">
+                    <div class="form-group form-group-inline ">
+                        <select class="form-control" id="exampleSelect1">
+                            <option selected disabled >Personne</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                        
+                    </div>
+                    </div>
+
+                <!-- FIN Ligne Nb CUISINE / ESPACE DETENTE -->
+                </div>
+
+                    <div class="loading"></div>
+                    <div class="error-message"></div>
+                    <div class="sent-message mt-4">Recherche en cours...</div>
+
+                    <div class="form-send ">
+                        <button type="submit" class="btn btn-large btn-primary">Validez votre recherche</button>
+                    </div>
+                    </form>
+                
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-4 ">
+                    <h4 class="title">Confiez-nous votre recherche</h4>
+                    {{ form_start(formRecherche) }}
+                        {{ form_widget(formRecherche) }}
+                    <button type="submit" class="btn btn-large btn-primary">Envoyé votre demande</button>
+                    {{ form_end(formRecherche) }}
+                    {{ messageRetour ?? "" }}
+                </div>
+
+            </div>
+
+            <div class="divider"></div>
+
+        </section>
+
+        <section id="annonces" class="container">
+
+            <h1>Les annonces correspondant à vos résultats</h1>
+            <div class="card-deck">
+
+                <div class="card">
+                    <img class="card-img-top" src="https://placehold.it/400x300" alt="Card image cap">
+                    <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <a href="#" class="btn btn-primary">Voir l'annonce</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img class="card-img-top" src="https://placehold.it/400x300" alt="Card image cap">
+                    <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-primary">Voir l'annonce</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img class="card-img-top" src="https://placehold.it/400x300" alt="Card image cap">
+                    <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                    <a href="#" class="btn btn-primary">Voir l'annonce</a>
+                    </div>
+                </div>
+
+            </div>
+
+        
+        </section>
+
     {% endblock body %}
