@@ -2,15 +2,20 @@
 
     {% block body %}
 
-        <h1>Ma partie recrutement</h1>
-        {{ form_start(formCandidature) }}
+        <section id="recrutement">
 
-            {{ form_widget(formCandidature) }}
+            <h1>Nous sommes toujours à l'affût de nouveaux collaborateurs, alors n'hésitez pas à nous contacter</h1>
+            <div class="divider"></div>
+            {{ form_start(formCandidature) }}
 
-            <button class="btn btn-success">Valider</button>
+                {{ form_widget(formCandidature) }}
 
-        {{ form_end(formCandidature) }}
-        {{ messageRetour ?? "" }}
+            <button type="submit" class="btn btn-large btn-primary">Envoyé votre demande</button>
+
+            {{ form_end(formCandidature) }}
+            {{ messageRetour ?? "" }}
+
+        </section>
 
     {% endblock body %}
 
