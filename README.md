@@ -39,6 +39,8 @@ ________________________________________________________________________________
 - Intégrer la navigation du back office dans le template back-office.html.twig
 - Intégrer une page home dans le back-office
 - Intégrer toutes les autres pages 
+- Créer Le template USER_ADMIN
+
 # Partie Back Gestion
 Gestion du mot de passe oublié
 
