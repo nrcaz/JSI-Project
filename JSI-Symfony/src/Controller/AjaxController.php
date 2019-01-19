@@ -25,7 +25,7 @@ class AjaxController extends AbstractController
         
         // custom query
         $query = 'SELECT * FROM annonce a 
-            WHERE a.surface > :surfaceMin AND a.surface < :surfaceMax AND a.bureaux >= :nbBureaux AND a.open_space >= :nbOpenSpace AND a.salle_reunion >= :nbSalleReunion AND a.espace_detente >= :nbEspaceDetente 
+            WHERE a.surface >= :surfaceMin AND a.surface <= :surfaceMax AND a.bureaux >= :nbBureaux AND a.open_space >= :nbOpenSpace AND a.salle_reunion >= :nbSalleReunion AND a.espace_detente >= :nbEspaceDetente 
             ORDER BY a.surface ASC';
 
         $annonces = $annonceRepository
@@ -43,7 +43,7 @@ class AjaxController extends AbstractController
             ->fetchAll();
         dump($annonces);
         
-        // traitement du retour SQL 3 max & 3 min
+        // traitement du retour SQL 3 max & 3 min resultat a stocker dans $tabAsso
 
         // return $this->json($tabAsso);
         return $this->render('ajax/index.html.twig', [
