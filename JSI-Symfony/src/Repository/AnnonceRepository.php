@@ -19,6 +19,27 @@ class AnnonceRepository extends ServiceEntityRepository
         parent::__construct($registry, Annonce::class);
     }
 
+    public function simRechercheSQL() {
+
+
+        $conn = $this->getEntityManager()->getConnection();
+
+        $sql = 'SELECT * FROM annonce a
+        WHERE a.surface >= :surfaceMin AND a.surface <= :surfaceMax AND a.bureaux >= :nbBureaux AND a.open_space >= :nbOpenSpace AND a.salle_reunion >= :nbSalleReunion AND a.espace_detente >= :nbEspaceDetente 
+        ORDER BY a.surface DESC';     
+
+        $stmt = $conn->prepare($sql);
+        $stmt->execute([
+            'surfaceMin' => intval($_REQUEST["surfaceMin"] ?? "0"),
+            'surfaceMax' => intval($_REQUEST["surfaceMax"] ?? "0"),
+            'nbBureaux' => intval($_REQUEST["nbBureaux"] ?? "0"),
+            'nbOpenSpace' => intval($_REQUEST["nbOpenSpace"] ?? "0"),
+            'nbSalleReunion' => intval($_REQUEST["nbSalleReunion"] ?? "0"),
+            'nbEspaceDetente' => intval($_REQUEST["nbEspaceDetente"] ?? "0")
+        ]);
+
+        return $stmt->fetchAll(); 
+    }
     // /**
     //  * @return Annonce[] Returns an array of Annonce objects
     //  */
