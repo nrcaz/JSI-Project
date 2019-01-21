@@ -39,7 +39,7 @@
                 <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
             </div>
             <!--logo start-->
-            <a href="index.html" class="logo"><b>J<span>SI</span></b></a>
+            <a href="{{ path('accueil') }}" class="logo"><b>J<span>SI</span></b></a>
             <!--logo end-->
             <div class="nav notify-row" id="top_menu">
                 <!--  notification start -->
@@ -58,7 +58,7 @@
             </div>
             <div class="top-menu">
                 <ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="login.html">Logout</a></li>
+                    <li><a class="logout" href="{{ path('security_logout') }}">Logout</a></li>
                 </ul>
             </div>
         </header>
@@ -76,7 +76,7 @@
                     </p>
                     <h5 class="centered">Admin</h5>
                     <li class="mt">
-                        <a href="index.html">
+                        <a href="{{ path('back_office_accueil') }}">
                             <i class="fa fa-dashboard"></i>
                             <span>Menu</span>
                         </a>
@@ -84,10 +84,10 @@
                     <li class="sub-menu">
                         <a href="javascript:;">
                             <i class="fa fa-desktop"></i>
-                            <span>Contact</span>
+                            <span>Contacts Clients</span>
                         </a>
                         <ul class="sub">
-                            <li><a href="{{ path('contact_index') }}">Demande</a></li>
+                            <li><a href="{{ path('contact_index') }}">Voir les demandes</a></li>
                             <li><a href="#">Nouveau Message</a></li>
 
                         </ul>
@@ -95,20 +95,25 @@
                     <li class="sub-menu">
                         <a href="javascript:;">
                             <i class="fa fa-cogs"></i>
-                            <span>Article</span>
+                            <span>Annonces</span>
                         </a>
                         <ul class="sub">
-                            <li><a href="{{ path('annonce_index') }}">Mes article</a></li>
-                            <li><a href="back-article-new.html">Ajout Article</a></li>
+                            <li><a href="{{ path('annonce_index') }}">Voir mes annonces</a></li>
+                            <li><a href="{{ path('annonce_new') }}">Ajouter une annonce</a></li>
 
                         </ul>
                     </li>
                     <li class="sub-menu">
                         <a class="" href="{{ path('candidature') }}">
                             <i class="fa fa-book"></i>
-                            <span>Recrutement</span>
+                            <span>Candidatures</span>
                         </a>
-
+                    </li>
+                    <li class="sub-menu">
+                        <a class="" href="{{ path('user') }}">
+                            <i class="fa fa-book"></i>
+                            <span>Administrateurs</span>
+                        </a>
                     </li>
 
 

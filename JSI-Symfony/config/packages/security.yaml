@@ -1,40 +1,38 @@
 security:
-    encoders:
-        App\Entity\User:
-            algorithm: bcrypt
-    # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
-    providers:
-        in_memory: { memory: ~ }
-        in_data_base:
-            entity:
-                class: App\Entity\User
-                property: username   
-    firewalls:
-        dev:
-            pattern: ^/(_(profiler|wdt)|css|images|js)/
-            security: false
-        main:
-            anonymous: true
-            provider: in_data_base
+  encoders:
+    App\Entity\User:
+      algorithm: bcrypt
+  # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+  providers:
+    in_memory: { memory: ~ }
+    in_data_base:
+      entity:
+        class: App\Entity\User
+        property: username
+  firewalls:
+    dev:
+      pattern: ^/(_(profiler|wdt)|css|images|js)/
+      security: false
+    main:
+      anonymous: true
+      provider: in_data_base
 
-            form_login:
-                login_path: security_login
-                check_path: security_login
-            
-            logout:
-                path: security_logout
-                target: accueil
+      form_login:
+        login_path: security_login
+        check_path: security_login
 
-            # activate different ways to authenticate
+      logout:
+        path: security_logout
+        target: security_login
 
-            # http_basic: true
-            # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
+      # activate different ways to authenticate
+      # http_basic: true
+      # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
+      # form_login: true
+      # https://symfony.com/doc/current/security/form_login_setup.html
 
-            # form_login: true
-            # https://symfony.com/doc/current/security/form_login_setup.html
-
-    # Easy way to control access for large sections of your site
-    # Note: Only the *first* access control that matches will be used
-    access_control:
-        # - { path: ^/admin, roles: ROLE_ADMIN }
-        # - { path: ^/profile, roles: ROLE_USER }
+  # Easy way to control access for large sections of your site
+  # Note: Only the *first* access control that matches will be used
+  access_control:
+    - { path: ^/admin, roles: ROLE_ADMIN }
+    # - { path: ^/profile, roles: ROLE_USER }
