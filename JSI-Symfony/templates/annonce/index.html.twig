@@ -30,7 +30,7 @@
                                         <tr>
                                             <td>{{ annonce.id }}</td>
                                             <td>{{ annonce.titre }}</td>
-                                            <td>{{ annonce.description }}</td>
+                                            <td>{{ annonce.description|slice(0,100)}}</td>
                                     
                                             <td>{{ annonce.images ? annonce.images|join(', ') : '' }}</td>
                                             
@@ -40,7 +40,7 @@
                                                 <a href="{{ path('annonce_show', {'id': annonce.id}) }}">
                                                 <button class="btn btn-success btn-xs"><i class="fa fa-eye"></i></button>
                                                 </a>
-                                                <a href="{{ path('annonce_edit', {'id': annonce.id}) }}">
+                                                <a href="{{ path('annonce_edit', {'id': annonce.id}) }}" style="display:inline">
                                                 <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
                                                 </a>
                                             </td>

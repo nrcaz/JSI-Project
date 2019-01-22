@@ -42,6 +42,7 @@
                                         <td>
                                             <a href="{{ path('contact_show', {'id': contact.id}) }}"><button class="btn btn-success btn-xs"><i class="fa fa-eye"></i></button></a>
                                             {# <a href="{{ path('contact_edit', {'id': contact.id}) }}"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button></a> #}
+                                            {{ include('contact/_delete_form.html.twig') }}
                                         </td>
                                     </tr>
                                 {% else %}

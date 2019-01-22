@@ -4,7 +4,7 @@
 
 {% block body %}
 <section class="wrapper">
-    <h3><i class="fa fa-angle-right"></i> Demande reçu</h3>
+    <h3><i class="fa fa-angle-right"></i> Candidature reçu</h3>
 
 
     <!-- row -->
@@ -38,6 +38,7 @@
                             <td>{{ candidature.dateReception ? candidature.dateReception|date('H:i | d-m-Y') : '' }}</td>
                             <td>
                                 <a href="{{ path('candidature_show', {'id': candidature.id}) }}"><button class="btn btn-success btn-xs"><i class="fa fa-eye"></i></button></a>
+                                {{ include('candidature/_delete_form.html.twig') }}
                             </td>
                         </tr>
                     {% else %}
