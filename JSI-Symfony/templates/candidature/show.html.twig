@@ -3,9 +3,9 @@
 {% block title %}Recrutement{% endblock %}
 
 {% block body %}
+<div class="container">
     <h1>Candidature</h1>
-
-    <table class="table">
+     <table class="table content-panel">
         <tbody>
             <tr>
                 <th>Nom</th>
@@ -29,6 +29,6 @@
             </tr>
         </tbody>
     </table>
-
-    <a href="{{ path('candidature') }}">back to list</a>
+    <a class="btn btn-primary" href="{{ path('candidature') }}">Retour</a>
+</div>
 {% endblock %}

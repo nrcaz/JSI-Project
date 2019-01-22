@@ -107,10 +107,10 @@ formSim.addEventListener('submit',function(e) {
 
 		let demande = `
 		Surface ${document.querySelector('#surfaceMin').value} - ${document.querySelector('#surfaceMax').value}
-		${document.querySelector('#nbBureaux').value}+ Bureaux
-		${document.querySelector('#nbOpenSpace').value}+ Open Space
-		${document.querySelector('#nbSalleReunion').value}+ Salles de Reunion
-		${document.querySelector('#nbEspaceDetente').value}+ Cuisine / Espace detente
+		| ${document.querySelector('#nbBureaux').value}+ Bureaux
+		| ${document.querySelector('#nbOpenSpace').value}+ Open Space
+		| ${document.querySelector('#nbSalleReunion').value}+ Salles de Reunion
+		| ${document.querySelector('#nbEspaceDetente').value}+ Cuisine / Espace detente
 		`;
 
 		document.querySelector('#contact_demande').value = demande;
