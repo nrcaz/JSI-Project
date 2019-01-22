@@ -1,13 +1,12 @@
-{% extends 'base.html.twig' %}
+{% extends 'backoffice.html.twig' %}
 
 {% block title %}Annonce{% endblock %}
 
 {% block body %}
-    <section id="main-content">
-            <section class="wrapper site-min-height">
+        <section class="wrapper site-min-height">
                 <!-- page start-->
-                <div class="chat-room mt">
-                    <aside class="mid-side">
+            <div class="chat-room mt">
+                <aside class="mid-side">
                         <div class="chat-room-head">
                             <h3>{{ annonce.titre }} <span>Publié le {{ annonce.dateCreation ? annonce.dateCreation|date('Y-m-d H:i:s') : '' }}</span></h3>
                             <form action="#" class="pull-right position">
@@ -98,13 +97,13 @@
                         </footer>
                     <!-- aside right -->
                     <!-- Bloc Note -->
-
+                </aside>
                     <aside class="right-side">
                         <div class="user-head">
                             <!-- En tête
                                 <h3>Note</h3>
                             -->
-                            <button href="#" class="btn btn-danger pull-right">{{ include('annonce/_delete_form.html.twig') }}Supprimer</button>
+                            {{ include('annonce/_delete_form.html.twig') }}
                         </div>
                         <div class="invite-row">
                             <h4 class="pull-left">Note</h4>
