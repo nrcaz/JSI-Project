@@ -87,18 +87,13 @@
                             </table>
                         </div>
                     </div>
-                    <footer>
-                            <div class="chat-txt">
-                                <input type="text" class="form-control">
-                            </div>
-                            <div class="btn-group hidden-sm hidden-xs">
-                            </div>
-                            <button class="btn btn-theme">Send</button>
-                        </footer>
+
                     <!-- aside right -->
                     <!-- Bloc Note -->
                 </aside>
+                    
                     <aside class="right-side">
+
                         <div class="user-head">
                             <!-- En tête
                                 <h3>Note</h3>
@@ -109,14 +104,13 @@
                             <h4 class="pull-left">Note</h4>
                         </div>
                         <div class="">
-                            <blockquote contenteditable="true">{{ annonce.note }}</blockquote>
+                            <blockquote>{{ annonce.note }}</blockquote>
                         </div>
 
                     </aside>
-                    <!-- end aside right -->
-
+                        <!-- end aside right -->
                 </div>
                 <!-- page end-->
             </section>
              
-            {% endblock %}
+{% endblock %}

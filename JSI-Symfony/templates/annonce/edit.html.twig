@@ -3,11 +3,13 @@
 {% block title %}Edit Annonce{% endblock %}
 
 {% block body %}
-    <h1>Edit Annonce</h1>
 
-    {{ include('annonce/_form.html.twig', {'button_label': 'Update'}) }}
+    <section class="wrapper">
+        <h1>Edit Annonce</h1>
 
-    <a href="{{ path('annonce_index') }}">back to list</a>
+        {{ include('annonce/_form.html.twig', {'button_label': 'Update'}) }}
 
-    {{ include('annonce/_delete_form.html.twig') }}
+            <a class="btn btn-primary" href="{{ path('annonce_index') }}">Retour</a>
+    </section>
+
 {% endblock %}
