@@ -4,8 +4,9 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Form\RegistrationType;
-use Symfony\Component\HttpFoundation\Request;
+use App\Repository\UserRepository;
 
+use Symfony\Component\HttpFoundation\Request;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -59,10 +60,22 @@ CODEHTML;
     }
 
     /**
-     * @Route("/passwordnew", name="password_new")
+     * @Route("/forgetpassword", name="security_password_forget")
      */
-    public function passwordnew() {
-        return $this->render('passwordnew/index.html.twig');
+    public function forgetpassword(Request $request, UserRepository $userRepository) {
+        
+        $email = $request->get("email");
+        $user = $userRepository->findOneBy([ "email" => $email ]);
+
+        if($user) {
+            $newPassword = uniqid();
+            $user->setPassword($newPassword);
+            $message = "Votre nouveau mot de passe est $newPassword";
+        }
+
+        return $this->render('forgetpassword/index.html.twig', [
+            'message' => $message ?? ""
+        ]);
     }
     
     /**
