@@ -100,7 +100,6 @@
                         <ul class="sub">
                             <li><a href="{{ path('annonce_index') }}">Voir mes annonces</a></li>
                             <li><a href="{{ path('annonce_new') }}">Ajouter une annonce</a></li>
-
                         </ul>
                     </li>
                     <li class="sub-menu">
@@ -129,11 +128,13 @@
     <a href="{{ path('candidature') }}">Ma liste des candidatures</a>
     <a href="{{ path('contact_index') }}">Ma liste des contacts</a>
 </nav>
-
+<!-- MAIN CONTENT -->
+<section id="main-content">
 {% block body %}{% endblock %}
-
+</section>
 <!-- /MAIN CONTENT -->
         <!--main content end-->
+
         <!--footer start-->
         <footer class="site-footer">
             <!--

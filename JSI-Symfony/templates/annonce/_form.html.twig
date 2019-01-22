@@ -1,4 +1,164 @@
-{{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
-{{ form_end(form) }}
+
+            <section class="wrapper">
+                
+                <!-- BASIC FORM ELELEMNTS -->
+                <div class="row mt">
+                    <div class="col-lg-12">
+                        <div class="form-panel">
+                            <form class="form-horizontal style-form" method="get">
+                        {{ form_start(form, {'attr':{'class': 'form-horizontal style-form'} }) }}
+                                <div class="form-group">
+                                    <label class="col-sm-2 col-sm-2 control-label">Titre</label>
+                                    <div class="col-sm-8">
+                                        {{ form_row(form.titre, {'attr':{'class': 'form-control'} }) }}
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 col-sm-2 control-label">Description</label>
+                                    <div class="col-sm-8">
+                                        {{ form_row(form.description, {'attr':{'class': 'form-control'} }) }}
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 col-sm-2 control-label">Equipement</label>
+                                    <div class="col-sm-8">
+                                        {{ form_row(form.equipement, {'attr':{'class': 'form-control'} }) }}
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-3">Images</label>
+                                    <div class="col-md-9">
+                                        <div class="fileupload fileupload-new" data-provides="fileupload">
+                                            <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+                                                <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="">
+                                            </div>
+                                            <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
+                                            <div>
+                                                <span class="btn btn-theme02 btn-file">
+                                                    <span class="fileupload-new"><i class="fa fa-paperclip"></i>Votre image</span>
+                                                <span class="fileupload-exists"><i class="fa fa-undo"></i> Change</span>
+                                                {{ form_row(form.images, {'attr':{'class': 'form-control'} }) }}
+                                                </span>
+                                                <a href="advanced_form_components.html#" class="btn btn-theme04 fileupload-exists" data-dismiss="fileupload"><i
+                                                        class="fa fa-trash-o"></i> Remove</a>
+                                            </div>
+                                        </div>
+                                        <span class="label label-info">NOTE!</span>
+                                        <span>
+                                            Attached image thumbnail is
+                                            supported in Latest Firefox, Chrome, Opera,
+                                            Safari and Internet Explorer 10 only
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 col-sm-2 control-label">Type</label>
+                                    <div class="col-sm-4">
+                                        {{ form_row(form.type, {'attr':{'class': 'form-control'} }) }}
+                                    </div>
+                                    <label class="col-sm-2 col-sm-2 control-label">Lieux</label>
+                                    <div class="col-sm-4">
+                                        {{ form_row(form.lieu, {'attr':{'class': 'form-control'} }) }}
+                                        
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <form class="form-inline" role="form">
+                                        <label class="col-sm-1 col-sm-1 control-label">Surface</label>
+                                        <div class=" col-sm-2">
+                                            {{ form_row(form.surface, {'attr':{'class': 'form-control'} }) }}
+                                        </div>
+
+                                        <label class="col-sm-1 col-sm-1 control-label">Loyer</label>
+                                        <div class=" col-sm-2">
+                                            {{ form_row(form.loyer, {'attr':{'class': 'form-control'} }) }}
+                                        </div>
+                                        <label class="col-sm-1 col-sm-1 control-label">Charges</label>
+                                        <div class=" col-sm-2">
+                                            {{ form_row(form.charges, {'attr':{'class': 'form-control'} }) }}
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="form-group">
+                                    <div class="form-inline ">
+
+                                        <label for="" class="col-sm-3 col-sm-3 "> Disponibilité</label>
+                                        <div class="">
+                                            <div class="switch has-switch">
+                                                <div class="switch-on switch-animate">
+                                                    {{ form_row(form.disponibilite, {'attr':{'class': 'form-control'} }) }}<span class="switch-left">OUI</span><label>&nbsp;</label><span class="switch-right">NON</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <!-- Caractéristisque Local-->
+                            </form>
+                        </div>
+                        <!-- col-lg-12-->
+                    </div>
+                    <!-- /row -->
+                    <h3><i class="fa fa-angle-right"></i>Info pour Simulateur</h3>
+                    <div class="form-panel">
+                        <div class="row mt">
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <form class="form-inline" role="form">
+
+                                        <label class="col-sm-8 col-sm-offset-4 control-label">Bureau</label>
+                                        <div class="col-sm-2 col-sm-offset-4">
+                                            {{ form_row(form.bureaux, {'attr':{'class': 'form-control'} }) }}
+                                        </div>
+
+                                        <label class="col-sm-8 col-sm-offset-4 control-label">Open space</label>
+                                        <div class="col-sm-2 col-sm-offset-4">
+                                            {{ form_row(form.openSpace, {'attr':{'class': 'form-control'} }) }}
+                                        </div>
+
+                                        <label class="col-sm-8 col-sm-offset-4 control-label">Salle de Réunion</label>
+                                        <div class="col-sm-2 col-sm-offset-4">
+                                             {{ form_row(form.salleReunion, {'attr':{'class': 'form-control'} }) }}
+                                        </div>
+
+                                        <label class="col-sm-8 col-sm-offset-4 control-label">Cuisine Espace Détente </label>
+                                        <div class="col-sm-2 col-sm-offset-4">
+                                            {{ form_row(form.espaceDetente, {'attr':{'class': 'form-control'} }) }}
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="form-group last-group">
+                                    <div class="row mt">
+                                        <label for="" class="col-sm-8 col-sm-offset-4 control-label">Hotesse</label>
+                                        <div class="col-sm-2 col-sm-offset-4">
+                                            <div class="switch has-switch">
+                                                <div class="switch-animate switch-on">{{ form_row(form.accueil, {'attr':{'class': 'form-control'} }) }}<span class="switch-left">ON</span><label>&nbsp;</label><span class="switch-right">OFF</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <label for="" class="col-sm-8 control-label">Note</label>
+                                {{ form_row(form.note) }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- CUSTOM TOGGLES -->
+
+                    <!-- /row -->
+                {{ form_end(form) }}
+                <button class="btn btn-sucess">{{ button_label|default('Save') }}</button>
+            </section>
+            <!-- /wrapper -->
+        
+
+
+
+
+
+    
+   
+    
+    
+    
+    
+
+
