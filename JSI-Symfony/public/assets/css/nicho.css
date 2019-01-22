@@ -7,9 +7,6 @@
 	--googleRed: #de5246;
 	--linkedinBlue: #0077b5;
 }
-body {
-	position: relative;
-}
 
 /*****************************/
 /****** HEADER
@@ -83,9 +80,6 @@ footer {
 	align-items: center;
 	flex-direction: column;
 	padding: 1rem 0 1rem 0;
-	position: absolute;
-	bottom: 0;
-	width: 100%;
 }
 footer nav {
 	margin-bottom: 1rem;

@@ -28,9 +28,6 @@ $('#home').parallax({
 //// FOOTER
 /////////////////////
 
-$('body').css({
-	paddingBottom : $('footer').height()
-});
 // hover
 $('footer .nav-link').on('mouseover', function() {
 	$('footer .nav-link').css({
