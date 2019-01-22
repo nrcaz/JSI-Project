@@ -203,11 +203,11 @@ hr {
 }
 
 .mt {
-    margin-top: 25px;
+    margin-top: 15px;
 }
 
 .mb {
-    margin-bottom: 25px;
+    margin-bottom: 15px;
 }
 
 .no-padding {
@@ -434,6 +434,7 @@ ul.sidebar-menu li a.active i {
 
 .header {
     position: sticky;
+    top: 0;
     left: 0;
     right: 0;
     z-index: 1002;
@@ -446,7 +447,7 @@ ul.sidebar-menu li a.active i {
 
 .wrapper {
     display: inline-block;
-    margin-top: 60px;
+    /* margin-top: 60px; */
     padding-left: 15px;
     padding-right: 15px;
     padding-bottom: 15px;
