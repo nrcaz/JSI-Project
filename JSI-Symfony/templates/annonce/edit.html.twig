@@ -1,15 +1,10 @@
 {% extends 'backoffice.html.twig' %}
 
-{% block title %}Edit Annonce{% endblock %}
-
 {% block body %}
 
     <section class="wrapper">
         <h1>Edit Annonce</h1>
-
         {{ include('annonce/_form.html.twig', {'button_label': 'Update'}) }}
-
-            <a class="btn btn-primary" href="{{ path('annonce_index') }}">Retour</a>
     </section>
 
 {% endblock %}

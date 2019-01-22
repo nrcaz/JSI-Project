@@ -23,7 +23,8 @@ class AnnonceType extends AbstractType
             ->add('description',TextareaType::class)
             ->add('equipement',TextareaType::class)
             ->add('images',FileType::class, [
-                'required' => false
+                'required' => false,
+                'data_class' => null
             ])
             ->add('type', TextType::class)
             ->add('lieu', TextType::class)
