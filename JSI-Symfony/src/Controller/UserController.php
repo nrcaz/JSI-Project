@@ -5,15 +5,15 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
-class BackOfficeController extends AbstractController
+class UserController extends AbstractController
 {
     /**
-     * @Route("/admin/accueil", name="back_office_accueil")
+     * @Route("/admin/user", name="user")
      */
     public function index()
     {
-        return $this->render('accueilBackOffice/index.html.twig', [
-            '' => '',
+        return $this->render('user/index.html.twig', [
+            'controller_name' => 'UserController',
         ]);
     }
 }

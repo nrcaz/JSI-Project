@@ -1,4 +1,4 @@
-{% extends 'backoffice.html.twig' %}
+{% extends 'base.html.twig' %}
 
 {% block body %}
 
@@ -18,6 +18,13 @@
     <div class="form-group">
         <button type="submit" class="btn btn-primary">Connexion</button>
     </div>
+
+    <a href="{{ path('security_password_forget')}}">Mot de passe oublié ?</a>
+
+    {% if error %}
+        <div>Login ou mot de passe incorrect</div>
+    {% endif %}
+
 </form>
 
 {% endblock %}
