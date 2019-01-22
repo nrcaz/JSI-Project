@@ -7,6 +7,9 @@
 	--googleRed: #de5246;
 	--linkedinBlue: #0077b5;
 }
+body {
+	position: relative;
+}
 
 /*****************************/
 /****** HEADER
@@ -80,6 +83,9 @@ footer {
 	align-items: center;
 	flex-direction: column;
 	padding: 1rem 0 1rem 0;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
 }
 footer nav {
 	margin-bottom: 1rem;
@@ -130,10 +136,11 @@ footer nav i:hover {
 	flex-wrap: wrap;
 	justify-content: center;
 	margin: 0 auto 1rem auto;
-	width: 60rem;
+	width: 90%;
 }
 #etapes article{
-	margin: 1rem 1rem 0 0;
+	margin: 3% 3% 0 0;
+	width: 30%;
 }
 #commercialisation{
 	display: flex;
@@ -156,4 +163,38 @@ footer nav i:hover {
 		margin: 0 0 1rem 0;
 		padding-left: 1rem;
 	}
+	#etapes article{
+		margin: 1rem 1rem 0 0;
+		width: 18rem;
+	}
+}
+
+/*****************************/
+/****** ANNONCES
+/*****************************/
+#annonces  .annonceList{
+	width: 60rem;
+	padding-left: 1rem;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 0 auto 1rem auto;
+}
+#annonces .annonceList article{
+	margin: 1rem 1rem 0 0;
+	width: 18rem;
+}
+/*****************************/
+/****** ANNONCES RECHERCHE
+/*****************************/
+#recherche {
+	padding-top: 3rem;
+}
+#recherche select{
+	padding-left: 5px;
+	padding-right: 5px;
+	text-align: center;
+}
+#contact_demande{
+	height: 185px;
 }
