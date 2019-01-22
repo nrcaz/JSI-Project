@@ -18,9 +18,6 @@ $('header .nav-link').on('click', function() {
 //// HOME
 /////////////////////
 
-$('#home, #contact, #recherche, #recrutement, #template-annonce').css({
-	marginTop : $('header').height()
-});
 // parallax
 $('#home').parallax({
 	imageSrc : 'assets/img/architectural-design-architecture-buildings-936722.jpg',
