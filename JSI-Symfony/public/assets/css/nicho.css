@@ -10,13 +10,6 @@
     --googleRed: #de5246;
     --linkedinBlue: #0077b5;
 }
-<<<<<<< HEAD
-=======
-
-body {
-    position: relative;
-}
->>>>>>> origin/steph
 
 
 /*****************************/
@@ -109,22 +102,11 @@ header .nav-link:hover {
 /*****************************/
 
 footer {
-<<<<<<< HEAD
 	background-color: var(--footerColor);
 	display: flex;
 	align-items: center;
 	flex-direction: column;
 	padding: 1rem 0 1rem 0;
-=======
-    background-color: var(--footerColor);
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding: 1rem 0 1rem 0;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
->>>>>>> origin/steph
 }
 
 footer nav {
