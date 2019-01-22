@@ -1,0 +1,34 @@
+{% extends 'backoffice.html.twig' %}
+
+{% block title %}Recrutement{% endblock %}
+
+{% block body %}
+    <h1>Candidature</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Nom</th>
+                <td>{{ candidature.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ candidature.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ candidature.email }}</td>
+            </tr>
+            <tr>
+                <th>CV</th>
+                <td>{{ candidature.cv }}</td>
+            </tr>
+            <tr>
+                <th>Message</th>
+                <td>{{ candidature.message }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('candidature') }}">back to list</a>
+{% endblock %}

@@ -23,6 +23,7 @@
                                         <th><i class="fa fa-phone"></i> Téléphone</th>
                                         <th><i class=" fa fa-envelope"></i> Demande</th>
                                         <th><i class="fa fa-undo"></i> Simulation</th>
+                                        <th><i class="fa fa-calendar-o"></i> Date</th>
                                         <th>actions</th>
                                     </tr>
                                 </thead>
@@ -37,9 +38,10 @@
                                         <td>{{ contact.telephone }}</td>
                                         <td>{{ contact.message }}</td>
                                         <td>{{ contact.demande }}</td>
+                                        <td>{{ contact.dateReception ? contact.dateReception|date('H:i | d-m-Y') : '' }}</td>
                                         <td>
                                             <a href="{{ path('contact_show', {'id': contact.id}) }}"><button class="btn btn-success btn-xs"><i class="fa fa-eye"></i></button></a>
-                                            <a href="{{ path('contact_edit', {'id': contact.id}) }}"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button></a>
+                                            {# <a href="{{ path('contact_edit', {'id': contact.id}) }}"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button></a> #}
                                         </td>
                                     </tr>
                                 {% else %}
@@ -49,8 +51,6 @@
                                 {% endfor %}
                                 </tbody>
                             </table>
-
-                            <a href="{{ path('contact_new') }}">Create new</a>
                         </div>
                         <!-- /content-panel -->
                     </div>

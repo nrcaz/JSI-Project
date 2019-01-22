@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'backoffice.html.twig' %}
 
 {% block title %}Contact{% endblock %}
 
@@ -7,10 +7,6 @@
 
     <table class="table">
         <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ contact.id }}</td>
-            </tr>
             <tr>
                 <th>Nom</th>
                 <td>{{ contact.nom }}</td>
@@ -40,7 +36,7 @@
 
     <a href="{{ path('contact_index') }}">back to list</a>
 
-    <a href="{{ path('contact_edit', {'id': contact.id}) }}">edit</a>
+    {# <a href="{{ path('contact_edit', {'id': contact.id}) }}">edit</a> #}
 
-    {{ include('contact/_delete_form.html.twig') }}
+    {# {{ include('contact/_delete_form.html.twig') }} #}
 {% endblock %}

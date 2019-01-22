@@ -64,8 +64,7 @@ $('[href="#references"]').on('click', function(e) {
 //// SIMULATION
 /////////////////////
 
-// Rajouter le code Ajax ici en Vanilla JS
-// Ne pas oublier de gérer l'ajout du texte dans l'input "demande"
+// AJAX
 let formSim = document.querySelector('#simulation');
 let annonces = [];
 
