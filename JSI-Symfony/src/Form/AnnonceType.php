@@ -6,28 +6,32 @@ use App\Entity\Annonce;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\RadioType;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class AnnonceType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('titre')
-            ->add('description')
-            ->add('equipement')
+            ->add('titre', TextType::class)
+            ->add('description',TextareaType::class)
+            ->add('equipement',TextareaType::class)
             ->add('images')
-            ->add('type')
-            ->add('lieu')
-            ->add('surface')
-            ->add('loyer')
-            ->add('charges')
-            ->add('disponibilite')
-            ->add('bureaux')
-            ->add('openSpace')
-            ->add('salleReunion')
-            ->add('espaceDetente')
-            ->add('accueil')
-            ->add('dateCreation')
+            ->add('type', TextType::class)
+            ->add('lieu', TextType::class)
+            ->add('surface', NumberType::class)
+            ->add('loyer', NumberType::class)
+            ->add('charges', NumberType::class)
+            ->add('disponibilite', RadioType::class)
+            ->add('bureaux', NumberType::class)
+            ->add('openSpace', NumberType::class)
+            ->add('salleReunion', NumberType::class)
+            ->add('espaceDetente', NumberType::class)
+            ->add('accueil',RadioType::class)
+           // ->add('dateCreation')
             ->add('note')
         ;
     }

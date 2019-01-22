@@ -99,7 +99,7 @@
                         </a>
                         <ul class="sub">
                             <li><a href="{{ path('annonce_index') }}">Mes article</a></li>
-                            <li><a href="back-article-new.html">Ajout Article</a></li>
+                            <li><a href="{{ path('annonce_new')}}">Ajout Article</a></li>
 
                         </ul>
                     </li>
@@ -124,11 +124,13 @@
     <a href="{{ path('candidature') }}">Ma liste des candidatures</a>
     <a href="{{ path('contact_index') }}">Ma liste des contacts</a>
 </nav>
-
+<!-- MAIN CONTENT -->
+<section id="main-content">
 {% block body %}{% endblock %}
-
+</section>
 <!-- /MAIN CONTENT -->
         <!--main content end-->
+
         <!--footer start-->
         <footer class="site-footer">
             <!--
