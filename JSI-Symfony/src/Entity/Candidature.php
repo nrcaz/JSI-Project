@@ -41,6 +41,11 @@ class Candidature
      */
     private $message;
 
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $dateReception;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -102,6 +107,18 @@ class Candidature
     public function setMessage(string $message): self
     {
         $this->message = $message;
+
+        return $this;
+    }
+
+    public function getDateReception(): ?\DateTimeInterface
+    {
+        return $this->dateReception;
+    }
+
+    public function setDateReception(?\DateTimeInterface $dateReception): self
+    {
+        $this->dateReception = $dateReception;
 
         return $this;
     }

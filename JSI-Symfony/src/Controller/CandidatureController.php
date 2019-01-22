@@ -14,7 +14,7 @@ class CandidatureController extends AbstractController
     public function index(CandidatureRepository $candidatureRepository)
     {
         
-        $candidatures = $candidatureRepository->findAll();
+        $candidatures = $candidatureRepository->findBy([],[ "dateReception" => "DESC" ]);
         
         return $this->render('candidature/index.html.twig', [
             'candidatures' => $candidatures,

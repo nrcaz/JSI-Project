@@ -45,6 +45,9 @@ class PublicController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            // ajout de la dateReception
+            $contact->setDateReception(new \Datetime());
+            // insert DB
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($contact);
             $entityManager->flush();
@@ -67,6 +70,9 @@ class PublicController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            // ajout de la dateReception
+            $contact->setDateReception(new \Datetime());
+            // insert DB
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($contact);
             $entityManager->flush();
@@ -97,6 +103,9 @@ class PublicController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            // ajout de la dateReception
+            $candidature->setDateReception(new \Datetime());
+            // insert DB
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($candidature);
             $entityManager->flush();
