@@ -84,12 +84,11 @@
                     <li class="sub-menu">
                         <a href="javascript:;">
                             <i class="fa fa-desktop"></i>
-                            <span>Contacts Clients</span>
+                            <span>Messages</span>
                         </a>
                         <ul class="sub">
-                            <li><a href="{{ path('contact_index') }}">Voir les demandes</a></li>
-                            <li><a href="#">Nouveau Message</a></li>
-
+                            <li><a href="{{ path('contact_index') }}">Demandes Clients</a></li>
+                            <li><a href="{{ path('candidature') }}">Candidatures</a></li>
                         </ul>
                     </li>
                     <li class="sub-menu">
@@ -101,12 +100,6 @@
                             <li><a href="{{ path('annonce_index') }}">Voir mes annonces</a></li>
                             <li><a href="{{ path('annonce_new') }}">Ajouter une annonce</a></li>
                         </ul>
-                    </li>
-                    <li class="sub-menu">
-                        <a class="" href="{{ path('candidature') }}">
-                            <i class="fa fa-book"></i>
-                            <span>Candidatures</span>
-                        </a>
                     </li>
                     <li class="sub-menu">
                         <a class="" href="{{ path('user') }}">
@@ -126,7 +119,6 @@
             </div>
         </aside>
         <!--sidebar end-->
-
 <!-- MAIN CONTENT -->
 <section id="main-content">
 
