@@ -62,18 +62,60 @@ CODEHTML;
     /**
      * @Route("/forgetpassword", name="security_password_forget")
      */
-    public function forgetpassword(Request $request, UserRepository $userRepository) {
+    public function forgetpassword(Request $request, UserRepository $userRepository, ObjectManager $manager, UserPasswordEncoderInterface $encoder) {
         
         $email = $request->get("email");
-        $user = $userRepository->findOneBy([ "email" => $email ]);
 
-        if($user) {
-            $newPassword = uniqid();
-            $user->setPassword($newPassword);
-            $message = "Votre nouveau mot de passe est $newPassword";
+        if($email != "") {
+
+            $user = $userRepository->findOneBy([ "email" => $email ]);
+
+            if($user) {
+                
+                $newPassword = uniqid();
+                $hash = $encoder->encodePassword($user, $newPassword);
+
+                $user->setPassword($hash);
+                $manager->persist($user);
+                $manager->flush();
+                
+                $message = "Votre nouveau mot de passe est ($newPassword)";
+                dump($user);
+            } else {
+                $message = "Nous n'avons pas trouvé votre email";
+            }
+        } else {
+            $message = "";
         }
 
         return $this->render('forgetpassword/index.html.twig', [
+            'message' => $message
+        ]);
+    }
+
+    /**
+     * @Route("/changepassword", name="security_password_change")
+     */
+    public function changepassword(UserRepository $userRepository, ObjectManager $manager, Request $request, UserPasswordEncoderInterface $encoder) {
+
+        $email = $request->get("email");
+        $newPassword = $request->get("new_password");
+
+        $user = $userRepository->findOneBy([ "email" => $email ]);
+        dump($user);
+
+        if($user) {
+
+            $hash = $encoder->encodePassword($user, $newPassword);
+            $user->setPassword($hash);
+
+            $manager->persist($user);
+            $manager->flush();
+
+            $message = "Votre mot de passe a bien été modifié !";
+        } 
+        
+        return $this->render('changepassword/index.html.twig', [
             'message' => $message ?? ""
         ]);
     }
