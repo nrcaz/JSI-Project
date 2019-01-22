@@ -34,7 +34,7 @@
                             <td>{{ candidature.prenom }}</td>
                             <td>{{ candidature.email }}</td>
                             <td>{{ candidature.cv }}</td>
-                            <td>{{ candidature.message }}</td>
+                            <td>{{ candidature.message|slice(0,100) }}...</td>
                             <td>{{ candidature.dateReception ? candidature.dateReception|date('H:i | d-m-Y') : '' }}</td>
                             <td>
                                 <a href="{{ path('candidature_show', {'id': candidature.id}) }}"><button class="btn btn-success btn-xs"><i class="fa fa-eye"></i></button></a>
