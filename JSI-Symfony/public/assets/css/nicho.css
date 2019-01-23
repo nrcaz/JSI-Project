@@ -1,4 +1,6 @@
 /*****************************/
+
+
 /****** GLOBAL
 /*****************************/
 
@@ -11,11 +13,14 @@
 
 
 /*****************************/
+
+
 /****** HEADER
 /*****************************/
 
 
 /* NAV */
+
 
 /* logo */
 
@@ -64,6 +69,8 @@ header .nav-link:hover {
 
 
 /*****************************/
+
+
 /****** HOME
 /*****************************/
 
@@ -89,15 +96,17 @@ header .nav-link:hover {
 
 
 /*****************************/
+
+
 /****** FOOTER
 /*****************************/
 
 footer {
-	background-color: var(--footerColor);
-	display: flex;
-	align-items: center;
-	flex-direction: column;
-	padding: 1rem 0 1rem 0;
+    background-color: var(--footerColor);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem 0 1rem 0;
 }
 
 footer nav {
@@ -144,6 +153,8 @@ footer nav i:hover {
 
 
 /*****************************/
+
+
 /****** SERVICES
 /*****************************/
 
@@ -161,28 +172,25 @@ footer nav i:hover {
     margin: 0 auto 1rem auto;
     width: 90%;
 }
-#etapes article{
-	margin: 7rem 5% 0 5%;
-	width: 20rem;
+
+#etapes article {
+    margin: 3rem 5% 0 5%;
+    height: 20rem;
+    width: 20rem;
 }
 
 #commercialisation {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto 1rem auto;
+    width: 75%;
 }
 
-#commercialisation p {
-    width: 40rem;
-    text-align: center;
-}
-
-#commercialisation ul {
-    list-style: none;
-}
-
-#commercialisation li {
-    margin: 1rem 0 1rem 0;
+#commercialisation article {
+    margin: 7rem 1% 0 1%;
+    height: 18rem;
+    width: 18rem;
 }
 
 @media screen and (max-width: 60rem) {
@@ -195,10 +203,21 @@ footer nav i:hover {
         margin: 1rem 1rem 0 0;
         width: 18rem;
     }
+    #commercialisation {
+        width: 100%;
+        margin: 0 0 1rem 0;
+        padding-left: 1rem;
+    }
+    #commercialisation article {
+        margin: 1rem 1rem 0 0;
+        width: 18rem;
+    }
 }
 
 
 /*****************************/
+
+
 /****** ANNONCES
 /*****************************/
 
@@ -218,6 +237,8 @@ footer nav i:hover {
 
 
 /*****************************/
+
+
 /****** ANNONCES RECHERCHE
 /*****************************/
 

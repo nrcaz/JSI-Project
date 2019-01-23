@@ -48,7 +48,7 @@
     -moz-transform-origin: 0% 100%;
     -o-transform-origin: 0% 100%;
     -ms-transform-origin: 0% 100%;
-    transform-origin: 0% 130%;
+    transform-origin: 0% 100%;
 }
 
 .view-ninth .content {
@@ -115,20 +115,20 @@
 /** Profondeur position finale**/
 
 .view-ninth:hover .mask-1 {
-    -webkit-transform: rotate(45.5deg) translateX(1px);
-    -moz-transform: rotate(45.5deg) translateX(1px);
-    -o-transform: rotate(45.5deg) translateX(1px);
-    -ms-transform: rotate(45.5deg) translateX(1px);
-    transform: rotate(45.5deg) translateX(1px);
+    -webkit-transform: rotate(56.5deg) translateX(1px);
+    -moz-transform: rotate(56.5deg) translateX(1px);
+    -o-transform: rotate(56.5deg) translateX(1px);
+    -ms-transform: rotate(56.5deg) translateX(1px);
+    transform: rotate(56.5deg) translateX(1px);
 }
 
 
 /** Profondeur position finale**/
 
 .view-ninth:hover .mask-2 {
-    -webkit-transform: rotate(45.5deg) translateX(-4px);
-    -moz-transform: rotate(45.5deg) translateX(-4px);
-    -o-transform: rotate(45.5deg) translateX(-4px);
-    -ms-transform: rotate(45.5deg) translateX(-4px);
-    transform: rotate(45.5deg) translateX(-4px);
+    -webkit-transform: rotate(56.5deg) translateX(-4px);
+    -moz-transform: rotate(56.5deg) translateX(-4px);
+    -o-transform: rotate(56.5deg) translateX(-4px);
+    -ms-transform: rotate(56.5deg) translateX(-4px);
+    transform: rotate(56.5deg) translateX(-4px);
 }
