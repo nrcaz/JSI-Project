@@ -1,8 +1,57 @@
-
 {{ form_start(form) }}
-{{ form_widget(form) }}
-<button class="btn btn-success">Sauvegarder</button>
-<a class="btn btn-primary" href="{{ path('annonce_index') }}">Retour</a>
+
+    <div class="row">
+        <div class="col-lg-4">
+            {{ form_row(form.titre) }}
+        </div>
+        <div class="col-lg-4">
+            {{ form_row(form.type) }}
+        </div>
+        <div class="col-lg-4">
+            {{ form_row(form.lieu) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            {{ form_row(form.description, { "attr": { "style" : "height:10rem" }}) }}
+        </div>
+        <div class="col-lg-6">
+            {{ form_row(form.equipement, { "attr": { "style" : "height:10rem" }}) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            {{ form_row(form.loyer) }}
+            {{ form_row(form.charges) }}
+        </div>
+        <div class="col-lg-6" style="display:flex; flex-direction:column; align-items:center">
+            {{ form_row(form.disponibilite) }}
+            {{ form_row(form.accueil) }}
+        </div>
+    </div>
+    <h3>Infos-simulateur</h3>
+    <hr>
+    <div class="row" style="display:flex; justify-content:space-around">
+        <div class="col-lg-2">
+            {{ form_row(form.surface) }}
+        </div>
+        <div class="col-lg-2">
+            {{ form_row(form.bureaux) }}
+        </div>
+        <div class="col-lg-2">
+            {{ form_row(form.openSpace) }}
+        </div>
+        <div class="col-lg-2">
+            {{ form_row(form.salleReunion) }}
+        </div>
+        <div class="col-lg-2">
+            {{ form_row(form.espaceDetente) }}
+        </div>
+    </div>
+
+    <button class="btn btn-success">Sauvegarder</button>
+    <a class="btn btn-primary" href="{{ path('annonce_index') }}">Retour</a> 
+
 {{ form_end(form) }}
 
 <!-- /wrapper -->
