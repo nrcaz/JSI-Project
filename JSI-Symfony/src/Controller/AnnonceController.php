@@ -34,7 +34,7 @@ class AnnonceController extends AbstractController
         $form = $this->createForm(AnnonceType::class, $annonce);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid()) { 
             $annonce->setDateCreation(new \DateTime());
             // upload des images
             for($i=1; $i<6; $i++) {

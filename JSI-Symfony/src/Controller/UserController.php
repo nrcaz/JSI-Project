@@ -67,6 +67,7 @@ class UserController extends AbstractController
         <li>Email : $email</li>
         <li>Mot de passe : $password</li>
     </ul>
+    <p>Pour vous connectez, cliquez sur le lien ci-après : <a href="http://localhost/JSI-Project/JSI-Symfony/public/login">Se connecter<a/></p>
     <strong>Nous vous conseillons fortement de supprimer ce mail pour des raisons de sécurité.</strong>
 </body>
 </html>
