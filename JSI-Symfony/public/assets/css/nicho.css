@@ -241,6 +241,9 @@ footer nav i:hover {
 #contact_demande {
     height: 185px;
 }
+/* #message {
+    text-align: center;
+} */
 
 /*****************************/
 /****** FORGET PASSWORD
@@ -253,5 +256,25 @@ footer nav i:hover {
 #forgetpw p {
     width: 500px;
     font-size: 150%;
+    margin-bottom: 2rem;
+}
+
+/*****************************/
+/****** LOGIN
+/*****************************/
+#login{
+    display: flex;
+    justify-content: center;
+    padding-top: 3rem;
+}
+#login > div{
+    padding: 1rem 5rem 1rem 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+    border: 1px solid lightgrey;
+}
+#login h1 {
     margin-bottom: 2rem;
 }
