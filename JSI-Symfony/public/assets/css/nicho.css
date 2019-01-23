@@ -9,6 +9,11 @@
     --linkedinBlue: #0077b5;
 }
 
+div.divider {
+    height: 300px;
+    width: 100%;
+}
+
 
 /*****************************/
 /****** HEADER
@@ -21,7 +26,6 @@
 /* logo */
 
 header {
-    background-color: var(--headerColor);
     position: sticky;
     width: 100%;
     top: 0;
@@ -69,7 +73,6 @@ header .nav-link:hover {
 /*****************************/
 
 #home {
-    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: column;
     justify-content: center;
