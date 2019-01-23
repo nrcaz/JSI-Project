@@ -202,23 +202,36 @@
                     <div class="sent-message mt-4"></div>
 
                     <div class="form-send ">
-                        <button type="submit" class="btn btn-large btn-primary">Validez votre recherche</button>
+                        <button type="submit" class="btn btn-large btn-success">Valider votre recherche</button>
                     </div>
                     </form>
                 
                 </div>
-
-                <div class="col-lg-4 col-md-4 col-sm-4 ">
-                    <h4 class="title">Confiez-nous votre recherche</h4>
-                    {{ form_start(formRecherche) }}
-                        {{ form_widget(formRecherche) }}
-                    <button type="submit" class="btn btn-large btn-primary">Envoyez votre demande</button>
-                    {{ form_end(formRecherche) }}
-                    {{ messageRetour ?? "" }}
-                </div>
-
             </div>
-
+            {# MODAL #}
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Confiez nous votre recherche</button>
+            
+            <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title title" id="exampleModalLabel">Confiez-nous votre recherche</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container">
+                                {{ form_start(formRecherche) }}
+                                    {{ form_widget(formRecherche) }}
+                                <button type="submit" class="btn btn-large btn-success">Envoyer votre demande</button>
+                                {{ form_end(formRecherche) }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                
             <div class="divider"></div>
 
         </section>
