@@ -86,9 +86,12 @@ if (formSim) {
 		};
 	
 		fetch('http://localhost/jsi-project/jsi-symfony/public/ajax', fetchOption).then(response => response.json()).then(response => {
-			document.querySelector('#message').textContent = response.message;
+			// message
+			if (response.message) document.querySelector('#message').textContent = response.message;
+			else document.querySelector('#message').textContent = "Les annonces correspondantes à votre recherche";
+
+			// liste annonce
 			annonces = response.annonces;
-			console.log(annonces);
 	
 			let html = "";
 			for(annonce of annonces) {
@@ -124,7 +127,7 @@ if (formSim) {
 }
 
 ////////////////////////////
-//// LOGIN / FORGET PW
+//// FORGET PW
 ////////////////////////////
 // adjust height so footer is at bottom of page
 if (innerHeight > $('header').height()+$('footer').height()+$('#forgetpw').height()) {
@@ -132,8 +135,19 @@ if (innerHeight > $('header').height()+$('footer').height()+$('#forgetpw').heigh
 		height: innerHeight - $('header').height() - $('footer').height()
 	})
 }
+////////////////////////////
+//// LOGIN
+////////////////////////////
 if (innerHeight > $('header').height()+$('footer').height()+$('#login').height()) {
 	$('#login').css({
+		height: innerHeight - $('header').height() - $('footer').height()
+	})
+}
+////////////////////////////
+//// CONFIRMATION
+////////////////////////////
+if (innerHeight > $('header').height()+$('footer').height()+$('#confirmation').height()) {
+	$('#confirmation').css({
 		height: innerHeight - $('header').height() - $('footer').height()
 	})
 }
