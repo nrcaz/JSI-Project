@@ -1,7 +1,8 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-
+<section id="login">
+<div>
 <h1>Connexion</h1>
 
 <form action="{{ path('security_login') }}" method="post">
@@ -19,13 +20,18 @@
         <button type="submit" class="btn btn-primary">Connexion</button>
     </div>
 
+<<<<<<< HEAD
     <a href="{{ path('security_password_new')}}" class="btn btn-primary">Mot de passe oublié ?</a>
     <a href="{{ path('security_registration')}}" class="btn btn-success">Je veux m'inscrire</a>
+=======
+    <a href="{{ path('security_password_forget')}}" class="btn btn.success">Mot de passe oublié ?</a>
+>>>>>>> master
 
     {% if error %}
         <div>Login ou mot de passe incorrect</div>
     {% endif %}
 
 </form>
-
+</div>
+</section>
 {% endblock %}

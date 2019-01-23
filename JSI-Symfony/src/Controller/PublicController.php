@@ -45,15 +45,18 @@ class PublicController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            // ajout de la dateReception
+            $contact->setDateReception(new \Datetime());
+            // insert DB
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($contact);
             $entityManager->flush();
-            $messageRetour = "Ok fait !";
-        }
 
+            return $this->render('public/confirmation.html.twig', [
+                'formulaire' => "demande"]);
+        }
         return $this->render('public/recherche.html.twig', [
             'formRecherche' => $form->createView(),
-            'messageRetour' => $messageRetour ?? "",
         ]);
     }
 
@@ -67,15 +70,20 @@ class PublicController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            // ajout de la dateReception
+            $contact->setDateReception(new \Datetime());
+            // insert DB
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($contact);
             $entityManager->flush();
-            $messageRetour = "Ok fait !";
+
+            return $this->render('public/confirmation.html.twig', [
+                'formulaire' => "message"
+            ]);
         }
 
         return $this->render('public/contact.html.twig', [
             'formRecherche' => $form->createView(),
-            'messageRetour' => $messageRetour ?? "",
         ]);
     }
 
@@ -97,15 +105,20 @@ class PublicController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            // ajout de la dateReception
+            $candidature->setDateReception(new \Datetime());
+            // insert DB
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($candidature);
             $entityManager->flush();
-            $messageRetour = "Ok fait !";
+
+            return $this->render('public/confirmation.html.twig', [
+                'formulaire' => "candidature"
+            ]);
         }
 
         return $this->render('public/recrutement.html.twig', [
             'formCandidature' => $form->createView(),
-            'messageRetour' => $messageRetour ?? "",
         ]);
     }
 

@@ -1,13 +1,18 @@
-{% extends 'base.html.twig' %}
-
-{% block title %}Edit Annonce{% endblock %}
+{% extends 'backoffice.html.twig' %}
 
 {% block body %}
-    <h1>Edit Annonce</h1>
 
-    {{ include('annonce/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('annonce_index') }}">back to list</a>
-
-    {{ include('annonce/_delete_form.html.twig') }}
+    <section class="wrapper">
+        <div class="row mt">
+            <div class="col-lg-12">
+                <div class="form-panel">
+                    <h1><i class="fa fa-angle-right"></i> Editer une annonce</h1>
+                    <hr>
+                    <hr>
+                    {{ include('annonce/_form.html.twig') }}
+                </div>
+            </div>
+        </div>
+    </section>
+    
 {% endblock %}

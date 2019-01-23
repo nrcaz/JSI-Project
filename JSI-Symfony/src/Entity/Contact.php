@@ -46,6 +46,11 @@ class Contact
      */
     private $demande;
 
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $dateReception;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -119,6 +124,18 @@ class Contact
     public function setDemande(?string $demande): self
     {
         $this->demande = $demande;
+
+        return $this;
+    }
+
+    public function getDateReception(): ?\DateTimeInterface
+    {
+        return $this->dateReception;
+    }
+
+    public function setDateReception(?\DateTimeInterface $dateReception): self
+    {
+        $this->dateReception = $dateReception;
 
         return $this;
     }

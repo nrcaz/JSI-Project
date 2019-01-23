@@ -1,90 +1,116 @@
-{% extends 'base.html.twig' %}
+{% extends 'backoffice.html.twig' %}
 
 {% block title %}Annonce{% endblock %}
 
 {% block body %}
-    <h1>Annonce</h1>
+        <section class="wrapper site-min-height">
+                <!-- page start-->
+            <div class="chat-room mt">
+                <aside class="mid-side">
+                        <div class="chat-room-head">
+                            <h3>{{ annonce.titre }} <span>Publié le {{ annonce.dateCreation ? annonce.dateCreation|date('Y-m-d H:i:s') : '' }}</span></h3>
+                            <form action="#" class="pull-right position">
+                            <a href="{{ path('annonce_edit', {'id': annonce.id}) }}"><button type="button" class="btn btn-theme02 ">Editer</button></a>
+                            <a href="{{ path('annonce_index') }}"><button type="button" class="btn btn-warning">Retour liste</button></a>
+                            </form>
+                        </div>
+                    <div class="group-rom">
+                        <div class="first-part">Description</div>
+                        <div class="second-part">{{ annonce.description }}</div>
+                    </div>
+                    <div class="group-rom">
+                        <div class="first-part">Equipement</div>
+                        <div class="second-part">{{ annonce.equipement }}</div>
+                    </div>
+                     <div class="group-rom">
+                        <div class="first-part">Lieux</div>
+                        <div class="second-part">{{ annonce.lieu }}</div>
+                    </div>
+                    <div class="group-rom">
+                        <div class="first-part">Images</div>
+                        <div class="second-part">
+                            <div class="row content-panel mt mb">
+                                <a href="#">product.jpg</a> <span class="text-muted">35.4KB</span>
+                                <p>
+                                    <img class="img-responsive col-4" src="{{ annonce.image1 }}.jpg" alt="">
+                                </p>
+                            </div>
+                        </div>
+                    </div>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ annonce.id }}</td>
-            </tr>
-            <tr>
-                <th>Titre</th>
-                <td>{{ annonce.titre }}</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>{{ annonce.description }}</td>
-            </tr>
-            <tr>
-                <th>Equipement</th>
-                <td>{{ annonce.equipement }}</td>
-            </tr>
-            <tr>
-                <th>Images</th>
-                <td>{{ annonce.images ? annonce.images|join(', ') : '' }}</td>
-            </tr>
-            <tr>
-                <th>Type</th>
-                <td>{{ annonce.type }}</td>
-            </tr>
-            <tr>
-                <th>Lieu</th>
-                <td>{{ annonce.lieu }}</td>
-            </tr>
-            <tr>
-                <th>Surface</th>
-                <td>{{ annonce.surface }}</td>
-            </tr>
-            <tr>
-                <th>Loyer</th>
-                <td>{{ annonce.loyer }}</td>
-            </tr>
-            <tr>
-                <th>Charges</th>
-                <td>{{ annonce.charges }}</td>
-            </tr>
-            <tr>
-                <th>Disponibilite</th>
-                <td>{{ annonce.disponibilite }}</td>
-            </tr>
-            <tr>
-                <th>Bureaux</th>
-                <td>{{ annonce.bureaux }}</td>
-            </tr>
-            <tr>
-                <th>OpenSpace</th>
-                <td>{{ annonce.openSpace }}</td>
-            </tr>
-            <tr>
-                <th>SalleReunion</th>
-                <td>{{ annonce.salleReunion }}</td>
-            </tr>
-            <tr>
-                <th>EspaceDetente</th>
-                <td>{{ annonce.espaceDetente }}</td>
-            </tr>
-            <tr>
-                <th>Accueil</th>
-                <td>{{ annonce.accueil }}</td>
-            </tr>
-            <tr>
-                <th>DateCreation</th>
-                <td>{{ annonce.dateCreation ? annonce.dateCreation|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
-            <tr>
-                <th>Note</th>
-                <td>{{ annonce.note }}</td>
-            </tr>
-        </tbody>
-    </table>
+                    <div class="group-rom">
+                        <table class="table table-striped table-advance table-hover col-sm-12">
+                            <thead>
+                                <tr>
+                                    <th><i class="fa fa-building-o"></i> Type</th>
+                                    
+                                    <th><i class="fa fa-square"></i> Surface</th>
+                                    <th><i class=" fa fa-edit"></i> Disponibilité</th>
+                                    <th><i class=" fa fa-eur"></i> Loyer</th>
+                                    <th><i class=" fa fa-euro"></i> Charges</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>{{ annonce.type }}</td>
+                                    <td>{{ annonce.surface }}<span>m2</span></td>
+                                    <td>{{ annonce.disponibilite }}</td>
+                                    <td>{{ annonce.loyer }}<span>€/m2</span></td>
+                                    <td>{{ annonce.charges }}<span>€/m</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="group-rom last-group">
+                        <div class="content-panel">
+                            <table class="table table-striped table-advance table-hover">
+                                <thead>
+                                    <tr>
+                                        <th><i class="fa fa-chair"></i> Bureau</th>
+                                        <th class=""><i class="fa fa-users"></i> Open Space</th>
+                                        <th><i class="fa fa-users"></i> Salle de Réunion</th>
+                                        <th><i class=" fa fa-edit"></i> Cuisine</th>
+                                        <th><i class=" fa fa-glass-cheers"></i> Espace Détente</th>
+                                        <th><i class=" fa fa-user"></i>Accueil</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>{{ annonce.bureaux }}</td>
+                                        <td>{{ annonce.openSpace }}</td>
+                                        <td>{{ annonce.salleReunion }}</td>
+                                        <td>{{ annonce.espaceDetente }}</td>
+                                        <td>{{ annonce.accueil }}</td>
+                                    </tr>
 
-    <a href="{{ path('annonce_index') }}">back to list</a>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
 
-    <a href="{{ path('annonce_edit', {'id': annonce.id}) }}">edit</a>
+                    <!-- aside right -->
+                    <!-- Bloc Note -->
+                </aside>
+                    
+                    <aside class="right-side">
 
-    {{ include('annonce/_delete_form.html.twig') }}
+                        <div class="user-head">
+                            <!-- En tête
+                                <h3>Note</h3>
+                            -->
+                            {{ include('annonce/_delete_form.html.twig') }}
+                        </div>
+                        <div class="invite-row">
+                            <h4 class="pull-left">Note</h4>
+                        </div>
+                        <div class="">
+                            <blockquote>{{ annonce.note }}</blockquote>
+                        </div>
+
+                    </aside>
+                        <!-- end aside right -->
+                </div>
+                <!-- page end-->
+            </section>
+             
 {% endblock %}

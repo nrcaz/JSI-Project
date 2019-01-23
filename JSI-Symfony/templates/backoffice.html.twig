@@ -78,18 +78,17 @@
                     <li class="mt">
                         <a href="{{ path('back_office_accueil') }}">
                             <i class="fa fa-dashboard"></i>
-                            <span>Menu</span>
+                            <span>Accueil</span>
                         </a>
                     </li>
                     <li class="sub-menu">
                         <a href="javascript:;">
                             <i class="fa fa-desktop"></i>
-                            <span>Contacts Clients</span>
+                            <span>Messages</span>
                         </a>
                         <ul class="sub">
-                            <li><a href="{{ path('contact_index') }}">Voir les demandes</a></li>
-                            <li><a href="#">Nouveau Message</a></li>
-
+                            <li><a href="{{ path('contact_index') }}">Demandes Clients</a></li>
+                            <li><a href="{{ path('candidature') }}">Candidatures</a></li>
                         </ul>
                     </li>
                     <li class="sub-menu">
@@ -100,54 +99,39 @@
                         <ul class="sub">
                             <li><a href="{{ path('annonce_index') }}">Voir mes annonces</a></li>
                             <li><a href="{{ path('annonce_new') }}">Ajouter une annonce</a></li>
-
                         </ul>
                     </li>
                     <li class="sub-menu">
-                        <a class="" href="{{ path('candidature') }}">
+                        <a href="javascript:;">
                             <i class="fa fa-book"></i>
-                            <span>Candidatures</span>
+                            <span>Administration</span>
                         </a>
+                        <ul class="sub">
+                            <li><a href="{{ path('liste_administrateurs') }}">Liste des administrateurs</a></li>
+                            <li><a href="{{ path('new_administrateur') }}">Ajouter un administrateur</a></li>
+                        </ul>
                     </li>
                     <li class="sub-menu">
-                        <a class="" href="{{ path('user') }}">
+                        <a class="" href="{{ path('security_password_change') }}">
                             <i class="fa fa-book"></i>
-                            <span>Administrateurs</span>
+                            <span>Changer mon mot de passe</span>
                         </a>
                     </li>
-
-
 
                 </ul>
                 <!-- sidebar menu end-->
             </div>
         </aside>
         <!--sidebar end-->
-
-<nav>
-    <a href="{{ path('annonce_index') }}">Ma liste des annonces</a>
-    <a href="{{ path('candidature') }}">Ma liste des candidatures</a>
-    <a href="{{ path('contact_index') }}">Ma liste des contacts</a>
-</nav>
+<!-- MAIN CONTENT -->
+<section id="main-content">
 
 {% block body %}{% endblock %}
 
+</section>
 <!-- /MAIN CONTENT -->
         <!--main content end-->
-        <!--footer start-->
-        <footer class="site-footer">
-            <!--
-                        
-                      -->
-
-            </div>
-            <a href="blank.html#" class="go-top">
-                <i class="fa fa-angle-up"></i>
-            </a>
-            </div>
-        </footer>
-        <!--footer end-->
-    </section>
+</section>
 
 <!-- js placed at the end of the document so the pages load faster -->
     <script src="{{ absolute_url(asset('assets/css/lib/jquery/jquery.min.js')) }}"></script>

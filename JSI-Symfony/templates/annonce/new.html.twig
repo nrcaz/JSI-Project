@@ -1,11 +1,20 @@
-{% extends 'base.html.twig' %}
+{% extends 'backoffice.html.twig' %}
 
 {% block title %}New Annonce{% endblock %}
 
 {% block body %}
-    <h1>Create new Annonce</h1>
 
-    {{ include('annonce/_form.html.twig') }}
+    <section class="wrapper">
+        <div class="row mt">
+            <div class="col-lg-12">
+                <div class="form-panel">
+                    <h1><i class="fa fa-angle-right"></i> Nouvelle annonce</h1>
+                    <hr>
+                    <hr>
+                    {{ include('annonce/_form.html.twig') }}
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <a href="{{ path('annonce_index') }}">back to list</a>
 {% endblock %}
