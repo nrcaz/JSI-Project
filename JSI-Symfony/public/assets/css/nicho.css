@@ -192,6 +192,7 @@ footer nav i:hover {
     #etapes article {
         margin: 1rem 1rem 0 0;
         width: 18rem;
+        height: 18rem;
     }
     #commercialisation {
         width: 100%;
@@ -201,6 +202,7 @@ footer nav i:hover {
     #commercialisation article {
         margin: 1rem 1rem 0 0;
         width: 18rem;
+        height: 18rem;
     }
 }
 
@@ -265,7 +267,8 @@ footer nav i:hover {
 #login{
     display: flex;
     justify-content: center;
-    padding-top: 3rem;
+    align-items: flex-start;
+    padding-top: 2rem;
 }
 #login > div{
     padding: 1rem 5rem 1rem 5rem;
