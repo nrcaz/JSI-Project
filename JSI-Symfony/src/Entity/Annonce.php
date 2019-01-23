@@ -96,31 +96,40 @@ class Annonce
      */
     private $note;
 
+    // ON RAJOUTE UNE PROPRIETE QUI NOUS SERT A RECUPERER LE FICHIER UPLOADE DANS LE FORMULAIRE
+    public $uploadArticleForm;
+
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $image1;
-
+    // uploaded file
+    public $image1Upload;
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $image2;
-
+    // uploaded file
+    public $image2Upload;
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $image3;
-
+    // uploaded file
+    public $image3Upload;
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $image4;
-
+    // uploaded file
+    public $image4Upload;
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $image5;
-
+    // uploaded file
+    public $image5Upload;
+    
     public function getId(): ?int
     {
         return $this->id;

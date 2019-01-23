@@ -35,23 +35,23 @@ class AnnonceType extends AbstractType
             ->add('accueil',TextType::class)
            // ->add('dateCreation')
             ->add('note')
-            ->add('image1',FileType::class, [
+            ->add('image1Upload',FileType::class, [
                 'required' => false,
                 'data_class' => null
             ])
-            ->add('image2',FileType::class, [
+            ->add('image2Upload',FileType::class, [
                 'required' => false,
                 'data_class' => null
             ])
-            ->add('image3',FileType::class, [
+            ->add('image3Upload',FileType::class, [
                 'required' => false,
                 'data_class' => null
             ])
-            ->add('image4',FileType::class, [
+            ->add('image4Upload',FileType::class, [
                 'required' => false,
                 'data_class' => null
             ])
-            ->add('image5',FileType::class, [
+            ->add('image5Upload',FileType::class, [
                 'required' => false,
                 'data_class' => null
             ])
