@@ -18,7 +18,7 @@ class SecurityController extends AbstractController
     /**
      * @Route("/forgetpassword", name="security_password_forget")
      */
-    public function forgetpassword(Request $request, UserRepository $userRepository, ObjectManager $manager, UserPasswordEncoderInterface $encoder) {
+    public function forgetpassword(Request $request, UserRepository $userRepository, ObjectManager $manager, UserPasswordEncoderInterface $encoder, \Swift_Mailer $mailer) {
         
         $email = $request->get("email");
 
@@ -35,17 +35,23 @@ class SecurityController extends AbstractController
                 $manager->persist($user);
                 $manager->flush();
                 
-                $message = "Votre nouveau mot de passe est ($newPassword)";
-                dump($user);
+                $body = "Votre nouveau mot de passe est ($newPassword)";
+                $message = (new \Swift_Message("MERCI !"))
+                    ->setFrom('no-reply@monsite.fr')
+                    ->setTo($email)
+                    ->setBody($body, 'text/html');
+                $mailer->send($message);
+                $retourMessage = "Un nouveau mot de passe vous a été envoyé sur votre boîte mail";
+                
             } else {
-                $message = "Nous n'avons pas trouvé votre email";
+                $retourMessage = "Nous n'avons pas trouvé votre email";
             }
         } else {
-            $message = "";
+            $retourMessage = "";
         }
 
         return $this->render('forgetpassword/index.html.twig', [
-            'message' => $message
+            'retourMessage' => $retourMessage
         ]);
     }
 

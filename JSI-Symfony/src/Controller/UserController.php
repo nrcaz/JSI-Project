@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\User;
 use App\Form\RegistrationType;
 
+use App\Repository\UserRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\Routing\Annotation\Route;
@@ -14,12 +15,15 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 class UserController extends AbstractController
 {
     /**
-     * @Route("/admin/user", name="liste_administrateurs")
+     * @Route("/admin/users", name="liste_administrateurs")
      */
-    public function index()
+    public function index(UserRepository $userRepository)
     {
+
+        $users = $userRepository->findAll();
+
         return $this->render('user/index.html.twig', [
-            'controller_name' => 'UserController',
+            'users' => $users,
         ]);
     }
 
@@ -64,5 +68,19 @@ CODEHTML;
             'controller_name' => 'SecurityController',
             'form' => $form->createView()
         ]);
+    }
+
+    /**
+     * @Route("/admin/{id}", name="delete_administrateur", methods={"DELETE"})
+     */
+    public function delete(Request $request, User $user): Response
+    {
+        if ($this->isCsrfTokenValid('delete'.$user->getId(), $request->request->get('_token'))) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->remove($user);
+            $entityManager->flush();
+        }
+
+        return $this->redirectToRoute('liste_administrateurs');
     }
 }

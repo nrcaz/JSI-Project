@@ -1,19 +1,29 @@
-{% extends 'base.html.twig' %}
-
-{% block title %}Hello SecurityController!{% endblock %}
+{% extends 'backoffice.html.twig' %}
 
 {% block body %}
 
-    <h1>Inscription</h1>
 
-    {{ form_start(form) }}
+    <section class="wrapper">
+        <div class="row mt">
+            <div class="col-lg-12">
+                <div class="form-panel">
+                    <h1><i class="fa fa-angle-right"></i> Nouvel administrateur</h1>
+                    <hr>
+                    <hr>
+                        {{ form_start(form) }}
 
-    {{ form_row(form.username, { 'label' : 'Nom d\'utilisateur', 'attr' : { 'placeholder': 'Login' }}) }}
-    {{ form_row(form.email, { 'label' : 'Email', 'attr' : { 'placeholder': 'Email' }}) }}
-    {{ form_row(form.password, { 'label' : 'Mot de passe', 'attr' : { 'placeholder': 'Mot de passe' }}) }}
-    {{ form_row(form.confirm_password, { 'label' : 'Confirmez votre mot de passe', 'attr' : { 'placeholder': 'Confirmation mot de passe' }}) }}
-    <button type="submit" class="btn btn-primary">Enregistrer</button>
+                        {{ form_row(form.username, { 'label' : 'Nom d\'utilisateur', 'attr' : { 'placeholder': 'Login' }}) }}
+                        {{ form_row(form.email, { 'label' : 'Email', 'attr' : { 'placeholder': 'Email' }}) }}
+                        {{ form_row(form.password, { 'label' : 'Mot de passe', 'attr' : { 'placeholder': 'Mot de passe' }}) }}
+                        {{ form_row(form.confirm_password, { 'label' : 'Confirmez votre mot de passe', 'attr' : { 'placeholder': 'Confirmation mot de passe' }}) }}
+                        <button type="submit" class="btn btn-primary">Enregistrer</button>
 
-    {{ form_end(form )}}
+                        {{ form_end(form )}}
+                </div>
+            </div>
+        </div>
+    </section>
+
+
 
 {% endblock %}
