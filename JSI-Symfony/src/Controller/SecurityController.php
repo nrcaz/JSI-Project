@@ -59,9 +59,11 @@ CODEHTML;
     }
 
     /**
-     * @Route("/passwordnew", name="password_new")
+     * @Route("/passwordnew", name="security_password_new")
      */
     public function passwordnew() {
+
+        
         return $this->render('passwordnew/index.html.twig');
     }
     

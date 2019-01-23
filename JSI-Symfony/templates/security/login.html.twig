@@ -19,7 +19,8 @@
         <button type="submit" class="btn btn-primary">Connexion</button>
     </div>
 
-    <a href="{{ path('password_new')}}">Mot de passe oublié ?</a>
+    <a href="{{ path('security_password_new')}}" class="btn btn-primary">Mot de passe oublié ?</a>
+    <a href="{{ path('security_registration')}}" class="btn btn-success">Je veux m'inscrire</a>
 
     {% if error %}
         <div>Login ou mot de passe incorrect</div>
