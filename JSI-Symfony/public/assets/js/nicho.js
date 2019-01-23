@@ -2,16 +2,16 @@
 //// HEADER
 /////////////////////
 
-$('header .nav-link').on('click', function() {
-	console.log(screen.width + '' + innerWidth);
-	$('header .nav-link').css({
-		borderBottom : 'solid 5px transparent'
-	});
-	if (screen.width > 990 && innerWidth > 990) {
-		$(this).css({
-			borderBottom : 'solid 5px orange'
-		});
-	}
+$("header .nav-link").on("click", function() {
+    console.log(screen.width + "" + innerWidth);
+    $("header .nav-link").css({
+        borderBottom: "solid 5px transparent"
+    });
+    if (screen.width > 990 && innerWidth > 990) {
+        $(this).css({
+            borderBottom: "solid 5px orange"
+        });
+    }
 });
 
 /////////////////////
@@ -19,9 +19,14 @@ $('header .nav-link').on('click', function() {
 /////////////////////
 
 // parallax
-$('#home').parallax({
-	imageSrc : 'assets/img/architectural-design-architecture-buildings-936722.jpg',
-	speed    : 0.5
+$("#home").parallax({
+    imageSrc: "assets/img/city.gif",
+    speed: 0.5
+});
+
+$(".divider").parallax({
+    imageSrc: "assets/img/economie.jpg",
+    speed: 0.3
 });
 
 /////////////////////
@@ -29,35 +34,35 @@ $('#home').parallax({
 /////////////////////
 
 // hover
-$('footer .nav-link').on('mouseover', function() {
-	$('footer .nav-link').css({
-		color : 'white'
-	});
-	$(this).css({
-		color : 'orange'
-	});
+$("footer .nav-link").on("mouseover", function() {
+    $("footer .nav-link").css({
+        color: "white"
+    });
+    $(this).css({
+        color: "orange"
+    });
 });
-$('footer .nav-link').on('mouseleave', function() {
-	$('footer .nav-link').css({
-		color : 'white'
-	});
+$("footer .nav-link").on("mouseleave", function() {
+    $("footer .nav-link").css({
+        color: "white"
+    });
 });
 
 // click on references
 let clickReferences = false;
-$('[href="#references"]').on('click', function(e) {
-	e.preventDefault();
-	if (!clickReferences) {
-		clickReferences = true;
-		$('#references').animate({
-			height : $('#references img').height()
-		});
-	} else {
-		clickReferences = false;
-		$('#references').animate({
-			height : 0
-		});
-	}
+$('[href="#references"]').on("click", function(e) {
+    e.preventDefault();
+    if (!clickReferences) {
+        clickReferences = true;
+        $("#references").animate({
+            height: $("#references img").height()
+        });
+    } else {
+        clickReferences = false;
+        $("#references").animate({
+            height: 0
+        });
+    }
 });
 
 /////////////////////
@@ -65,7 +70,7 @@ $('[href="#references"]').on('click', function(e) {
 /////////////////////
 
 // AJAX
-let formSim = document.querySelector('#simulation');
+let formSim = document.querySelector("#simulation");
 let annonces = [];
 
 if (formSim) {
@@ -86,9 +91,12 @@ if (formSim) {
 		};
 	
 		fetch('http://localhost/jsi-project/jsi-symfony/public/ajax', fetchOption).then(response => response.json()).then(response => {
-			document.querySelector('#message').textContent = response.message;
+			// message
+			if (response.message) document.querySelector('#message').textContent = response.message;
+			else document.querySelector('#message').textContent = "Les annonces correspondantes à votre recherche";
+
+			// liste annonce
 			annonces = response.annonces;
-			console.log(annonces);
 	
 			let html = "";
 			for(annonce of annonces) {
@@ -124,7 +132,7 @@ if (formSim) {
 }
 
 ////////////////////////////
-//// LOGIN / FORGET PW
+//// FORGET PW
 ////////////////////////////
 // adjust height so footer is at bottom of page
 if (innerHeight > $('header').height()+$('footer').height()+$('#forgetpw').height()) {
@@ -132,8 +140,19 @@ if (innerHeight > $('header').height()+$('footer').height()+$('#forgetpw').heigh
 		height: innerHeight - $('header').height() - $('footer').height()
 	})
 }
+////////////////////////////
+//// LOGIN
+////////////////////////////
 if (innerHeight > $('header').height()+$('footer').height()+$('#login').height()) {
 	$('#login').css({
+		height: innerHeight - $('header').height() - $('footer').height()
+	})
+}
+////////////////////////////
+//// CONFIRMATION
+////////////////////////////
+if (innerHeight > $('header').height()+$('footer').height()+$('#confirmation').height()) {
+	$('#confirmation').css({
 		height: innerHeight - $('header').height() - $('footer').height()
 	})
 }

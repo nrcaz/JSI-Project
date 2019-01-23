@@ -9,6 +9,11 @@
     --linkedinBlue: #0077b5;
 }
 
+div.divider {
+    height: 300px;
+    width: 100%;
+}
+
 
 /*****************************/
 /****** HEADER
@@ -21,7 +26,6 @@
 /* logo */
 
 header {
-    background-color: var(--headerColor);
     position: sticky;
     width: 100%;
     top: 0;
@@ -69,7 +73,6 @@ header .nav-link:hover {
 /*****************************/
 
 #home {
-    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -247,6 +250,12 @@ footer nav i:hover {
     text-align: center;
 } */
 
+/* MODALE */
+div.modal div.container {
+    padding-bottom: 15px;
+}
+div.modal
+
 /*****************************/
 /****** FORGET PASSWORD
 /*****************************/
@@ -280,4 +289,26 @@ footer nav i:hover {
 }
 #login h1 {
     margin-bottom: 2rem;
+}
+
+/*****************************/
+/****** CONFIRMATION
+/*****************************/
+#confirmation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+#confirmation > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#confirmation p {
+    width: 500px;
+    font-size: 150%;
+    margin-bottom: 2rem;
+    text-align: center;
 }

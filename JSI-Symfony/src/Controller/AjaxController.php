@@ -28,7 +28,7 @@ class AjaxController extends AbstractController
         if ($arrayLength > 6) array_splice($annonces, 3, $arrayLength - 6);
 
         if ($arrayLength === 0) {
-            $tabAsso["message"] = "Désolé nous n'avons pas d'annonces 'publique' correspondantes à votre recherche";
+            $tabAsso["message"] = "Désolé nous n'avons pas trouvé d'annonces 'publiques' correspondantes à votre recherche";
         }
 
         $tabAsso["annonces"]= $annonces;
