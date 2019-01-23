@@ -1,8 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-
-    <h1>Si vous avez oublié votre mot de passe, il vous suffit de remplir votre adresse mail ci-dessous et un mail vous sera envoyé avec un nouveau mot de passe</h1>
+<section id="forgetpw">
+<div>
+    <p>Si vous avez oublié votre mot de passe, il vous suffit de remplir votre adresse mail ci-dessous et un mail vous sera envoyé avec un nouveau mot de passe</p>
 
     <form action="{{ path('security_password_forget') }}" method="post">
 
@@ -16,5 +17,6 @@
     </form>
 
     <p>{{ message }}</p>
-    
+</div>
+</section>  
 {% endblock %}

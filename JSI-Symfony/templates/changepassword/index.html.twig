@@ -1,8 +1,7 @@
 {% extends 'backoffice.html.twig' %}
 
 {% block body %}
-
-    <h1>Changer le mot de passe</h1>
+    <h1>Changer de mot de passe</h1>
 
     <form action="{{ path('security_password_change') }}" method="post">
 
@@ -22,5 +21,4 @@
         <button type="submit" class="btn btn-success">Valider</button>
 
     </form>
-
 {% endblock %}
