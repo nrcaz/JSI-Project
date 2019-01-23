@@ -37,7 +37,7 @@ class SecurityController extends AbstractController
                 
                 $body = "Votre nouveau mot de passe est ($newPassword)";
                 $message = (new \Swift_Message("MERCI !"))
-                    ->setFrom('no-reply@monsite.fr')
+                    ->setFrom('flobsn06@gmail.com')
                     ->setTo($email)
                     ->setBody($body, 'text/html');
                 $mailer->send($message);

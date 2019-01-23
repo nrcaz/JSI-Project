@@ -38,8 +38,9 @@ class UserController extends AbstractController
         $form->handleRequest($request);
         
         if($form->isSubmitted() && $form->isValid()) {
-
-            $hash = $encoder->encodePassword($user, $user->getPassword());
+            
+            $password = $user->getPassword();
+            $hash = $encoder->encodePassword($user, $password);
             $user->setPassword($hash);
             $identifiant = $user->getUsername();
             $email = $user->getEmail();
@@ -51,22 +52,39 @@ class UserController extends AbstractController
             $body = 
 <<<CODEHTML
 
-<h1>Merci pour votre inscription ! Pour rappel, votre identifiant est $identifiant : </a>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Merci pour votre inscription ! Voici un récapitulatif de vos informations :</h1>
+    <ul>
+        <li>Identifiant : $identifiant</li>
+        <li>Email : $email</li>
+        <li>Mot de passe : $password</li>
+    </ul>
+    <strong>Nous vous conseillons fortement de supprimer ce mail pour des raisons de sécurité.</strong>
+</body>
+</html>
 
 CODEHTML;
             
-            $message = (new \Swift_Message("MERCI !"))
-                ->setFrom('no-reply@monsite.fr')
+            $message = (new \Swift_Message("Confirmation de votre inscription au site JSI-Partner !"))
+                ->setFrom('flobsn06@gmail.com')
                 ->setTo($email)
                 ->setBody($body, 'text/html');
             $mailer->send($message);
+            $messageRetour = "Votre mot de passe a bien été modifié !";
 
-            return $this->redirectToRoute('security_login');
         }
         
         return $this->render('user/inscription.html.twig', [
-            'controller_name' => 'SecurityController',
-            'form' => $form->createView()
+            'form' => $form->createView(),
+            'messageRetour' => $messageRetour
         ]);
     }
 
