@@ -199,7 +199,7 @@
 
                     <div class="loading"></div>
                     <div class="error-message"></div>
-                    <div class="sent-message mt-4">Recherche en cours...</div>
+                    <div class="sent-message mt-4"></div>
 
                     <div class="form-send ">
                         <button type="submit" class="btn btn-large btn-primary">Validez votre recherche</button>
@@ -212,7 +212,7 @@
                     <h4 class="title">Confiez-nous votre recherche</h4>
                     {{ form_start(formRecherche) }}
                         {{ form_widget(formRecherche) }}
-                    <button type="submit" class="btn btn-large btn-primary">Envoyé votre demande</button>
+                    <button type="submit" class="btn btn-large btn-primary">Envoyez votre demande</button>
                     {{ form_end(formRecherche) }}
                     {{ messageRetour ?? "" }}
                 </div>
@@ -225,7 +225,7 @@
 
         <section id="annonces" class="container">
 
-            <h1>Les annonces correspondant à vos résultats</h1>
+            <h1 id="message">Les annonces correspondantes à votre recherche</h1>
             <div id="message"></div>
             <div class="annonceList">
 
