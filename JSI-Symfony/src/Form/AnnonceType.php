@@ -22,10 +22,6 @@ class AnnonceType extends AbstractType
             ])
             ->add('description',TextareaType::class)
             ->add('equipement',TextareaType::class)
-            ->add('images',FileType::class, [
-                'required' => false,
-                'data_class' => null
-            ])
             ->add('type', TextType::class)
             ->add('lieu', TextType::class)
             ->add('surface', NumberType::class)
@@ -39,6 +35,26 @@ class AnnonceType extends AbstractType
             ->add('accueil',TextType::class)
            // ->add('dateCreation')
             ->add('note')
+            ->add('image1',FileType::class, [
+                'required' => false,
+                'data_class' => null
+            ])
+            ->add('image2',FileType::class, [
+                'required' => false,
+                'data_class' => null
+            ])
+            ->add('image3',FileType::class, [
+                'required' => false,
+                'data_class' => null
+            ])
+            ->add('image4',FileType::class, [
+                'required' => false,
+                'data_class' => null
+            ])
+            ->add('image5',FileType::class, [
+                'required' => false,
+                'data_class' => null
+            ])
         ;
     }
 
