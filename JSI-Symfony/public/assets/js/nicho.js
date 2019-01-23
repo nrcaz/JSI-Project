@@ -94,7 +94,7 @@ if (formSim) {
 			for(annonce of annonces) {
 				html+=`
 				<article class="card">
-					<figure><img src="assets/img/visite.jpg" class="card-img-top" alt=""></figure>
+					<figure><img src="${annonce.image1 ? annonce.image1 : 'assets/img/selection.jpg'}" class="card-img-top" alt=""></figure>
 					<figcaption class="card-body">
 						<h5 class="card-title">${annonce.titre}</h5>
 						<p class="card-text">${annonce.description}</p>
