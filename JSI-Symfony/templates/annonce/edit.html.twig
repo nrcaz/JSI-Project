@@ -3,8 +3,16 @@
 {% block body %}
 
     <section class="wrapper">
-        <h1>Edit Annonce</h1>
-        {{ include('annonce/_form.html.twig', {'button_label': 'Update'}) }}
+        <div class="row mt">
+            <div class="col-lg-12">
+                <div class="form-panel">
+                    <h1><i class="fa fa-angle-right"></i> Editer une annonce</h1>
+                    <hr>
+                    <hr>
+                    {{ include('annonce/_form.html.twig') }}
+                </div>
+            </div>
+        </div>
     </section>
-
+    
 {% endblock %}

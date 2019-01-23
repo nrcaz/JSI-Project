@@ -78,7 +78,7 @@
                     <li class="mt">
                         <a href="{{ path('back_office_accueil') }}">
                             <i class="fa fa-dashboard"></i>
-                            <span>Menu</span>
+                            <span>Accueil</span>
                         </a>
                     </li>
                     <li class="sub-menu">
@@ -102,10 +102,14 @@
                         </ul>
                     </li>
                     <li class="sub-menu">
-                        <a class="" href="{{ path('user') }}">
+                        <a href="javascript:;">
                             <i class="fa fa-book"></i>
-                            <span>Administrateurs</span>
+                            <span>Administration</span>
                         </a>
+                        <ul class="sub">
+                            <li><a href="{{ path('liste_administrateurs') }}">Liste des administrateurs</a></li>
+                            <li><a href="{{ path('new_administrateur') }}">Ajouter un administrateur</a></li>
+                        </ul>
                     </li>
                     <li class="sub-menu">
                         <a class="" href="{{ path('security_password_change') }}">
