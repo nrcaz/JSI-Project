@@ -84,7 +84,7 @@ CODEHTML;
         
         return $this->render('user/inscription.html.twig', [
             'form' => $form->createView(),
-            'messageRetour' => $messageRetour
+            'messageRetour' => $messageRetour ?? ""
         ]);
     }
 
