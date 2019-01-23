@@ -2,16 +2,16 @@
 //// HEADER
 /////////////////////
 
-$('header .nav-link').on('click', function() {
-	console.log(screen.width + '' + innerWidth);
-	$('header .nav-link').css({
-		borderBottom : 'solid 5px transparent'
-	});
-	if (screen.width > 990 && innerWidth > 990) {
-		$(this).css({
-			borderBottom : 'solid 5px orange'
-		});
-	}
+$("header .nav-link").on("click", function() {
+    console.log(screen.width + "" + innerWidth);
+    $("header .nav-link").css({
+        borderBottom: "solid 5px transparent"
+    });
+    if (screen.width > 990 && innerWidth > 990) {
+        $(this).css({
+            borderBottom: "solid 5px orange"
+        });
+    }
 });
 
 /////////////////////
@@ -19,9 +19,14 @@ $('header .nav-link').on('click', function() {
 /////////////////////
 
 // parallax
-$('#home').parallax({
-	imageSrc : 'assets/img/architectural-design-architecture-buildings-936722.jpg',
-	speed    : 0.5
+$("#home").parallax({
+    imageSrc: "assets/img/city.gif",
+    speed: 0.5
+});
+
+$(".divider").parallax({
+    imageSrc: "assets/img/economie.jpg",
+    speed: 0.3
 });
 
 /////////////////////
@@ -29,35 +34,35 @@ $('#home').parallax({
 /////////////////////
 
 // hover
-$('footer .nav-link').on('mouseover', function() {
-	$('footer .nav-link').css({
-		color : 'white'
-	});
-	$(this).css({
-		color : 'orange'
-	});
+$("footer .nav-link").on("mouseover", function() {
+    $("footer .nav-link").css({
+        color: "white"
+    });
+    $(this).css({
+        color: "orange"
+    });
 });
-$('footer .nav-link').on('mouseleave', function() {
-	$('footer .nav-link').css({
-		color : 'white'
-	});
+$("footer .nav-link").on("mouseleave", function() {
+    $("footer .nav-link").css({
+        color: "white"
+    });
 });
 
 // click on references
 let clickReferences = false;
-$('[href="#references"]').on('click', function(e) {
-	e.preventDefault();
-	if (!clickReferences) {
-		clickReferences = true;
-		$('#references').animate({
-			height : $('#references img').height()
-		});
-	} else {
-		clickReferences = false;
-		$('#references').animate({
-			height : 0
-		});
-	}
+$('[href="#references"]').on("click", function(e) {
+    e.preventDefault();
+    if (!clickReferences) {
+        clickReferences = true;
+        $("#references").animate({
+            height: $("#references img").height()
+        });
+    } else {
+        clickReferences = false;
+        $("#references").animate({
+            height: 0
+        });
+    }
 });
 
 /////////////////////
@@ -65,34 +70,35 @@ $('[href="#references"]').on('click', function(e) {
 /////////////////////
 
 // AJAX
-let formSim = document.querySelector('#simulation');
+let formSim = document.querySelector("#simulation");
 let annonces = [];
 
+formSim.addEventListener("submit", function(e) {
+    e.preventDefault();
+    // scroll to result
+    document.querySelector("#annonces").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
 
-formSim.addEventListener('submit',function(e) {
-	e.preventDefault();
-	// scroll to result
-	document.querySelector('#annonces').scrollIntoView({ 
-		behavior: 'smooth',
-		block: 'start' 
-	  });
-	
-	// prepare AJAX
-	let formData = new FormData(formSim);
+    // prepare AJAX
+    let formData = new FormData(formSim);
 
-	let fetchOption = {
-		method: 'POST',
-		body: formData
-	};
+    let fetchOption = {
+        method: "POST",
+        body: formData
+    };
 
-	fetch('http://localhost/jsi-project/jsi-symfony/public/ajax', fetchOption).then(response => response.json()).then(response => {
-		document.querySelector('#message').textContent = response.message;
-		annonces = response.annonces;
-		console.log(annonces);
+    fetch("http://localhost/jsi-project/jsi-symfony/public/ajax", fetchOption)
+        .then(response => response.json())
+        .then(response => {
+            document.querySelector("#message").textContent = response.message;
+            annonces = response.annonces;
+            console.log(annonces);
 
-		let html = "";
-		for(annonce of annonces) {
-			html+=`
+            let html = "";
+            for (annonce of annonces) {
+                html += `
 			<article class="card">
 				<figure><img src="assets/img/visite.jpg" class="card-img-top" alt=""></figure>
 				<figcaption class="card-body">
@@ -101,23 +107,25 @@ formSim.addEventListener('submit',function(e) {
 					<a href="annonce/${annonce.id}" class="btn btn-primary">Voir l'annonce</a>
 				</figcaption>
         	</article>
-			`
-		}
-		document.querySelector('.annonceList').innerHTML = html;
+			`;
+            }
+            document.querySelector(".annonceList").innerHTML = html;
 
-		let demande = `
-		Surface ${document.querySelector('#surfaceMin').value} - ${document.querySelector('#surfaceMax').value}
-		| ${document.querySelector('#nbBureaux').value}+ Bureaux
-		| ${document.querySelector('#nbOpenSpace').value}+ Open Space
-		| ${document.querySelector('#nbSalleReunion').value}+ Salles de Reunion
-		| ${document.querySelector('#nbEspaceDetente').value}+ Cuisine / Espace detente
+            let demande = `
+		Surface ${document.querySelector("#surfaceMin").value} - ${
+                document.querySelector("#surfaceMax").value
+            }
+		| ${document.querySelector("#nbBureaux").value}+ Bureaux
+		| ${document.querySelector("#nbOpenSpace").value}+ Open Space
+		| ${document.querySelector("#nbSalleReunion").value}+ Salles de Reunion
+		| ${document.querySelector("#nbEspaceDetente").value}+ Cuisine / Espace detente
 		`;
 
-		document.querySelector('#contact_demande').value = demande;
+            document.querySelector("#contact_demande").value = demande;
 
-		document.querySelector('#annonces').scrollIntoView({ 
-			behavior: 'smooth',
-			block: 'start' 
-		  });
-	});
-})
+            document.querySelector("#annonces").scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        });
+});
