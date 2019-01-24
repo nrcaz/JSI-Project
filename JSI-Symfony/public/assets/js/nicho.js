@@ -1,20 +1,4 @@
 /////////////////////
-//// HEADER
-/////////////////////
-
-$("header .nav-link").on("click", function() {
-    console.log(screen.width + "" + innerWidth);
-    $("header .nav-link").css({
-        borderBottom: "solid 5px transparent"
-    });
-    if (screen.width > 990 && innerWidth > 990) {
-        $(this).css({
-            borderBottom: "solid 5px orange"
-        });
-    }
-});
-
-/////////////////////
 //// HOME
 /////////////////////
 

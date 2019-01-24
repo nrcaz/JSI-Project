@@ -4,15 +4,12 @@ $(function() {
     "click",
     function(e) {
       e.preventDefault();
-      var hash = this.hash;
 
-      $("body,html").animate(
-        { scrollTop: $(hash).offset().top },
-        900,
-        function() {
-          window.location.hash = hash;
-        }
-      );
+      let hash = this.hash;
+      let hauteurNav = $("header").height();
+      let decalage = $(hash).offset().top;
+
+      window.scrollTo({ top: decalage - hauteurNav, behavior: "smooth" });
     }
   );
 });

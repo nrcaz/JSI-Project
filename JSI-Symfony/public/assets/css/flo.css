@@ -93,6 +93,10 @@
   margin-bottom: 20px;
 }
 /* PARTIE CONTACT & RECRUTEMENT */
+#contact_home {
+  padding-bottom: 40px;
+  padding-top: 20px;
+}
 #contact_home form,
 #recrutement form {
   width: 50%;
@@ -104,4 +108,22 @@
 }
 #contact_home .form-group:last-of-type {
   display: none;
+}
+/* NAV */
+.navbar-nav a::after {
+  content: "";
+  width: 0;
+  height: 3px;
+  margin: auto;
+  margin-top: 10px;
+  background-color: orange;
+  display: block;
+  transition: all 1s ease;
+}
+.navbar-nav a:hover::after {
+  content: "";
+  width: 100%;
+}
+.navbar-nav .nav-link {
+  padding-top: 1.53rem;
 }
