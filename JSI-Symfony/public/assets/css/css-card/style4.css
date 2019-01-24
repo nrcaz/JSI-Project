@@ -10,7 +10,7 @@
 }
 
 .view-fourth .mask {
-    background-color: rgb(85, 85, 85);
+    background-color: rgba(8, 124, 219, 0.527);
     -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
     filter: alpha(opacity=0);
     opacity: 0;
@@ -33,9 +33,9 @@
     -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
     filter: alpha(opacity=0);
     opacity: 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    /*border-bottom: 1px solid rgba(0, 0, 0, 0.3);
     background: transparent;
-    margin: 20px 40px 0px 40px;
+    margin: 20px 40px 0px 40px;*/
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
     -o-transition: all 0.5s ease-in-out;

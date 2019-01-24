@@ -49,6 +49,30 @@
         </div>
     </div>
 
+    <div class="row" style="display:flex; justify-content:space-around">
+        <div class="col-lg-8">
+            {{ form_row(form.note, { "attr": { "style" : "height:10rem" }}) }}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-2">
+            {{ form_row(form.image1Upload) }}
+        </div>
+        <div class="col-lg-2">
+            {{ form_row(form.image2Upload) }}
+        </div>
+        <div class="col-lg-2">
+            {{ form_row(form.image3Upload) }}
+        </div>
+        <div class="col-lg-2">
+            {{ form_row(form.image4Upload) }}
+        </div>
+        <div class="col-lg-2">
+            {{ form_row(form.image5Upload) }}
+        </div>
+    </div>
+
     <button class="btn btn-success">Sauvegarder</button>
     <a class="btn btn-primary" href="{{ path('annonce_index') }}">Retour</a> 
 

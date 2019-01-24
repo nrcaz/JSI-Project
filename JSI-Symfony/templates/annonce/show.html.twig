@@ -1,19 +1,23 @@
 {% extends 'backoffice.html.twig' %}
 
-{% block title %}Annonce{% endblock %}
-
 {% block body %}
+
         <section class="wrapper site-min-height">
                 <!-- page start-->
             <div class="chat-room mt">
                 <aside class="mid-side">
-                        <div class="chat-room-head">
-                            <h3>{{ annonce.titre }} <span>Publié le {{ annonce.dateCreation ? annonce.dateCreation|date('Y-m-d H:i:s') : '' }}</span></h3>
-                            <form action="#" class="pull-right position">
-                            <a href="{{ path('annonce_edit', {'id': annonce.id}) }}"><button type="button" class="btn btn-theme02 ">Editer</button></a>
-                            <a href="{{ path('annonce_index') }}"><button type="button" class="btn btn-warning">Retour liste</button></a>
-                            </form>
-                        </div>
+                        <h1 style="padding:1rem"><i class="fa fa-angle-right"></i> Annonce {{ annonce.titre }} | <span>Publié le {{ annonce.dateCreation ? annonce.dateCreation|date('d-m-Y à H:i') : '' }} 
+                            <strong class="pull-right">
+                            <a href="{{ path('annonce_index') }}">
+                            <button class="btn btn-success btn-xs"><i class="fa fa-arrow-left"></i></button>
+                            </a>
+                            <a href="{{ path('annonce_edit', {'id': annonce.id}) }}" style="display:inline">
+                            <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
+                            </a>
+                            {{ include('annonce/_delete_form.html.twig') }}
+                            </strong>
+                        </h1>
+                        <hr>
                     <div class="group-rom">
                         <div class="first-part">Description</div>
                         <div class="second-part">{{ annonce.description }}</div>
@@ -29,12 +33,10 @@
                     <div class="group-rom">
                         <div class="first-part">Images</div>
                         <div class="second-part">
-                            <div class="row content-panel mt mb">
-                                <a href="#">product.jpg</a> <span class="text-muted">35.4KB</span>
-                                <p>
-                                    <img class="img-responsive col-4" src="{{ annonce.image1 }}.jpg" alt="">
-                                </p>
-                            </div>
+                           {% if annonce.image1 %}<img src="{{ absolute_url(asset(annonce.image1)) }}" style="width:200px" alt="">{% endif %}                            {% if annonce.image2 %}<img src="{{ absolute_url(asset(annonce.image2)) }}" style="width:200px" alt="">{% endif %}
+                           {% if annonce.image3 %}<img src="{{ absolute_url(asset(annonce.image3)) }}" style="width:200px" alt="">{% endif %}
+                           {% if annonce.image4 %}<img src="{{ absolute_url(asset(annonce.image4)) }}" style="width:200px" alt="">{% endif %}
+                           {% if annonce.image5 %}<img src="{{ absolute_url(asset(annonce.image5)) }}" style="width:200px" alt="">{% endif %}
                         </div>
                     </div>
 
@@ -61,7 +63,7 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="group-rom last-group">
+                    <div class="group-rom">
                         <div class="content-panel">
                             <table class="table table-striped table-advance table-hover">
                                 <thead>
@@ -93,20 +95,11 @@
                 </aside>
                     
                     <aside class="right-side">
-
-                        <div class="user-head">
-                            <!-- En tête
-                                <h3>Note</h3>
-                            -->
-                            {{ include('annonce/_delete_form.html.twig') }}
-                        </div>
-                        <div class="invite-row">
-                            <h4 class="pull-left">Note</h4>
-                        </div>
-                        <div class="">
+                        <h1 style="padding:1rem"><i class="fa fa-angle-right"></i> Note</h1>
+                        <hr>
+                        <div class="group-rom">
                             <blockquote>{{ annonce.note }}</blockquote>
                         </div>
-
                     </aside>
                         <!-- end aside right -->
                 </div>

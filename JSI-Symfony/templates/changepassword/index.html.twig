@@ -10,7 +10,7 @@
                     <hr>
                 </table>
                 
-                <div class="container">
+                <div class="container" style="width:300px">
                     <form action="{{ path('security_password_change') }}" method="post">
                         <div class="form-group">
                             <label for="email">Email</label>
@@ -24,7 +24,7 @@
                             <label for="email">Nouveau mot de passe</label>
                             <input id="email" type="password" class="form-control" name="new_password">
                         </div>
-                        <button type="submit" class="btn btn-success">Valider</button>
+                        <button type="submit" class="btn btn-success">Enregistrer</button>
                         <p>{{ message }}</p>
                     </form>
                 </div>

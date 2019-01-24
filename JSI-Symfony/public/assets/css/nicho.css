@@ -1,4 +1,6 @@
 /*****************************/
+
+
 /****** GLOBAL
 /*****************************/
 
@@ -9,13 +11,15 @@
     --linkedinBlue: #0077b5;
 }
 
-div.divider {
+.parallax {
     height: 300px;
     width: 100%;
 }
 
 
 /*****************************/
+
+
 /****** HEADER
 /*****************************/
 
@@ -30,45 +34,38 @@ header {
     width: 100%;
     top: 0;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     z-index: 20;
+}
+
+.bg-light {
+    background-color: #f7f7f9 !important;
 }
 
 header .navbar-brand>img {
     width: 4rem;
     margin-left: auto;
 }
-
 header #navbarNavAltMarkup {
     margin-left: 12rem;
 }
 
-header .nav-link {
-    border-bottom: solid 5px transparent;
-    margin-top: 5px;
-}
-
-header .nav-link:hover {
-    border-bottom: solid 5px orange;
-}
-
 @media screen and (max-width: 991px) {
-    header {
-        display: block;
-    }
-    header #navbarNavAltMarkup {
-        margin-left: 0;
-    }
-    header nav {
-        margin: 0 2rem 0 2rem;
-    }
-    header .nav-link:hover {
-        border-bottom: solid 5px transparent;
-    }
+  header {
+    display: block;
+  }
+  header #navbarNavAltMarkup {
+    margin-left: 0;
+  }
+  header nav {
+    margin: 0 2rem 0 2rem;
+  }
 }
 
 
 /*****************************/
+
+
 /****** HOME
 /*****************************/
 
@@ -77,7 +74,15 @@ header .nav-link:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 900px;
+    height: 637.5px;
+    position: relative;
+}
+
+#home div.home-bg {
+    position: absolute;
+    z-index: -5;
+    height: 637.5px;
+    width: 850px;
 }
 
 #home h1 {
@@ -93,6 +98,8 @@ header .nav-link:hover {
 
 
 /*****************************/
+
+
 /****** FOOTER
 /*****************************/
 
@@ -148,62 +155,61 @@ footer nav i:hover {
 
 
 /*****************************/
-/****** SERVICES
+
+
+/****** Methodes
 /*****************************/
 
-#services {
-    padding: 1rem 0 1rem 0;
+#methodes {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#etapes {
+#methodes>#services,
+#methodes>#commercialisation {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 0 auto 1rem auto;
-    width: 90%;
+    margin: 0rem auto 0rem auto;
+    padding: 3% 0%;
+    background-color: rgba(255, 233, 145, 0.747);
 }
 
-#etapes article {
+#methodes h1 {
+    width: 100%;
+    margin-top: 3%;
+}
+
+#methodes article {
     margin: 3rem 5% 0 5%;
     height: 20rem;
     width: 20rem;
 }
 
-#commercialisation {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 0 auto 1rem auto;
-    width: 75%;
-}
-
-#commercialisation article {
-    margin: 7rem 1% 0 1%;
-    height: 18rem;
-    width: 18rem;
+#commercialisation blockquote {
+    width: 100%;
+    text-align: center;
 }
 
 @media screen and (max-width: 60rem) {
-    #etapes {
+    #services {
         width: 100%;
-        margin: 0 0 1rem 0;
+        padding: 0 0 1rem 0;
         padding-left: 1rem;
     }
-    #etapes article {
+    #services article {
         margin: 1rem 1rem 0 0;
         width: 18rem;
         height: 18rem;
     }
     #commercialisation {
         width: 100%;
-        margin: 0 0 1rem 0;
+        padding: 0 0 1rem 0;
         padding-left: 1rem;
     }
     #commercialisation article {
-        margin: 1rem 1rem 0 0;
+        padding: 1rem 1rem 0 0;
         width: 18rem;
         height: 18rem;
     }
@@ -211,6 +217,8 @@ footer nav i:hover {
 
 
 /*****************************/
+
+
 /****** ANNONCES
 /*****************************/
 
@@ -230,6 +238,8 @@ footer nav i:hover {
 
 
 /*****************************/
+
+
 /****** ANNONCES RECHERCHE
 /*****************************/
 
@@ -246,40 +256,70 @@ footer nav i:hover {
 #contact_demande {
     height: 185px;
 }
+
+
 /* #message {
     text-align: center;
 } */
 
+.form-send {
+  width: 100%;
+  text-align: center;
+}
+
 /* MODALE */
+
 div.modal div.container {
     padding-bottom: 15px;
 }
-div.modal
 
+#div-modal {
+  font-size: 1rem;
+  top : 0;
+  left: 0;
+  position: fixed;
+  z-index: 100;
+}
+#btn-modal p {
+  width: 6rem;
+}
+#collapse-modal {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
 /*****************************/
+
+
 /****** FORGET PASSWORD
 /*****************************/
+
 #forgetpw {
     display: flex;
     justify-content: center;
     padding-top: 3rem;
 }
+
 #forgetpw p {
     width: 500px;
     font-size: 150%;
     margin-bottom: 2rem;
 }
 
+
 /*****************************/
+
+
 /****** LOGIN
 /*****************************/
-#login{
+
+#login {
     display: flex;
     justify-content: center;
     align-items: flex-start;
     padding-top: 2rem;
 }
-#login > div{
+
+#login>div {
     padding: 1rem 5rem 1rem 5rem;
     display: flex;
     flex-direction: column;
@@ -287,13 +327,18 @@ div.modal
     margin-bottom: 2rem;
     border: 1px solid lightgrey;
 }
+
 #login h1 {
     margin-bottom: 2rem;
 }
 
+
 /*****************************/
+
+
 /****** CONFIRMATION
 /*****************************/
+
 #confirmation {
     display: flex;
     justify-content: center;
@@ -301,11 +346,13 @@ div.modal
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
-#confirmation > div {
+
+#confirmation>div {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 #confirmation p {
     width: 500px;
     font-size: 150%;

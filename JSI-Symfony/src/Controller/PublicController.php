@@ -18,10 +18,27 @@ class PublicController extends AbstractController
     /**
      * @Route("/", name="accueil")
      */
-    public function accueil()
+    public function accueil(Request $request)
     {
+        $contact = new Contact();
+        $form = $this->createForm(ContactType::class, $contact);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            // ajout de la dateReception
+            $contact->setDateReception(new \Datetime());
+            // insert DB
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($contact);
+            $entityManager->flush();
+
+            return $this->render('public/confirmation.html.twig', [
+                'formulaire' => "message"
+            ]);
+        }
+
         return $this->render('public/index.html.twig', [
-            'controller_name' => 'PublicController',
+            'formRecherche' => $form->createView(),
         ]);
     }
 
@@ -56,33 +73,6 @@ class PublicController extends AbstractController
                 'formulaire' => "demande"]);
         }
         return $this->render('public/recherche.html.twig', [
-            'formRecherche' => $form->createView(),
-        ]);
-    }
-
-    /**
-     * @Route("/contact", name="contact", methods={"GET","POST"})
-     */
-    public function contact(Request $request): Response
-    {
-        $contact = new Contact();
-        $form = $this->createForm(ContactType::class, $contact);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            // ajout de la dateReception
-            $contact->setDateReception(new \Datetime());
-            // insert DB
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($contact);
-            $entityManager->flush();
-
-            return $this->render('public/confirmation.html.twig', [
-                'formulaire' => "message"
-            ]);
-        }
-
-        return $this->render('public/contact.html.twig', [
             'formRecherche' => $form->createView(),
         ]);
     }
