@@ -1,7 +1,6 @@
 {% extends 'backoffice.html.twig' %}
 
 {% block body %}
-
             <section class="wrapper">
                 <div class="row mt">
                     <div class="col-md-12">
@@ -14,7 +13,6 @@
                                             <th><i class="fa fa-sort-numeric-asc"></i></th>
                                             <th>Titre</th>
                                             <th>Description</th>
-                                            <th><i class=" fa fa-picture-o"></i></th>
                                             <th><i class=" fa fa-calendar"></i></th>
                                             <th>actions</th>
                                         </tr>
@@ -24,8 +22,7 @@
                                         <tr>
                                             <td>{{ annonce.id }}</td>
                                             <td>{{ annonce.titre }}</td>
-                                            <td>{{ annonce.description|slice(0,100)}}...</td>
-                                            <td>{{ annonce.image1 }}</td>
+                                            <td>{{ annonce.description|slice(0,150)}}...</td>
                                             <td>{{ annonce.dateCreation ? annonce.dateCreation|date('H:i | d-m-Y' ) : '' }}</td>
                                             
                                             <td>
