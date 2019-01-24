@@ -34,10 +34,12 @@ header {
     width: 100%;
     top: 0;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     z-index: 20;
 }
-
+.bg-light {
+    background-color: #f7f7f9 !important;
+}
 header .navbar-brand>img {
     width: 4rem;
     margin-left: auto;

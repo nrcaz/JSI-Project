@@ -1,19 +1,17 @@
 {% extends 'backoffice.html.twig' %}
 
-{% block title %}Annonce{% endblock %}
-
 {% block body %}
+
         <section class="wrapper site-min-height">
                 <!-- page start-->
             <div class="chat-room mt">
                 <aside class="mid-side">
-                        <div class="chat-room-head">
-                            <h3>{{ annonce.titre }} <span>Publié le {{ annonce.dateCreation ? annonce.dateCreation|date('Y-m-d H:i:s') : '' }}</span></h3>
-                            <form action="#" class="pull-right position">
-                            <a href="{{ path('annonce_edit', {'id': annonce.id}) }}"><button type="button" class="btn btn-theme02 ">Editer</button></a>
-                            <a href="{{ path('annonce_index') }}"><button type="button" class="btn btn-warning">Retour liste</button></a>
-                            </form>
-                        </div>
+                        <h1><i class="fa fa-angle-right"></i> Annonce {{ annonce.titre }} | <span>Publié le {{ annonce.dateCreation ? annonce.dateCreation|date('d-m-Y à H:i') : '' }} 
+                            <a class="btn btn-primary pull-right" href="{{ path('annonce_edit', {'id': annonce.id}) }}">Editer</a>
+                            <a class="btn btn-warning pull-right" href="{{ path('annonce_index') }}">Retour</a>
+                            {{ include('annonce/_delete_form.html.twig') }}
+                        </h1>
+                        <hr>
                     <div class="group-rom">
                         <div class="first-part">Description</div>
                         <div class="second-part">{{ annonce.description }}</div>
@@ -29,12 +27,11 @@
                     <div class="group-rom">
                         <div class="first-part">Images</div>
                         <div class="second-part">
-                            <div class="row content-panel mt mb">
-                                <a href="#">product.jpg</a> <span class="text-muted">35.4KB</span>
-                                <p>
-                                    <img class="img-responsive col-4" src="{{ annonce.image1 }}.jpg" alt="">
-                                </p>
-                            </div>
+                            <img src="{{ absolute_url(asset(annonce.image1)) }}" style="width:200px" alt="">
+                            <img src="{{ absolute_url(asset(annonce.image2)) }}" style="width:200px" alt="">
+                            <img src="{{ absolute_url(asset(annonce.image3)) }}" style="width:200px" alt="">
+                            <img src="{{ absolute_url(asset(annonce.image4)) }}" style="width:200px" alt="">
+                            <img src="{{ absolute_url(asset(annonce.image5)) }}" style="width:200px" alt="">
                         </div>
                     </div>
 
