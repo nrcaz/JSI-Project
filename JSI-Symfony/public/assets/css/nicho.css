@@ -293,6 +293,13 @@ div.modal div.container {
   position: fixed;
   z-index: 100;
 }
+#btn-modal p {
+  width: 6rem;
+}
+#collapse-modal {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
 /*****************************/
 
 
