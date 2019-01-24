@@ -1,7 +1,5 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello PublicController!{% endblock %}
-
 {% block body %}
 <section id="home">
     <div class="home-bg">
@@ -14,6 +12,7 @@
 <div id="methodes">
     <section id="services">
     <h1>SERVICES</h1>
+
         <article class="card view view-first">
             <img src="{{ absolute_url(asset('assets/img/cahier.jpg')) }} " class="card-img-top" alt="">
                 <div class="mask mask-1"></div>
@@ -25,10 +24,9 @@
                         Echange sur votre recherche</li>
                         Elaboration du cahier des charges</li>
                     </p>
-                    
                 </div>
-           
         </article>
+
         <article class="card view view-third">
             <img src="{{ absolute_url(asset('assets/img/selection.jpg')) }} " class="card-img-top" alt="">
             <div class="mask mask-1"></div>
@@ -41,8 +39,8 @@
                     Echanges autour de cette sélection
                 </p>
             </div>
-            
         </article>
+
         <article class="card view view-fourth">
             <img src="{{ absolute_url(asset('assets/img/visite.jpg')) }} " class="card-img-top" alt=""></figure>
             <div class="mask mask-1"></div>
@@ -56,6 +54,7 @@
                 </p>
             </div>
         </article>
+
         <article class="card view view-sixth">
            <img src="{{ absolute_url(asset('assets/img/shortlist.jpg')) }} " class="card-img-top" alt="">
             <div class="mask mask-1"></div>
@@ -68,8 +67,8 @@
                     Contre visite et simulation d'implantation
                 </p>
             </div>
-            
         </article>
+
         <article class="card view view-seventh">
             <img src="{{ absolute_url(asset('assets/img/dossier.jpg')) }} " class="card-img-top" alt="">
             <div class="mask mask-1"></div>
@@ -82,8 +81,8 @@
                     Mise en place d'une stratégie de négociation en fonction du propriétaire et de la concurrence éventuelle
                 </p>
             </div>
-            
         </article>
+
         <article class="card view view-eighth">
             <img src="{{ absolute_url(asset('assets/img/contract.jpg')) }} " class="card-img-top" alt="">
             <div class="mask mask-1"></div>
@@ -96,10 +95,11 @@
                     Signature de bail
                 </p>
             </div>
-            
         </article>
     </section>
+
     <div class="divider"></div>
+
     <section id="commercialisation">
     <h1>COMMERCIALISATION</h1>
     <blockquote>De l'estimation de la valeur du bien, a la signature du contrat, JSI vous offre un service sur-mesure tout au long du processus de commercialisation :</blockquote>
@@ -203,9 +203,21 @@
             </div>
             
         </article>
-        
-        
-        
     </section>
 </div>
+
+<section id="contact">
+
+    <h1>Contactez-nous</h1>
+    <div class="divider"></div>
+
+    {{ form_start(formRecherche) }}
+        {{ form_widget(formRecherche) }}
+    <button type="submit" class="btn btn-large btn-primary">Envoyé votre demande</button>
+    {{ form_end(formRecherche) }}
+    
+    {{ messageRetour ?? "" }}
+    
+</section>
+
 {% endblock %}
