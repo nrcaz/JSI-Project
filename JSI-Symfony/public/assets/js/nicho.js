@@ -144,6 +144,63 @@ if (formSim) {
   });
 }
 
+// MODAL
+$(function() {
+  let divModalWidth = $('#div-modal').width() + parseInt($('#div-modal').css("paddingLeft")) + parseInt($('#div-modal').css("paddingRight"));
+  let btnModalWidth = $('#btn-modal').width() + parseInt($('#btn-modal').css("paddingLeft")) + parseInt($('#btn-modal').css("paddingRight"));
+
+  // position out of screen
+  $('#div-modal').css({
+    top: innerHeight /2 - $('#div-modal').height() / 2,
+    left: - divModalWidth,
+  });
+
+  // animation on load ( a mettre au moment ou on submit la recherche)
+  document.querySelector('#div-modal').animate([
+    { transform : 'translateX(0px)'},
+    { transform : `translateX(${divModalWidth}px)`}
+  ],
+  {duration: 300}).onfinish = function () {
+    $('#div-modal').css({
+      left : 0
+    })
+  };
+
+  let collapse = false;
+  document.querySelector('#collapseModal').addEventListener('click', function () {
+      if (!collapse) {
+        // animation collapse
+        document.querySelector('#div-modal').animate([
+          { transform : 'translateX(0px)'},
+          { transform : `translateX(${-btnModalWidth}px)`}
+        ],
+        {duration: 300}).onfinish = function () {
+          $('#div-modal').css({
+            left : -btnModalWidth
+          });
+          $('#collapseModal').html('<i class="fas fa-chevron-right"></i>');
+          collapse = true;
+        };
+      }
+      // animation uncollapse
+      else {
+        document.querySelector('#div-modal').animate([
+          { transform : 'translateX(0px)'},
+          { transform : `translateX(${btnModalWidth}px)`}
+        ],
+        {duration: 300}).onfinish = function () {
+          $('#div-modal').css({
+            left : 0
+          })
+          $('#collapseModal').html('<i class="fas fa-chevron-left"></i>');
+          collapse = false;
+        };
+      }
+  })
+});
+
+
+
 ////////////////////////////
 //// FORGET PW
 ////////////////////////////

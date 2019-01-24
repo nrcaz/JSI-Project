@@ -269,13 +269,24 @@ footer nav i:hover {
     text-align: center;
 } */
 
+.form-send {
+  width: 100%;
+  text-align: center;
+}
+
 /* MODALE */
 
 div.modal div.container {
   padding-bottom: 15px;
 }
 
-div.modal
+#div-modal {
+  font-size: 1rem;
+  top : 0;
+  left: 0;
+  position: fixed;
+  z-index: 100;
+}
 /*****************************/
 
 
