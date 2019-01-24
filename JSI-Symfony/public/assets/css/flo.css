@@ -1,18 +1,17 @@
-/* PARTIE TEMPLATE ANNONCE */
+/* GENERAL*/
+.divider {
+  width: 200px;
+  height: 5px;
+  margin: 30px auto;
+  background: rgb(255, 128, 64);
+}
 
+/* PARTIE TEMPLATE ANNONCE */
 #template-annonce h1 {
   text-transform: uppercase;
   text-align: center;
   padding: 20px;
 }
-
-#template-annonce .divider {
-  width: 200px;
-  height: 5px;
-  margin: 0 auto;
-  background: rgb(255, 128, 64);
-}
-
 #template-annonce .row {
   margin-top: 50px;
   margin-bottom: 50px;
@@ -77,18 +76,8 @@
     margin-bottom: 50px;
   }
 }
-/* PARTIE RECHERCHE */
-
-#recherche .divider {
-  width: 200px;
-  height: 5px;
-  margin: 0 auto;
-  background: rgb(255, 128, 64);
-  margin: 50px auto;
-}
 
 /* PARTIE ANNONCES */
-
 #annonces {
   margin-bottom: 100px;
 }
@@ -104,20 +93,15 @@
   margin-bottom: 20px;
 }
 /* PARTIE CONTACT & RECRUTEMENT */
-#contact form,
+#contact_home form,
 #recrutement form {
   width: 50%;
   margin: auto;
 }
-#contact .divider,
-#recrutement .divider {
-  width: 200px;
-  height: 5px;
-  margin: 0 auto;
-  background: rgb(255, 128, 64);
-  margin: 50px auto;
-}
-#contact h1,
+#contact_home h1,
 #recrutement h1 {
   text-align: center;
+}
+#contact_home .form-group:last-of-type {
+  display: none;
 }

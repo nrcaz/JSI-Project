@@ -24,11 +24,11 @@ $(".home-bg").parallax({
   speed: 0.5
 });
 
-$("#services .divider").parallax({
+$(".parallax1").parallax({
   imageSrc: "assets/img/background2.jpg",
   speed: 0.3
 });
-$("#contact .divider").parallax({
+$(".parallax2").parallax({
   imageSrc: "assets/img/background2.jpg",
   speed: 0.3
 });
