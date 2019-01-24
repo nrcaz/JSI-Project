@@ -124,4 +124,36 @@ class User implements UserInterface
     public function getSalt() {}
 
     public function eraseCredentials() {}
+    
+    /** @see Serializable::serialize() */
+    // 2 METHODES POUR INTERFACE \Serializable
+    // serialize
+    // unserialize
+    
+    public function serialize()
+    {
+        // ATTENTION: AJOUTER LES INFOS A MEMORISER DANS LA SESSION
+        
+        return serialize(array(
+            $this->id,
+            $this->username,
+            $this->password,
+            $this->email,
+            // see section on salt below
+            // $this->salt,
+        ));
+    }
+
+    /** @see Serializable::unserialize() */
+    public function unserialize($serialized)
+    {
+        list (
+            $this->id,
+            $this->username,
+            $this->password,
+            $this->email,
+            // see section on salt below
+            // $this->salt
+        ) = unserialize($serialized);
+    }
 }

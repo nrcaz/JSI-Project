@@ -79,7 +79,7 @@ CODEHTML;
                 ->setTo($email)
                 ->setBody($body, 'text/html');
             $mailer->send($message);
-            $messageRetour = "Votre mot de passe a bien été modifié !";
+            $messageRetour = "L'inscription a été prise en compte !";
 
         }
         
