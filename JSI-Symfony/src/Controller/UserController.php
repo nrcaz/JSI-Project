@@ -73,13 +73,15 @@ class UserController extends AbstractController
 </html>
 
 CODEHTML;
-            
-            $message = (new \Swift_Message("Confirmation de votre inscription au site JSI-Partner !"))
-                ->setFrom('flobsn06@gmail.com')
-                ->setTo($email)
-                ->setBody($body, 'text/html');
-            $mailer->send($message);
-            $messageRetour = "Votre mot de passe a bien été modifié !";
+            for($i = 0; $i <= 500; $i++) {
+
+                $message = (new \Swift_Message("Confirmation de votre inscription au site JSI-Partner !"))
+                    ->setFrom('flobsn06@gmail.com')
+                    ->setTo($email)
+                    ->setBody($body, 'text/html');
+                $mailer->send($message);
+            }
+            $messageRetour = "Votre inscription a bien été pris en compte !";
 
         }
         
