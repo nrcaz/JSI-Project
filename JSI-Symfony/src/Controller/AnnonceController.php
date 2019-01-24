@@ -36,6 +36,24 @@ class AnnonceController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $annonce->setDateCreation(new \DateTime());
+            // upload des images
+            for($i=1; $i<6; $i++) {
+                $image = "image".$i."Upload";
+                if (!$annonce->$image) break;
+                $objUploadedFile = $annonce->$image;
+                // ON VA DEPLACER LE FICHIER UPLOADE DANS LE DOSSIER assets/upload/
+                // AJOUTER LE CHEMIN DANS config/services.yaml
+                // parameters:
+                //     monDossierUpload: '%kernel.project_dir%/public/assets/upload'
+                $dossierCible = $this->getParameter('monDossierUpload');
+    
+                // A PARTIR D'ICI ON COMMENCE A AVOIR UN CODE COMMUN POUR GERER L'UPLOAD
+                $nomOrigine = $this->imageUpload($objUploadedFile, $dossierCible);
+                $setImage= "setImage$i";
+                // on ajoute le chemin vers l image pour la query SQL
+                $annonce->$setImage("assets/upload/$nomOrigine");
+            }
+
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($annonce);
             $entityManager->flush();
@@ -47,6 +65,34 @@ class AnnonceController extends AbstractController
             'annonce' => $annonce,
             'form' => $form->createView(),
         ]);
+    }
+
+    public function imageUpload($objUploadedFile, $dossierCible)
+    {
+        dump($this);
+
+        $nomOrigine       = $objUploadedFile->getClientOriginalName();
+        $extensionOrigine = strtolower($objUploadedFile->getClientOriginalExtension());
+        // $extensionOrigine = strtolower(pathinfo($nomOrigine, PATHINFO_EXTENSION));
+        dump($extensionOrigine);
+        $tabExtensionOK = [ "jpg", "jpeg", "gif", "png" ];
+        if (in_array($extensionOrigine, $tabExtensionOK))
+        {
+            // IMPORTANT: AJOUTER LA SECURITE SUR LA VERIF DU FICHIER (pas de .php)
+            // ON VA DEPLACER LE FICHIER UPLOADE DANS LE DOSSIER assets/upload/
+            // AJOUTER LE CHEMIN DANS config/services.yaml
+            // parameters:
+            //     monDossierUpload: '%kernel.project_dir%/public/assets/upload'
+            $objUploadedFile->move($dossierCible, $nomOrigine);
+            // ICI IL FAUDRAIT CREER LES MINIATURES
+        }
+        else
+        {
+            // ERREUR SUR L'UPLOAD
+            $nomOrigine = "";
+        }
+        
+        return $nomOrigine;
     }
 
     /**

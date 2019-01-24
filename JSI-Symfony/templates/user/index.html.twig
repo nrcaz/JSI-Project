@@ -1,8 +1,40 @@
 {% extends 'backoffice.html.twig' %}
 
-{% block title %}Hello UserController!{% endblock %}
-
 {% block body %}
-    <h1>Liste des administrateurs</h1>
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus, suscipit rerum! Inventore labore tenetur beatae eius, praesentium quod saepe totam doloremque atque. Nostrum, fugiat. Autem, sunt nisi nobis culpa, facilis accusamus eos, perspiciatis iusto esse incidunt alias recusandae earum minus quis quos eveniet vel rem impedit ratione voluptatem fuga veritatis quidem molestiae beatae. Illum similique sed tempore. Explicabo perspiciatis culpa praesentium beatae sequi voluptates ducimus veniam, odit exercitationem commodi tenetur neque corrupti necessitatibus sed adipisci soluta ratione nostrum dicta sunt fugit, eos tempora rerum. Veniam quia suscipit dicta accusamus magnam voluptas culpa ipsam. Suscipit cumque iure pariatur quidem deserunt adipisci, consequuntur minus placeat mollitia rem quisquam tempora labore! Est veniam quidem quas facere ducimus atque laboriosam temporibus porro aliquam. Soluta nemo tempora, exercitationem rerum repellendus alias ea vero tenetur adipisci et? Id, aut. Velit reiciendis nemo excepturi qui autem aliquam fugiat sit quae, amet aut voluptatibus ipsam suscipit dignissimos recusandae soluta aliquid, consectetur sint nobis vero, quidem fugit odit nam fuga facere. Facere commodi libero aperiam, possimus inventore praesentium nostrum, rerum exercitationem, magnam quam iure. Obcaecati laborum sunt eaque consectetur nam quibusdam voluptate nemo vitae expedita nulla iste dicta dolore laboriosam debitis, quos ex saepe alias nisi magnam ipsa adipisci delectus illo ipsum? Nostrum minus, repellat libero temporibus voluptatum, earum necessitatibus enim at saepe, dolores asperiores ab nobis voluptate? Sit dolorem harum assumenda iure est, laboriosam quo placeat hic odit, numquam natus, fugit cum quibusdam cumque repudiandae aut ducimus impedit veniam? Perspiciatis, officiis cumque officia quisquam et consectetur sint labore autem repellendus beatae cupiditate eum nesciunt inventore quibusdam nam facilis est? Et ducimus quisquam provident doloribus aspernatur, aperiam aliquam animi architecto itaque atque, assumenda exercitationem saepe iste praesentium laborum vero dignissimos molestias odit autem dolorum dolores placeat labore dolore! Quidem odio ab impedit saepe eos perspiciatis fugiat quos provident vero rerum vel, harum voluptates, maiores reiciendis architecto. Quaerat reprehenderit, id corporis nam voluptas officiis repellendus placeat quidem consequuntur quo provident! Aliquam quos nobis ipsa deserunt illo optio dignissimos, in voluptatem blanditiis officia maxime recusandae placeat vitae voluptas, at quod exercitationem voluptate necessitatibus numquam consectetur tenetur. Quis accusamus dolore, dignissimos repudiandae incidunt ipsam delectus sint explicabo ad placeat atque ipsa sed voluptate, neque corporis sapiente esse! Tempora nemo debitis repellendus error sit voluptatibus delectus non culpa labore consequuntur ipsam tenetur optio quaerat necessitatibus atque, provident iure vel laborum architecto mollitia quos. Aperiam tenetur molestiae ratione et pariatur repudiandae doloremque magnam error, distinctio repellendus enim expedita libero, sint cum at. Perspiciatis eligendi saepe voluptates maxime asperiores commodi quasi. Minus ut delectus, voluptatibus hic suscipit fugiat necessitatibus eligendi? Totam a consequuntur nemo eveniet dolor, repudiandae, quidem aliquid aliquam harum natus necessitatibus! Aliquid, eligendi. Amet, accusamus maxime? Veniam modi incidunt, deserunt optio eligendi repellat numquam doloribus dolore assumenda quia perferendis? Voluptates modi est totam, eaque esse delectus, temporibus, culpa dolorem quis minus voluptatibus quaerat porro ipsam architecto deserunt ratione molestiae facilis maiores. Tempora dolorem, officia officiis praesentium rem ex aperiam, molestiae id at eveniet nulla quas non quis quae necessitatibus, quaerat possimus labore iure!</p>
+
+            <section class="wrapper">
+                <div class="row mt">
+                    <div class="col-md-12">
+                        <div class="content-panel">
+                            <table class="table table-striped table-advance table-hover">
+                                <h4><i class="fa fa-angle-right"></i> Liste des administrateurs</h4>
+                                <hr>
+                                    <thead>
+                                        <tr>
+                                            <th>Login</th>
+                                            <th>Email</th>
+                                            <th>Mot de passe</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for user in users %}
+                                        <tr>
+                                            <td>{{ user.username }}</td>
+                                            <td>{{ user.email }}</td>
+                                            <td>{{ user.password }}</td>
+                                            <td>{{ include ('user/_delete_form.html.twig') }}</td>
+                                        </tr>
+                                    {% else %}
+                                        <tr>
+                                            <td colspan="19">Pas d'annonce dans la base de donnée</td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
 {% endblock %}

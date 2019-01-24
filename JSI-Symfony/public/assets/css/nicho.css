@@ -21,7 +21,6 @@ div.divider {
 
 
 /****** HEADER
-background-color: var(--headerColor);
 /*****************************/
 
 
@@ -38,8 +37,6 @@ header {
     justify-content: center;
     z-index: 20;
 }
-
-header .navbar {}
 
 header .navbar-brand>img {
     width: 4rem;
@@ -87,19 +84,21 @@ header .nav-link:hover {
     justify-content: center;
     align-items: center;
     height: 750px;
+    position: relative;
 }
 
-#home div.home {
-    height: 100%;
-    width: 60%;
+#home div.home-bg {
+    position: absolute;
+    height: 637.5px;
+    width: 850px;
 }
 
-#home div.home h1 {
+#home h1 {
     color: white;
     margin-bottom: 2rem;
 }
 
-#home div.home strong {
+#home strong {
     color: white;
     font-weight: 900;
     margin-bottom: 5rem;
@@ -166,25 +165,25 @@ footer nav i:hover {
 /*****************************/
 
 
-/****** SERVICES
+/****** Methodes
 /*****************************/
 
-#services {
+#methodes {
     padding: 1rem 0 1rem 0;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#etapes {
+#services {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin: 0 auto 1rem auto;
-    width: 90%;
+    background-color: rgba(255, 233, 145, 0.747);
 }
 
-#etapes article {
+#services article {
     margin: 3rem 5% 0 5%;
     height: 20rem;
     width: 20rem;
@@ -205,14 +204,15 @@ footer nav i:hover {
 }
 
 @media screen and (max-width: 60rem) {
-    #etapes {
+    #services {
         width: 100%;
         margin: 0 0 1rem 0;
         padding-left: 1rem;
     }
-    #etapes article {
+    #services article {
         margin: 1rem 1rem 0 0;
         width: 18rem;
+        height: 18rem;
     }
     #commercialisation {
         width: 100%;
@@ -222,6 +222,7 @@ footer nav i:hover {
     #commercialisation article {
         margin: 1rem 1rem 0 0;
         width: 18rem;
+        height: 18rem;
     }
 }
 
@@ -265,4 +266,90 @@ footer nav i:hover {
 
 #contact_demande {
     height: 185px;
+}
+
+
+/* #message {
+    text-align: center;
+} */
+
+
+/* MODALE */
+
+div.modal div.container {
+    padding-bottom: 15px;
+}
+
+div.modal
+/*****************************/
+
+
+/****** FORGET PASSWORD
+/*****************************/
+
+#forgetpw {
+    display: flex;
+    justify-content: center;
+    padding-top: 3rem;
+}
+
+#forgetpw p {
+    width: 500px;
+    font-size: 150%;
+    margin-bottom: 2rem;
+}
+
+
+/*****************************/
+
+
+/****** LOGIN
+/*****************************/
+
+#login {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 2rem;
+}
+
+#login>div {
+    padding: 1rem 5rem 1rem 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+    border: 1px solid lightgrey;
+}
+
+#login h1 {
+    margin-bottom: 2rem;
+}
+
+
+/*****************************/
+
+
+/****** CONFIRMATION
+/*****************************/
+
+#confirmation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+#confirmation>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#confirmation p {
+    width: 500px;
+    font-size: 150%;
+    margin-bottom: 2rem;
+    text-align: center;
 }

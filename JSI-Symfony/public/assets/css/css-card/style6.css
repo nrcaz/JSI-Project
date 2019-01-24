@@ -7,7 +7,7 @@
 }
 
 .view-sixth .mask {
-    background-color: rgba(91, 146, 91, 0.692);
+    background-color: rgba(8, 124, 219, 0.527);
     -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
     filter: alpha(opacity=0);
     opacity: 0;
@@ -22,9 +22,9 @@
     -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
     filter: alpha(opacity=0);
     opacity: 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    /* border-bottom: 1px solid rgba(0, 0, 0, 0.3);
     background: transparent;
-    margin: 20px 40px 0px 40px;
+    margin: 20px 40px 0px 40px;*/
     -webkit-transform: scale(10);
     -moz-transform: scale(10);
     -o-transform: scale(10);
