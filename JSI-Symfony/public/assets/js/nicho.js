@@ -25,11 +25,11 @@ $(".home-bg").parallax({
 });
 
 $("#services .divider").parallax({
-  imageSrc: "assets/img/economie.jpg",
+  imageSrc: "assets/img/background2.jpg",
   speed: 0.3
 });
 $("#contact .divider").parallax({
-  imageSrc: "assets/img/economie.jpg",
+  imageSrc: "assets/img/background2.jpg",
   speed: 0.3
 });
 
