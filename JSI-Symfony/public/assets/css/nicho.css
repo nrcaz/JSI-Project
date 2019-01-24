@@ -207,7 +207,7 @@ footer nav i:hover {
 @media screen and (max-width: 60rem) {
   #services {
     width: 100%;
-    margin: 0 0 1rem 0;
+    padding: 0 0 1rem 0;
     padding-left: 1rem;
   }
   #services article {
@@ -217,11 +217,11 @@ footer nav i:hover {
   }
   #commercialisation {
     width: 100%;
-    margin: 0 0 1rem 0;
+    padding: 0 0 1rem 0;
     padding-left: 1rem;
   }
   #commercialisation article {
-    margin: 1rem 1rem 0 0;
+    padding: 1rem 1rem 0 0;
     width: 18rem;
     height: 18rem;
   }
