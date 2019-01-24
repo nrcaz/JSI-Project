@@ -86,15 +86,20 @@ header .nav-link:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 900px;
+    height: 750px;
 }
 
-#home h1 {
+#home div.home {
+    height: 100%;
+    width: 60%;
+}
+
+#home div.home h1 {
     color: white;
     margin-bottom: 2rem;
 }
 
-#home strong {
+#home div.home strong {
     color: white;
     font-weight: 900;
     margin-bottom: 5rem;

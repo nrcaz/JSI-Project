@@ -19,7 +19,7 @@ $("header .nav-link").on("click", function() {
 /////////////////////
 
 // parallax
-$("#home").parallax({
+$(".home").parallax({
     imageSrc: "assets/img/city.gif",
     speed: 0.5
 });
