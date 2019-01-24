@@ -6,10 +6,16 @@
                 <!-- page start-->
             <div class="chat-room mt">
                 <aside class="mid-side">
-                        <h1><i class="fa fa-angle-right"></i> Annonce {{ annonce.titre }} | <span>Publié le {{ annonce.dateCreation ? annonce.dateCreation|date('d-m-Y à H:i') : '' }} 
-                            <a class="btn btn-primary pull-right" href="{{ path('annonce_edit', {'id': annonce.id}) }}">Editer</a>
-                            <a class="btn btn-warning pull-right" href="{{ path('annonce_index') }}">Retour</a>
+                        <h1 style="padding:1rem"><i class="fa fa-angle-right"></i> Annonce {{ annonce.titre }} | <span>Publié le {{ annonce.dateCreation ? annonce.dateCreation|date('d-m-Y à H:i') : '' }} 
+                            <strong class="pull-right">
+                            <a href="{{ path('annonce_index') }}">
+                            <button class="btn btn-success btn-xs"><i class="fa fa-arrow-left"></i></button>
+                            </a>
+                            <a href="{{ path('annonce_edit', {'id': annonce.id}) }}" style="display:inline">
+                            <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
+                            </a>
                             {{ include('annonce/_delete_form.html.twig') }}
+                            </strong>
                         </h1>
                         <hr>
                     <div class="group-rom">
@@ -58,7 +64,7 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="group-rom last-group">
+                    <div class="group-rom">
                         <div class="content-panel">
                             <table class="table table-striped table-advance table-hover">
                                 <thead>
@@ -90,20 +96,11 @@
                 </aside>
                     
                     <aside class="right-side">
-
-                        <div class="user-head">
-                            <!-- En tête
-                                <h3>Note</h3>
-                            -->
-                            {{ include('annonce/_delete_form.html.twig') }}
-                        </div>
-                        <div class="invite-row">
-                            <h4 class="pull-left">Note</h4>
-                        </div>
-                        <div class="">
+                        <h1 style="padding:1rem"><i class="fa fa-angle-right"></i> Note</h1>
+                        <hr>
+                        <div class="group-rom">
                             <blockquote>{{ annonce.note }}</blockquote>
                         </div>
-
                     </aside>
                         <!-- end aside right -->
                 </div>

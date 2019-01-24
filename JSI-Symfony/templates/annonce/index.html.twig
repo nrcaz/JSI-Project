@@ -13,6 +13,7 @@
                                             <th><i class="fa fa-sort-numeric-asc"></i></th>
                                             <th>Titre</th>
                                             <th>Description</th>
+                                            <th>Note</th>
                                             <th><i class=" fa fa-calendar"></i></th>
                                             <th>actions</th>
                                         </tr>
@@ -20,12 +21,13 @@
                                     <tbody>
                                     {% for annonce in annonces %}
                                         <tr>
-                                            <td>{{ annonce.id }}</td>
-                                            <td>{{ annonce.titre }}</td>
+                                            <td style="width:20px">{{ annonce.id }}</td>
+                                            <td class="col-md-1">{{ annonce.titre }}</td>
                                             <td>{{ annonce.description|slice(0,150)}}...</td>
-                                            <td>{{ annonce.dateCreation ? annonce.dateCreation|date('H:i | d-m-Y' ) : '' }}</td>
+                                            <td>{{ annonce.note}}</td>
+                                            <td class="col-md-1">{{ annonce.dateCreation ? annonce.dateCreation|date('H:i | d-m-Y' ) : '' }}</td>
                                             
-                                            <td>
+                                            <td class="col-md-1">
                                                 <a href="{{ path('annonce_show', {'id': annonce.id}) }}">
                                                 <button class="btn btn-success btn-xs"><i class="fa fa-eye"></i></button>
                                                 </a>
