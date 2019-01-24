@@ -91,6 +91,7 @@ header .nav-link:hover {
 
 #home div.home-bg {
     position: absolute;
+    z-index: -5;
     height: 637.5px;
     width: 850px;
 }
