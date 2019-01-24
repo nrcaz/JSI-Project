@@ -25,8 +25,8 @@ $(".home-bg").parallax({
 });
 
 $(".divider").parallax({
-    imageSrc: "assets/img/economie.jpg",
-    speed: 0.3
+    imageSrc: "assets/img/background2.jpg",
+    speed: 0
 });
 
 /////////////////////

@@ -83,7 +83,7 @@ header .nav-link:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 750px;
+    height: 637.5px;
     position: relative;
 }
 
@@ -169,7 +169,6 @@ footer nav i:hover {
 /*****************************/
 
 #methodes {
-    padding: 1rem 0 1rem 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -179,8 +178,14 @@ footer nav i:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 0 auto 1rem auto;
+    margin: 0rem auto 0rem auto;
+    padding: 3% 0%;
     background-color: rgba(255, 233, 145, 0.747);
+}
+
+#services h1 {
+    width: 100%;
+    margin-top: 3%;
 }
 
 #services article {
@@ -195,6 +200,10 @@ footer nav i:hover {
     justify-content: center;
     margin: 0 auto 1rem auto;
     width: 75%;
+}
+
+#commercialisation h1+blockquote {
+    width: 100%;
 }
 
 #commercialisation article {
