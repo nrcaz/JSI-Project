@@ -66,7 +66,7 @@
 
                         <div id="hidden-row" style="display:none">
                             {{ form_row(form.image1) }}
-                            {# {{ form_row(form.image1Upload) }} #}
+                            {{ form_row(form.image1Upload) }}
                             {{ form_row(form.image2) }}
                             {{ form_row(form.image2Upload) }}
                             {{ form_row(form.image3) }}
@@ -94,7 +94,6 @@
                                     <p style="height:20px; margin-top:10px"></p>
                                 </div>
                                 <div style="width:200px; text-align:center">
-                                {{ form_row(form.image1Upload) }}
                                     <button class="btn btn-primary edit">modifier</button>
                                     <button class="btn btn-danger delete">supprimer</button>
                                     <script>
