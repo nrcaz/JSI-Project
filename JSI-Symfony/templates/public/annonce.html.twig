@@ -11,20 +11,38 @@
 
                         <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
                                 <ol class="carousel-indicators">
-                                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                                        <li data-target="#myCarousel" data-slide-to="1"></li>
-                                        <li data-target="#myCarousel" data-slide-to="2"></li>  
+                                        {% if annonce.image1 %}<li data-target="#myCarousel" data-slide-to="0" class="active"></li>{% endif %}
+                                        {% if annonce.image2 %}<li data-target="#myCarousel" data-slide-to="1"></li>{% endif %}
+                                        {% if annonce.image3 %}<li data-target="#myCarousel" data-slide-to="2"></li>{% endif %}
+                                        {% if annonce.image4 %}<li data-target="#myCarousel" data-slide-to="3"></li>{% endif %}
+                                        {% if annonce.image5 %}<li data-target="#myCarousel" data-slide-to="4"></li>{% endif %}
                                 </ol>
                                 <div class="carousel-inner" role="listbox">
+                                        {% if annonce.image1 %}
                                         <div class="carousel-item active">
-                                                <img src="http://placehold.it/500x400" alt="">
+                                                <img src="{{absolute_url(asset(annonce.image1))}}" alt="" style="height:400px">
                                         </div>
+                                        {% endif %}
+                                        {% if annonce.image2 %}
                                         <div class="carousel-item">
-                                                <img src="http://placehold.it/500x400" alt="">
+                                                <img src="{{absolute_url(asset(annonce.image2))}}" alt="" style="height:400px">
                                         </div>
+                                        {% endif %}
+                                        {% if annonce.image3 %}
                                         <div class="carousel-item">
-                                                <img src="http://placehold.it/500x400" alt="">
+                                                <img src="{{absolute_url(asset(annonce.image3))}}" alt="" style="height:400px">
                                         </div>
+                                        {% endif %}
+                                        {% if annonce.image4 %}
+                                        <div class="carousel-item">
+                                                <img src="{{absolute_url(asset(annonce.image4))}}" alt="" style="height:400px">
+                                        </div>
+                                        {% endif %}
+                                        {% if annonce.image5 %}
+                                        <div class="carousel-item">
+                                                <img src="{{absolute_url(asset(annonce.image5))}}" alt="" style="height:400px">
+                                        </div>
+                                        {% endif %}     
                                 </div>
                                 <a class="carousel-control-prev" href="#myCarousel" data-slide="prev" role="button">
                                         <span class="fas fa-chevron-left fa-2x"></span>
@@ -81,8 +99,8 @@
         </section>
         {# MODAL #}
             <div id="div-modal">
-                <button id="btn-modal"type="button" class="btn btn-info" data-toggle="modal" data-target=".bd-example-modal-lg">
-                    <p>
+                <button id="btn-modal"type="button" class="btn btn-info" data-toggle="modal" data-target=".bd-example-modal-lg" style="background-color:#ff8040">
+                    <p style="color:white">
                         Confiez nous votre recherche
                     </p>
                     {# <img src="assets/img/votre-recherche.webp" alt=""> #}
@@ -103,23 +121,23 @@
                             <div class="container">
                                 {{ form_start(formRecherche) }}
                                 <div class="form-row">
-                                    <div class="col-6">
+                                    <div class="col-sm-6">
                                         {{form_row(formRecherche.nom)}}
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-sm-6">
                                         {{form_row(formRecherche.societe)}}
                                     </div>
                                 </div>
                                 <div class="form-row">
-                                    <div class="col-6">
+                                    <div class="col-sm-6">
                                         {{form_row(formRecherche.email)}}
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-sm-6">
                                         {{form_row(formRecherche.telephone)}}
                                     </div>
                                 </div>
                                     {{form_row(formRecherche.message)}}
-                                    {{form_row(formRecherche.demande)}}
+                                    {{form_row(formRecherche.demande, {"value": demandeContent})}}
                                 <button type="submit" class="btn btn-large btn-success">Envoyer votre demande</button>
                                 {{ form_end(formRecherche) }}
                             </div>
@@ -128,3 +146,8 @@
                 </div>
             </div>
     {% endblock body %}
+    {% block javascripts %}
+    <script>
+        modalPop();
+    </script>
+    {% endblock %}

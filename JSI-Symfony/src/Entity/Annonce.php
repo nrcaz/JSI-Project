@@ -130,6 +130,11 @@ class Annonce
     // uploaded file
     public $image5Upload;
     
+    public function getImagei($i)
+    {   
+        $image = 'image' . $i;
+        return $this->$image;
+    }
     public function getId(): ?int
     {
         return $this->id;

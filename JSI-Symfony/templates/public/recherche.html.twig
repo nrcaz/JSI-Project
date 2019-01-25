@@ -202,8 +202,8 @@
             </div>
             {# MODAL #}
             <div id="div-modal">
-                <button id="btn-modal"type="button" class="btn btn-info" data-toggle="modal" data-target=".bd-example-modal-lg">
-                    <p>
+                <button id="btn-modal"type="button" class="btn" data-toggle="modal" data-target=".bd-example-modal-lg" style="background-color:#ff8040">
+                    <p style="color:white">
                         Confiez nous votre recherche
                     </p>
                     {# <img src="assets/img/votre-recherche.webp" alt=""> #}
@@ -223,7 +223,24 @@
                         <div class="modal-body">
                             <div class="container">
                                 {{ form_start(formRecherche) }}
-                                    {{ form_widget(formRecherche) }}
+                                <div class="form-row">
+                                    <div class="col-sm-6">
+                                        {{form_row(formRecherche.nom)}}
+                                    </div>
+                                    <div class="col-sm-6">
+                                        {{form_row(formRecherche.societe)}}
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col-sm-6">
+                                        {{form_row(formRecherche.email)}}
+                                    </div>
+                                    <div class="col-sm-6">
+                                        {{form_row(formRecherche.telephone)}}
+                                    </div>
+                                </div>
+                                    {{form_row(formRecherche.message)}}
+                                    {{form_row(formRecherche.demande)}}
                                 <button type="submit" class="btn btn-large btn-success">Envoyer votre demande</button>
                                 {{ form_end(formRecherche) }}
                             </div>

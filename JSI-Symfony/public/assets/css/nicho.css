@@ -235,7 +235,9 @@ footer nav i:hover {
     margin: 1rem 1rem 0 0;
     width: 18rem;
 }
-
+#annonces .annonceList article a {
+    margin-top: 1rem;
+}
 
 /*****************************/
 

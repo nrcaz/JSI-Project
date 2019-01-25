@@ -167,8 +167,8 @@ if (formSim) {
                     }" class="card-img-top" alt=""></figure>
 					<figcaption class="card-body">
 						<h5 class="card-title">${annonce.titre}</h5>
-						<p class="card-text">${annonce.description}</p>
-						<a href="annonce/${annonce.id}" class="btn btn-primary">Voir l'annonce</a>
+						<p class="card-text">${annonce.description.slice(0,100)}</p>
+						<a href="annonce/${annonce.id}" class="btn btn-info">Voir l'annonce</a>
 					</figcaption>
 				</article>
 				`;
