@@ -122,7 +122,6 @@ function modalPop () {
 // AJAX
 let formSim = document.querySelector("#simulation");
 let annonces = [];
-
 if (formSim) {
     formSim.addEventListener("submit", function(e) {
         e.preventDefault();
@@ -141,7 +140,7 @@ if (formSim) {
         };
 
         fetch(
-                "http://localhost/jsi-project/jsi-symfony/public/ajax",
+                window.pathAjax,
                 fetchOption
             )
             .then(response => response.json())
