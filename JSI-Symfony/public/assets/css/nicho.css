@@ -62,27 +62,26 @@ header #navbarNavAltMarkup {
 
 #home {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
   align-items: center;
   height: 637.5px;
-  position: relative;
+  /* position: relative; */
 }
 
 #home div.home-bg {
-  position: absolute;
-  z-index: -5;
+  /* position: absolute; */
+  /* z-index: -5; */
   height: 637.5px;
   width: 850px;
 }
 
 #home h1 {
-  color: white;
+  color: black;
   margin-bottom: 2rem;
 }
 
 #home strong {
-  color: white;
+  color: black;
   font-weight: 900;
   margin-bottom: 5rem;
 }
