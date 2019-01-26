@@ -85,15 +85,26 @@ header #navbarNavAltMarkup {
     width: 850px;
 }
 
-#home h1 {
-    color: black;
-    margin-bottom: 2rem;
+.titre {
+    text-align: center;
 }
 
-#home strong {
+.titre h1 {
+    color: grey;
+    margin-bottom: 2rem;
+    font-size: 7rem;
+}
+
+.titre span {
+    color: black;
+    font-size: 15rem;
+}
+
+.titre strong {
     color: black;
     font-weight: 900;
     margin-bottom: 5rem;
+    width: 100%;
 }
 
 
@@ -173,7 +184,7 @@ footer nav i:hover {
     justify-content: center;
     margin: 0rem auto 0rem auto;
     padding: 3% 0%;
-    background-color: rgba(255, 233, 145, 0.747);
+    background-color: rgba(187, 216, 235, 0.575);
 }
 
 #methodes h1 {
