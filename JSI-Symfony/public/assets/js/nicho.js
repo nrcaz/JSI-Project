@@ -72,6 +72,7 @@ $('#div-modal').css({
 let collapse = true;
 
 function modalPop () {
+    
   if(collapse){
     // animation on submit
     document.querySelector('#div-modal').animate([
@@ -141,7 +142,7 @@ if (formSim) {
         };
 
         fetch(
-                "http://localhost/jsi-project/jsi-symfony/public/ajax",
+                "http://localhost/WF3/jsi-project/jsi-symfony/public/ajax",
                 fetchOption
             )
             .then(response => response.json())
