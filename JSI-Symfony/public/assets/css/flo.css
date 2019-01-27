@@ -113,7 +113,7 @@
 .navbar-nav a::after {
   content: "";
   width: 0;
-  height: 3px;
+  height: 4px;
   margin: auto;
   margin-top: 10px;
   background-color: orange;

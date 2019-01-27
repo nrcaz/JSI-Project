@@ -10,8 +10,7 @@
 
                 <h4 class="title">Votre Simulation</h4>
                 
-                <form id="simulation" class="contact-form php-mail-form" role="form" action="contactform/contactform.php" method="POST">
-                
+                 <form id="simulation">
                 <!-- Ligne Nb bureau -->
                 <div class="row mt-2 justify-content-center">
                     <div class="form-group col-lg-4 col-md-4 col-sm-2">
@@ -21,42 +20,40 @@
                     </fieldset>
                     </div>
                     <div class="form-group col-lg-3 col-md-3 col-sm-3 d-flex align-items-center">
-                        <input type="text" class="form-control" id="surfaceMin" name="surfaceMin" placeholder="Min">
+                        <input type="text" class="form-control" id="surfaceMin" name="surfaceMin" placeholder="Min" style="width:6rem">
                     </div>
 
                     <div class="form-group col-lg-3 col-md-3 col-sm-3 d-flex align-items-center">
-                        <input type="text" class="form-control" id="surfaceMax" name="surfaceMax" placeholder="Max">
+                        <input type="text" class="form-control" id="surfaceMax" name="surfaceMax" placeholder="Max" style="width:6rem">
                     </div>
                 <!-- FIN Ligne Surface -->
                 </div>
                 <!-- Ligne Nb bureau -->
                 <div class="row mt-2 justify-content-center ">
                     <div class="form-group col-lg-2 col-md-2 col-sm-2 d-flex align-items-center">
-                
-                        <select class="form-control" id="nbBureaux" name="nbBureaux">
+                        <input type="text" class="form-control" id="nbBureaux" name="nbBureaux" placeholder="Nb" style="width:6rem">
+                        {# <select class="form-control" id="nbBureaux" name="nbBureaux" style="width:6rem">
                         <option selected disabled value="0">Nb</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
                         <option value="5">5</option>
-                        </select>
+                        </select> #}
                     </div>
 
                     <div class="form-group col-lg-6 col-md-6 col-sm-4">
-                    <fieldset>
-                    <!-- <label class="control-label" for="readOnlyInput">Votre mobilier</label> -->
-                        <input class="form-control-plaintext" id="readOnlyInput" type="text" placeholder="BUREAU" readonly="">
-                    </fieldset>
+                        <blockquote class="blockquote text-center">
+                            <p class="mb-0 mt-2">BUREAU</p>
+                        </blockquote>
                     </div>
                 
                     <blockquote class="blockquote text-center d-flex align-items-basline">
                     <p class="mb-0 mt-2">pour</p>
                     </blockquote>
 
-                    <div class="form-group-inline col-lg-2 col-md-2 col-sm-2 d-flex align-items-center">
-                    <div class="form-group form-group-inline ">
-                        <select class="form-control" id="exampleSelect1">
+                    <div class="form-group form-group-inline col-lg-2 col-md-2 col-sm-2 d-flex align-items-center">
+                        <select class="form-control" id="exampleSelect1" style="width:6rem">
                             <option selected disabled >Pers.</option>
                             <option>1</option>
                             <option>2</option>
@@ -65,7 +62,6 @@
                             <option>5</option>
                         </select>
                         
-                    </div>
                     </div>
 
                 <!-- FIN Ligne Nb bureau -->
@@ -85,11 +81,10 @@
                         </select>
                     </div>
 
-                    <div class="form-group col-lg-6 col-md-6 ">
-                    <fieldset>
-                    <!-- <label class="control-label" for="readOnlyInput">Votre mobilier</label> -->
-                        <input class="form-control-plaintext" id="readOnlyInput" type="text" placeholder="OPEN SPACE" readonly="">
-                    </fieldset>
+                    <div class="form-group col-lg-6 col-md-6 col-sm-4">
+                        <blockquote class="blockquote text-center">
+                            <p class="mb-0 mt-2">OPEN SPACE</p>
+                        </blockquote>
                     </div>
 
                     <blockquote class="blockquote text-center">
@@ -127,13 +122,11 @@
                         </select>
                     </div>
 
-                    <div class="form-group col-lg-6 col-md-6 ">
-                    <fieldset>
-                    <!-- <label class="control-label" for="readOnlyInput">Votre mobilier</label> -->
-                        <input class="form-control-plaintext" id="readOnlyInput" type="text" placeholder="SALLE DE REUNION" readonly="">
-                    </fieldset>
+                    <div class="form-group col-lg-6 col-md-6 col-sm-4">
+                        <blockquote class="blockquote text-center">
+                            <p class="mb-0 mt-2">SALLE DE REUNION</p>
+                        </blockquote>
                     </div>
-
                     <blockquote class="blockquote text-center">
                     <p class="mb-0 mt-2">pour</p>
                     </blockquote>
@@ -169,11 +162,10 @@
                         </select>
                     </div>
 
-                    <div class="form-group col-lg-6 col-md-6 ">
-                    <fieldset>
-                    <!-- <label class="control-label" for="readOnlyInput">Votre mobilier</label> -->
-                        <input class="form-control-plaintext" id="readOnlyInput" type="text" placeholder="CUISINE / ESPACE DETENTE" readonly="">
-                    </fieldset>
+                    <div class="form-group col-lg-6 col-md-6 col-sm-4">
+                        <blockquote class="blockquote text-center">
+                            <p class="mb-0 mt-2">CUISINE / ESPACE DETENTE</p>
+                        </blockquote>
                     </div>
 
                     <blockquote class="blockquote text-center">
@@ -200,18 +192,18 @@
                     <div class="loading"></div>
                     <div class="error-message"></div>
                     <div class="sent-message mt-4"></div>
-
+                   
                     <div class="form-send ">
                         <button type="submit" class="btn btn-large btn-success">Valider votre recherche</button>
                     </div>
-                    </form>
+                    </form> 
                 
                 </div>
             </div>
             {# MODAL #}
             <div id="div-modal">
-                <button id="btn-modal"type="button" class="btn btn-info" data-toggle="modal" data-target=".bd-example-modal-lg">
-                    <p>
+                <button id="btn-modal"type="button" class="btn" data-toggle="modal" data-target=".bd-example-modal-lg" style="background-color:#ff8040">
+                    <p style="color:white">
                         Confiez nous votre recherche
                     </p>
                     {# <img src="assets/img/votre-recherche.webp" alt=""> #}
@@ -231,7 +223,24 @@
                         <div class="modal-body">
                             <div class="container">
                                 {{ form_start(formRecherche) }}
-                                    {{ form_widget(formRecherche) }}
+                                <div class="form-row">
+                                    <div class="col-sm-6">
+                                        {{form_row(formRecherche.nom)}}
+                                    </div>
+                                    <div class="col-sm-6">
+                                        {{form_row(formRecherche.societe)}}
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col-sm-6">
+                                        {{form_row(formRecherche.email)}}
+                                    </div>
+                                    <div class="col-sm-6">
+                                        {{form_row(formRecherche.telephone)}}
+                                    </div>
+                                </div>
+                                    {{form_row(formRecherche.message)}}
+                                    {{form_row(formRecherche.demande)}}
                                 <button type="submit" class="btn btn-large btn-success">Envoyer votre demande</button>
                                 {{ form_end(formRecherche) }}
                             </div>
@@ -244,10 +253,9 @@
 
         </section>
 
-        <section id="annonces" class="container">
+        <section id="annonces">
 
             <h1 id="message">Les annonces correspondantes à votre recherche</h1>
-            <div id="message"></div>
             <div class="annonceList">
 
             </div>
@@ -255,3 +263,8 @@
         </section>
 
     {% endblock body %}
+    {% block javascripts %}
+    <script>
+        var pathAjax = "{{absolute_url(path("ajax"))}}";
+    </script>
+    {% endblock javascripts %}

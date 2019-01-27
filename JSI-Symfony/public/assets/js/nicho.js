@@ -123,7 +123,6 @@ function modalPop () {
 // AJAX
 let formSim = document.querySelector("#simulation");
 let annonces = [];
-
 if (formSim) {
     formSim.addEventListener("submit", function(e) {
         e.preventDefault();
@@ -142,7 +141,7 @@ if (formSim) {
         };
 
         fetch(
-                "http://localhost/WF3/jsi-project/jsi-symfony/public/ajax",
+                window.pathAjax,
                 fetchOption
             )
             .then(response => response.json())
@@ -169,8 +168,8 @@ if (formSim) {
                     }" class="card-img-top" alt=""></figure>
 					<figcaption class="card-body">
 						<h5 class="card-title">${annonce.titre}</h5>
-						<p class="card-text">${annonce.description}</p>
-						<a href="annonce/${annonce.id}" class="btn btn-primary">Voir l'annonce</a>
+						<p class="card-text">${annonce.description.slice(0,100)}</p>
+						<a href="annonce/${annonce.id}" class="btn btn-info">Voir l'annonce</a>
 					</figcaption>
 				</article>
 				`;
