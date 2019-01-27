@@ -14,89 +14,65 @@ $(function() {
 });
 
 // Quand le top de mon élément est inférieur à la hauteur de mon écran alors je fade in
-let tabSections = [
-  (section1 = {
-    selecteur: "#services",
-    elements: [
-      ".view-first",
-      ".view-third",
-      ".view-fourth",
-      ".view-sixth",
-      ".view-seventh",
-      ".view-eighth"
-    ],
-    animatedType: "animated fadeInLeft slow"
-  }),
-  (section2 = {
-    selecteur: "#commercialisation",
-    animatedType: "animated fadeInRight slow"
-  })
-];
 
-function calculerHauteurTopFenetre(section) {
-  let distanceTopFenetre = document
-    .querySelector(section.selecteur)
-    .getBoundingClientRect().top;
+var HomePage = {
 
-  return distanceTopFenetre;
+  tabSections : [
+    (section1 = {
+      selecteur: "#services",
+      elements: "#services .card",
+      animationType : ["animated", "slideInLeft", "slow"],
+    }),
+    (section2 = {
+      selecteur: "#commercialisation",
+      elements: "#commercialisation .card",
+      animationType :  ["animated", "fadeInRight", "slow"],
+    })
+  ],
+
+  calculerHauteurTopFenetre : function(section) {
+    let distanceTopFenetre = document
+      .querySelector(section.selecteur)
+      .getBoundingClientRect().top;
+  
+    return distanceTopFenetre;
+  },
+
+  mettreAnimation : function (section) {
+  
+    let elements = document.querySelectorAll(section.elements);
+    let animations = section.animationType;
+    let longueurTab = elements.length;
+    let index = 0;
+  
+    var interval = setInterval(function() {
+      animations.forEach(function(animation){
+        elements[index].classList.add(animation);
+      });
+      index++;
+      if(index == longueurTab) {
+        clearInterval(interval);
+      }
+    },500);
+    HomePage.tabSections.splice(index, 1);
+  }
+
 }
-function mettreAnimation(section) {
-  console.log(section);
-  section.elements.forEach(function(element) {
-    console.log(element);
-    document
-      .querySelector(element)
-      .classList.add("animated", "fadeInLeft", "slow");
-  });
-}
+
 // Je boucle sur le tableau, je teste si la position top de l'élèment est inférieur à la taille de la fenêtre :
-// Si oui je lance l'animation en prenant la propriété animatedType, puis je splice l'élément et je break
+// Si oui je lance l'animation en prenant la propriété , puis je splice l'élément et je break
 // Si non je ne fais rien
 // Essayer d'optimiser les détections de scroll avec lodash
 // Tout placer dans un objet ( méthodes, tableaux )
 
 document.addEventListener("scroll", function() {
-  tabSections.forEach(function(section, index) {
+  HomePage.tabSections.forEach(function(section) {
+
     let hauteurFenetre = window.innerHeight;
-    let distanceTopFenetreSection = calculerHauteurTopFenetre(section);
+    let distanceTopFenetreSection = HomePage.calculerHauteurTopFenetre(section);
 
     if (distanceTopFenetreSection < hauteurFenetre) {
-      mettreAnimation(section);
-      tabSections.splice(index, 1);
+      HomePage.mettreAnimation(section);
     }
   });
 });
-
-// Quand le top de mon élément est inférieur à la hauteur de mon écran alors je fade in
-let tabSections = [
-  section1 = { 
-    "id" : "section_contact",
-    "animatedType" : "animated fadeInLeft slow",
-  },
-  section2 = { 
-    "id" : "section_contact",
-    "animatedType" : "animated fadeInLeft slow",
-  },
-  section3 = { 
-    "id" : "section_contact",
-    "animatedType" : "animated fadeInLeft slow",
-  }
-]
-// Je boucle sur le tableau, je teste si la position top de l'élèment est inférieur à la taille de la fenêtre : 
-// Si oui je lance l'animation en prenant la propriété animatedType, puis je splice l'élément et je break
-// Si non je ne fais rien
-// Essayer d'optimiser les détections de scroll avec lodash
-// Tout placer dans un objet ( méthodes, tableaux )
-
-console.log(tabSections[0].id);
-let sectionContact = document.querySelector('#contact_home');
-
-document.addEventListener('scroll', function() {
-  let hauteurFenetre = window.innerHeight;
-  let distanceTopFenetre = sectionContact.getBoundingClientRect().top;
-
-  if(distanceTopFenetre < hauteurFenetre) {
-    console.log("GOOO!");
-    sectionContact.classList.add('animated','fadeInLeft', 'slow');
-  }
-})
