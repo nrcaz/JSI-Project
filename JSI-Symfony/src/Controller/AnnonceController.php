@@ -39,19 +39,20 @@ class AnnonceController extends AbstractController
             // upload des images
             for($i=1; $i<6; $i++) {
                 $image = "image".$i."Upload";
-                if (!$annonce->$image) break;
-                $objUploadedFile = $annonce->$image;
-                // ON VA DEPLACER LE FICHIER UPLOADE DANS LE DOSSIER assets/upload/
-                // AJOUTER LE CHEMIN DANS config/services.yaml
-                // parameters:
-                //     monDossierUpload: '%kernel.project_dir%/public/assets/upload'
-                $dossierCible = $this->getParameter('monDossierUpload');
-    
-                // A PARTIR D'ICI ON COMMENCE A AVOIR UN CODE COMMUN POUR GERER L'UPLOAD
-                $nomOrigine = $this->imageUpload($objUploadedFile, $dossierCible);
-                $setImage= "setImage$i";
-                // on ajoute le chemin vers l image pour la query SQL
-                $annonce->$setImage("assets/upload/$nomOrigine");
+                if ($annonce->$image) {
+                    $objUploadedFile = $annonce->$image;
+                    // ON VA DEPLACER LE FICHIER UPLOADE DANS LE DOSSIER assets/upload/
+                    // AJOUTER LE CHEMIN DANS config/services.yaml
+                    // parameters:
+                    //     monDossierUpload: '%kernel.project_dir%/public/assets/upload'
+                    $dossierCible = $this->getParameter('monDossierUpload');
+        
+                    // A PARTIR D'ICI ON COMMENCE A AVOIR UN CODE COMMUN POUR GERER L'UPLOAD
+                    $nomOrigine = $this->imageUpload($objUploadedFile, $dossierCible);
+                    $setImage= "setImage$i";
+                    // on ajoute le chemin vers l image pour la query SQL
+                    $annonce->$setImage("assets/upload/$nomOrigine");
+                }
             }
 
             $entityManager = $this->getDoctrine()->getManager();
@@ -64,6 +65,7 @@ class AnnonceController extends AbstractController
         return $this->render('annonce/new.html.twig', [
             'annonce' => $annonce,
             'form' => $form->createView(),
+            'upload' => "Ajouter"
         ]);
     }
 
@@ -142,6 +144,7 @@ class AnnonceController extends AbstractController
         return $this->render('annonce/edit.html.twig', [
             'annonce' => $annonce,
             'form' => $form->createView(),
+            'upload' => "Modifier"
         ]);
     }
 
