@@ -60,6 +60,26 @@ class AnnonceType extends AbstractType
                 'required' => false,
                 'data_class' => null
             ])
+            ->add('image1',TextType::class, [
+                'required' => false,
+                'data_class' => null
+            ])
+            ->add('image2',TextType::class, [
+                'required' => false,
+                'data_class' => null
+            ])
+            ->add('image3',TextType::class, [
+                'required' => false,
+                'data_class' => null
+            ])
+            ->add('image4',TextType::class, [
+                'required' => false,
+                'data_class' => null
+            ])
+            ->add('image5',TextType::class, [
+                'required' => false,
+                'data_class' => null
+            ])
         ;
     }
 

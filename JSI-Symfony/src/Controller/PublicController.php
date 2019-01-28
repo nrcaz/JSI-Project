@@ -133,9 +133,12 @@ class PublicController extends AbstractController
             return $this->render('public/confirmation.html.twig', [
                 'formulaire' => "demande"]);
         }
+
+        $demande = "Surface " . $annonce->getSurface() . " m² \n| " . $annonce->getBureaux() . " Bureaux \n| " . $annonce->getOpenSpace() . " Open Space \n| " . $annonce->getSalleReunion() . " Salle de Reunion \n| " . $annonce->getEspaceDetente() . " Cuisine / Espace Detente";
         return $this->render('public/annonce.html.twig', [
             'formRecherche' => $form->createView(),
-            'annonce' => $annonce
+            'annonce' => $annonce,
+            'demandeContent' => $demande
         ]);
     }
 }
