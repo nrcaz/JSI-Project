@@ -3349,6 +3349,7 @@
   to {
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
+    opacity: 1;
   }
 }
 
@@ -3369,6 +3370,7 @@
 .slideInLeft {
   -webkit-animation-name: slideInLeft;
   animation-name: slideInLeft;
+  animation-duration: 0.5s;   
 }
 
 @-webkit-keyframes slideInRight {
@@ -3381,6 +3383,7 @@
   to {
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
+    opacity: 1;
   }
 }
 

@@ -248,14 +248,14 @@
             let index = 0;
 
             var interval = setInterval(function() {
-            animations.forEach(function(animation) {
-                elements[index].classList.add(animation);
-            });
-            index++;
-            if (index == longueurTab) {
-                clearInterval(interval);
-            }
-            }, 400);
+                console.log(elements[index])
+                $(elements[index]).trigger('focus');
+                index++;
+
+                if (index == longueurTab) {
+                    clearInterval(interval);
+                }
+            }, 600);
             HomePage.tabSections.splice(index, 1);
         }
         };
@@ -274,7 +274,7 @@
             }
         });
         });
-        
+
  </script>
 
 {% endblock %}
