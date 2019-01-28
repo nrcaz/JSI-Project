@@ -127,3 +127,6 @@
 .navbar-nav .nav-link {
   padding-top: 1.53rem;
 }
+article.card {
+  opacity: 0;
+}

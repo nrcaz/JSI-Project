@@ -3,203 +3,76 @@
     {% block body %}
 
         <section id="recherche">
-        
-            <div class="row justify-content-around">
 
-                <div class="col-lg-4 col-md-4 col-sm-4 ">
-
-                <h4 class="title">Votre Simulation</h4>
-                
-                 <form id="simulation">
-                <!-- Ligne Nb bureau -->
-                <div class="row mt-2 justify-content-center">
-                    <div class="form-group col-lg-4 col-md-4 col-sm-2">
-                    <fieldset>
-                    <!-- <label class="control-label" for="readOnlyInput">Votre mobilier</label> -->
-                        <input class="form-control-plaintext" id="readOnlyInput" type="text" placeholder="SURFACE" readonly="">
-                    </fieldset>
+        <div class="container" style="width:80%; border:1px solid grey">
+        <h1 style="text-align:center">Votre Recherche</h1>
+        <div class="divider"></div>
+            <form id="simulation">
+                <hr>
+                <label for="" style="display:block;border;text-align:center;font-size:1.2rem">Surface</label>
+                <hr>
+                <div class="row justify-content-center">
+                    <div class="form-group col-md-4">
+                        <input id="surfaceMin" type="text" class="form-control" placeholder="Minimum" pattern="[0-9]*" name="surfaceMin" required>
                     </div>
-                    <div class="form-group col-lg-3 col-md-3 col-sm-3 d-flex align-items-center">
-                        <input type="text" class="form-control" id="surfaceMin" name="surfaceMin" placeholder="Min" style="width:6rem">
+                    <div class="form-group col-md-4">
+                        <input id="surfaceMax" type="text" class="form-control" placeholder="Maximum" pattern="[0-9]*" name="surfaceMax" required>
                     </div>
-
-                    <div class="form-group col-lg-3 col-md-3 col-sm-3 d-flex align-items-center">
-                        <input type="text" class="form-control" id="surfaceMax" name="surfaceMax" placeholder="Max" style="width:6rem">
-                    </div>
-                <!-- FIN Ligne Surface -->
                 </div>
-                <!-- Ligne Nb bureau -->
-                <div class="row mt-2 justify-content-center ">
-                    <div class="form-group col-lg-2 col-md-2 col-sm-2 d-flex align-items-center">
-                        <input type="text" class="form-control" id="nbBureaux" name="nbBureaux" placeholder="Nb" style="width:6rem">
-                        {# <select class="form-control" id="nbBureaux" name="nbBureaux" style="width:6rem">
-                        <option selected disabled value="0">Nb</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        </select> #}
+                <hr>
+                <label for="" style="display:block;border;text-align:center;font-size:1.2rem">Bureaux</label>
+                <hr>
+                <div class="row justify-content-center">
+                    <div class="form-group col-md-4">
+                        <input type="text" class="form-control" placeholder="Nb de bureaux" pattern="[0-9]*" id="nbBureaux" name="nbBureaux" value="0">
                     </div>
-
-                    <div class="form-group col-lg-6 col-md-6 col-sm-4">
-                        <blockquote class="blockquote text-center">
-                            <p class="mb-0 mt-2">BUREAU</p>
-                        </blockquote>
+                    <div class="form-group col-md-4">
+                        <input type="text" class="form-control" placeholder="Nb de personnes par bureau" pattern="[0-9]*">
                     </div>
-                
-                    <blockquote class="blockquote text-center d-flex align-items-basline">
-                    <p class="mb-0 mt-2">pour</p>
-                    </blockquote>
-
-                    <div class="form-group form-group-inline col-lg-2 col-md-2 col-sm-2 d-flex align-items-center">
-                        <select class="form-control" id="exampleSelect1" style="width:6rem">
-                            <option selected disabled >Pers.</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                        </select>
-                        
-                    </div>
-
-                <!-- FIN Ligne Nb bureau -->
                 </div>
-
-                <!-- Ligne Nb OPEN SPACE -->
-                <div class="row mt-2 justify-content-center ">
-                    <div class="form-group col-lg-2 col-md-2 col-sm-2 d-flex align-items-center">
-                    
-                        <select class="form-control" id="nbOpenSpace" name="nbOpenSpace">
-                        <option selected disabled value="0">Nb</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        </select>
+                <hr>
+                <label for="" style="display:block;border;text-align:center;font-size:1.2rem">Open Space</label>
+                <hr>
+                <div class="row justify-content-center">
+                    <div class="form-group col-md-4">
+                        <input type="text" class="form-control" placeholder="Nb d'open space" pattern="[0-9]*" id="nbOpenSpace" name="nbOpenSpace">
                     </div>
-
-                    <div class="form-group col-lg-6 col-md-6 col-sm-4">
-                        <blockquote class="blockquote text-center">
-                            <p class="mb-0 mt-2">OPEN SPACE</p>
-                        </blockquote>
+                    <div class="form-group col-md-4">
+                        <input type="text" class="form-control" placeholder="Nb de personnes par open space" pattern="[0-9]*">
                     </div>
-
-                    <blockquote class="blockquote text-center">
-                    <p class="mb-0 mt-2">pour</p>
-                    </blockquote>
-
-                    <div class="form-group-inline col-lg-2 col-md-2 col-sm-2 d-flex align-items-center">
-                    <div class="form-group form-group-inline ">
-                        <select class="form-control" id="exampleSelect1">
-                            <option selected disabled >Pers.</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                        </select>
-                        
-                    </div>
-                    </div>
-
-                <!-- FIN Ligne Nb OPEN SPACE -->
                 </div>
-
-                    <!-- Ligne Nb SALLE DE REUNION -->
-                <div class="row mt-2 justify-content-center ">
-                    <div class="form-group col-lg-2 col-md-2 col-sm-2 d-flex align-items-center">
-                    
-                        <select class="form-control" id="nbSalleReunion" name="nbSalleReunion">
-                        <option selected disabled value="0">Nb</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        </select>
+                <hr>
+                <label for="" style="display:block;border;text-align:center;font-size:1.2rem">Salle de réunion</label>
+                <hr>
+                <div class="row justify-content-center">
+                    <div class="form-group col-md-4">
+                        <input type="text" class="form-control" placeholder="Nombre de salle de réunion" pattern="[0-9]*" id="nbSalleReunion" name="nbSalleReunion">
                     </div>
-
-                    <div class="form-group col-lg-6 col-md-6 col-sm-4">
-                        <blockquote class="blockquote text-center">
-                            <p class="mb-0 mt-2">SALLE DE REUNION</p>
-                        </blockquote>
+                    <div class="form-group col-md-4">
+                        <input type="text" class="form-control" placeholder="Nb de personnes par salle de réunion" pattern="[0-9]*">
                     </div>
-                    <blockquote class="blockquote text-center">
-                    <p class="mb-0 mt-2">pour</p>
-                    </blockquote>
-
-                    <div class="form-group-inline col-lg-2 col-md-2 col-sm-2 d-flex align-items-center">
-                    <div class="form-group form-group-inline ">
-                        <select class="form-control" id="exampleSelect1">
-                            <option selected disabled >Pers.</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                        </select>
-                        
-                    </div>
-                    </div>
-
-                <!-- FIN Ligne Nb SALLE DE REUNION -->
                 </div>
-
-                <!-- Ligne Nb CUISINE / ESPACE DETENTE -->
-                <div class="row mt-2 justify-content-center ">
-                    <div class="form-group col-lg-2 col-md-2 col-sm-2 d-flex align-items-center">
-                    
-                        <select class="form-control" id="nbEspaceDetente" name="nbEspaceDetente">
-                        <option selected disabled value="0">Nb</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        </select>
+                <hr>
+                <label for="" style="display:block;border;text-align:center;font-size:1.2rem">Cuisine / Espace Détente</label>
+                <div class="row justify-content-center">
+                    <div class="form-group col-md-4">
+                        <input type="text" class="form-control" placeholder="Nombre de bureaux" pattern="[0-9]*" id="nbEspaceDetente" name="nbEspaceDetente">
                     </div>
-
-                    <div class="form-group col-lg-6 col-md-6 col-sm-4">
-                        <blockquote class="blockquote text-center">
-                            <p class="mb-0 mt-2">CUISINE / ESPACE DETENTE</p>
-                        </blockquote>
+                    <div class="form-group col-md-4">
+                        <input type="text" class="form-control" placeholder="Nombre de personnes par bureau" pattern="[0-9]*">
                     </div>
-
-                    <blockquote class="blockquote text-center">
-                    <p class="mb-0 mt-2">pour</p>
-                    </blockquote>
-
-                    <div class="form-group-inline col-lg-2 col-md-2 col-sm-2 d-flex align-items-center">
-                    <div class="form-group form-group-inline ">
-                        <select class="form-control" id="exampleSelect1">
-                            <option selected disabled >Pers.</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                        </select>
-                        
-                    </div>
-                    </div>
-
-                <!-- FIN Ligne Nb CUISINE / ESPACE DETENTE -->
                 </div>
-
-                    <div class="loading"></div>
-                    <div class="error-message"></div>
-                    <div class="sent-message mt-4"></div>
-                   
-                    <div class="form-send ">
+                <div class="row justify-content-center">
+                    <div class="form-group">
                         <button type="submit" class="btn btn-large btn-success">Valider votre recherche</button>
                     </div>
-                    </form> 
-                
                 </div>
-            </div>
+            
+            </form>
+
+        </div>
+
+            
             {# MODAL #}
             <div id="div-modal">
                 <button id="btn-modal"type="button" class="btn" data-toggle="modal" data-target=".bd-example-modal-lg" style="background-color:#ff8040">
