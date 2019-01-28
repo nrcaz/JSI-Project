@@ -6,8 +6,9 @@
     <div class="home-bg" >
     </div>
     <div class="titre">
-        <h1><span>JSI</span>  PARTNERS</h1>
-        <strong>Cabinet conseil en immobilier</strong>
+        <p>JSI Partners est une société spécialisée dans le conseil en immobilier d’entreprise.</p>
+        <p>Notre expertise s’inscrit principalement dans l’accompagnement d’utilisateurs dans toutes les problématiques qui peuvent être rencontrées, pendant la recherche de locaux.</p>
+        <p>L’identité visuelle et l’ADN d’une société passant aujourd'hui de plus en plus par l'esprit des locaux qu’elle occupe et l’atmosphère de travail qu'elle génère, nous aidons véritablement nos clients à trouver des bureaux, plus que cela, des lieux qui leur ressemblent.</p>
         <a class="btn btn-primary" href="{{ url("recherche") }}">Rechercher un bien<a>
     </div>
 </section>
@@ -206,10 +207,76 @@
 
             {{ form_start(formRecherche) }}
             {{ form_widget(formRecherche) }}
-            <button type="submit" class="btn btn-large btn-primary">Envoyé votre demande</button>
+            <button type="submit" class="btn btn-large btn-info">Envoyer votre demande</button>
             {{ form_end(formRecherche) }}
             {{ messageRetour ?? "" }}
         
     </section>
 
 {% endblock %}
+
+{% block javascripts  %}
+
+    <script>
+        // Quand le top de mon élément est inférieur à la hauteur de mon écran alors je fade in
+
+        var HomePage = {
+        tabSections: [
+            (section1 = {
+            selecteur: "#services",
+            elements: "#services .card",
+            animationType: ["animated", "slideInLeft", "slow"]
+            }),
+            (section2 = {
+            selecteur: "#commercialisation",
+            elements: "#commercialisation .card",
+            animationType: ["animated", "slideInRight", "slow"]
+            })
+        ],
+
+        calculerHauteurTopFenetre: function(section) {
+            let distanceTopFenetre = document
+            .querySelector(section.selecteur)
+            .getBoundingClientRect().top;
+
+            return distanceTopFenetre;
+        },
+
+        mettreAnimation: function(section) {
+            let elements = document.querySelectorAll(section.elements);
+            let animations = section.animationType;
+            let longueurTab = elements.length;
+            let index = 0;
+
+            var interval = setInterval(function() {
+            animations.forEach(function(animation) {
+                elements[index].classList.add(animation);
+            });
+            index++;
+            if (index == longueurTab) {
+                clearInterval(interval);
+            }
+            }, 400);
+            HomePage.tabSections.splice(index, 1);
+        }
+        };
+
+        // Je boucle sur le tableau, je teste si la position top de l'élèment est inférieur à la taille de la fenêtre :
+        // Si oui je lance l'animation en prenant la propriété , puis je splice l'élément et je break
+        // Si non je ne fais rien
+
+        document.addEventListener("scroll", function() {
+        HomePage.tabSections.forEach(function(section) {
+            let hauteurFenetre = window.innerHeight;
+            let distanceTopFenetreSection = HomePage.calculerHauteurTopFenetre(section);
+
+            if (distanceTopFenetreSection < hauteurFenetre) {
+            HomePage.mettreAnimation(section);
+            }
+        });
+        });
+        
+ </script>
+
+{% endblock %}
+

@@ -3,7 +3,7 @@
 {% block body %}
 
     <div class="jumbotron" style="margin:20px; padding:20px; box-shadow:1px 1px 1px 1px">
-        <h1 class="display-4">Bonjour cher utilisateur</h1>
+        <h1 class="display-4">Bonjour {{ app.user.username }}</h1>
         <p class="lead">Bienvenue dans la partie back-office, ici tu pourras gérer : 
             <ul>
                 <li>- Les messages</li>

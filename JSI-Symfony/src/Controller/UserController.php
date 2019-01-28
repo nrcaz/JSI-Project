@@ -74,12 +74,12 @@ class UserController extends AbstractController
 
 CODEHTML;
             
-            $message = (new \Swift_Message("Confirmation de votre inscription au site JSI-Partner !"))
-                ->setFrom('flobsn06@gmail.com')
-                ->setTo($email)
-                ->setBody($body, 'text/html');
-            $mailer->send($message);
-            $messageRetour = "L'inscription a été prise en compte !";
+        $message = (new \Swift_Message("Confirmation de votre inscription au site JSI-Partner !"))
+            ->setFrom('flobsn06@gmail.com')
+            ->setTo($email)
+            ->setBody($body, 'text/html');
+        $mailer->send($message);
+        $messageRetour = "L'inscription a été prise en compte !";
 
         }
         

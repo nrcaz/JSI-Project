@@ -115,10 +115,30 @@ class PublicController extends AbstractController
     /**
      * @Route("/annonce/{id}", name="annonce")
      */
-    public function annonce(Annonce $annonce) 
+    public function annonce(Annonce $annonce, Request $request) 
     {
+
+        $contact = new Contact();
+        $form = $this->createForm(ContactType::class, $contact);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            // ajout de la dateReception
+            $contact->setDateReception(new \Datetime());
+            // insert DB
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($contact);
+            $entityManager->flush();
+
+            return $this->render('public/confirmation.html.twig', [
+                'formulaire' => "demande"]);
+        }
+
+        $demande = "Surface " . $annonce->getSurface() . " m² \n| " . $annonce->getBureaux() . " Bureaux \n| " . $annonce->getOpenSpace() . " Open Space \n| " . $annonce->getSalleReunion() . " Salle de Reunion \n| " . $annonce->getEspaceDetente() . " Cuisine / Espace Detente";
         return $this->render('public/annonce.html.twig', [
-            'annonce' => $annonce
+            'formRecherche' => $form->createView(),
+            'annonce' => $annonce,
+            'demandeContent' => $demande
         ]);
     }
 }

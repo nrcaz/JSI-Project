@@ -26,6 +26,10 @@
 
 /* NAV */
 
+header .navbar-light .navbar-nav .nav-link {
+    transition: color 0.5s;
+}
+
 
 /* logo */
 
@@ -72,9 +76,9 @@ header #navbarNavAltMarkup {
 
 #home {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    height: 637.5px;
+    align-items: stretch;
+    /* border: 1px solid black; */
+    /* height: 637.5px; */
     /* position: relative; */
 }
 
@@ -86,25 +90,41 @@ header #navbarNavAltMarkup {
 }
 
 .titre {
+    width: 40rem;
+    margin: 2rem auto;
+    /* border: 1px solid black; */
+    border: center;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+    background-color: transparent;
 }
 
-.titre h1 {
-    color: grey;
-    margin-bottom: 2rem;
-    font-size: 7rem;
-}
-
-.titre span {
-    color: black;
-    font-size: 15rem;
-}
-
-.titre strong {
-    color: black;
+.titre p {
+    margin: 1rem auto;
     font-weight: 900;
-    margin-bottom: 5rem;
-    width: 100%;
+    color: #1a1a1a;
+}
+
+@media screen and (max-width: 768px) {
+    #home {
+        display: flex;
+        flex-direction: column;
+    }
+    .titre {
+        width: 80%;
+        margin: 2rem auto;
+        /* border: 1px solid black; */
+        border: center;
+        text-align: center;
+        justify-content: center;
+    }
+    .titre p {
+        margin: 0.5rem;
+    }
 }
 
 
@@ -124,6 +144,7 @@ footer {
 
 footer nav {
     margin-bottom: 1rem;
+    color: white;
 }
 
 footer #references {
@@ -145,6 +166,7 @@ footer #references i {
 footer .nav-link {
     color: white;
     display: inline;
+    transition: all 0.5s;
 }
 
 footer nav i:hover {
@@ -153,14 +175,14 @@ footer nav i:hover {
 
 .fa-linkedin {
     font-size: 3rem;
-    color: black;
+    color: white;
     margin-right: 1rem;
     transition: all 0.5s;
 }
 
 .fa-google-plus {
     font-size: 3rem;
-    color: black;
+    color: white;
     transition: all 0.5s;
 }
 
@@ -233,8 +255,8 @@ footer nav i:hover {
 /****** ANNONCES
 /*****************************/
 
-#annonces .annonceList {
-    width: 60rem;
+#annonces #annonceList {
+    max-width: 62rem;
     padding-left: 1rem;
     display: flex;
     flex-wrap: wrap;
@@ -242,9 +264,13 @@ footer nav i:hover {
     margin: 0 auto 1rem auto;
 }
 
-#annonces .annonceList article {
-    margin: 1rem 1rem 0 0;
+#annonces #annonceList article {
+    margin: 2rem 2rem 0 0;
     width: 18rem;
+}
+
+#annonces #annonceList article a {
+    margin-top: 1rem;
 }
 
 
@@ -374,4 +400,45 @@ div.modal div.container {
     font-size: 150%;
     margin-bottom: 2rem;
     text-align: center;
+}
+
+
+/*****************************/
+
+
+/****** CONTACT / RECRUTEMENT FORM
+/*****************************/
+
+#contact_home label,
+#recrutement label {
+    width: 90%;
+    margin: auto;
+    display: block;
+}
+
+#contact_home input,
+#contact_home textarea,
+#recrutement input,
+#recrutement textarea {
+    width: 90%;
+    transition: 0.25s;
+    margin: auto;
+}
+
+#contact_home input:focus,
+#contact_home textarea:focus,
+#recrutement input:focus,
+#recrutement textarea:focus {
+    width: 100%;
+    background-color: white;
+}
+
+#contact_home form button,
+#recrutement form button {
+    margin: auto;
+    display: block;
+}
+
+#recrutement {
+    padding-bottom: 2rem;
 }

@@ -33,7 +33,7 @@
                     <div class="group-rom">
                         <div class="first-part">Images</div>
                         <div class="second-part">
-                           {% if annonce.image1 %}<img src="{{ absolute_url(asset(annonce.image1)) }}" style="width:200px" alt="">{% endif %}                            {% if annonce.image2 %}<img src="{{ absolute_url(asset(annonce.image2)) }}" style="width:200px" alt="">{% endif %}
+                           {% if annonce.image1 %}<img src="{{ absolute_url(asset(annonce.image1)) }}" style="width:200px" alt="">{% endif %}                {% if annonce.image2 %}<img src="{{ absolute_url(asset(annonce.image2)) }}" style="width:200px" alt="">{% endif %}
                            {% if annonce.image3 %}<img src="{{ absolute_url(asset(annonce.image3)) }}" style="width:200px" alt="">{% endif %}
                            {% if annonce.image4 %}<img src="{{ absolute_url(asset(annonce.image4)) }}" style="width:200px" alt="">{% endif %}
                            {% if annonce.image5 %}<img src="{{ absolute_url(asset(annonce.image5)) }}" style="width:200px" alt="">{% endif %}

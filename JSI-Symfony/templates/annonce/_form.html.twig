@@ -1,218 +1,124 @@
 {{ form_start(form) }}
+<div class="row">
+    <div class="col-lg-4">
+        {{ form_row(form.titre) }}
+    </div>
+    <div class="col-lg-4">
+        {{ form_row(form.type) }}
+    </div>
+    <div class="col-lg-4">
+        {{ form_row(form.lieu) }}
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-6">
+        {{ form_row(form.description, { "attr": { "style" : "height:10rem" }}) }}
+    </div>
+    <div class="col-lg-6">
+        {{ form_row(form.equipement, { "attr": { "style" : "height:10rem" }}) }}
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-6">
+        {{ form_row(form.loyer) }}
+        {{ form_row(form.charges) }}
+    </div>
+    <div class="col-lg-6" style="display:flex; flex-direction:column; align-items:center">
+        {{ form_row(form.disponibilite) }}
+        {{ form_row(form.accueil) }}
+    </div>
+</div>
+<h3>Infos-simulateur</h3>
+<hr>
+<div class="row" style="display:flex; justify-content:space-around">
+    <div class="col-lg-2">
+        {{ form_row(form.surface) }}
+    </div>
+    <div class="col-lg-2">
+        {{ form_row(form.bureaux) }}
+    </div>
+    <div class="col-lg-2">
+        {{ form_row(form.openSpace) }}
+    </div>
+    <div class="col-lg-2">
+        {{ form_row(form.salleReunion) }}
+    </div>
+    <div class="col-lg-2">
+        {{ form_row(form.espaceDetente) }}
+    </div>
+</div>
+<hr>
+<div class="row" style="display:flex; justify-content:space-around">
+    <div class="col-lg-8">
+        {{ form_row(form.note, { "attr": { "style" : "height:10rem" }}) }}
+    </div>
+</div>
 
-    <div class="row">
-        <div class="col-lg-4">
-            {{ form_row(form.titre) }}
-        </div>
-        <div class="col-lg-4">
-            {{ form_row(form.type) }}
-        </div>
-        <div class="col-lg-4">
-            {{ form_row(form.lieu) }}
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-6">
-            {{ form_row(form.description, { "attr": { "style" : "height:10rem" }}) }}
-        </div>
-        <div class="col-lg-6">
-            {{ form_row(form.equipement, { "attr": { "style" : "height:10rem" }}) }}
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-6">
-            {{ form_row(form.loyer) }}
-            {{ form_row(form.charges) }}
-        </div>
-        <div class="col-lg-6" style="display:flex; flex-direction:column; align-items:center">
-            {{ form_row(form.disponibilite) }}
-            {{ form_row(form.accueil) }}
-        </div>
-    </div>
-    <h3>Infos-simulateur</h3>
-    <hr>
-    <div class="row" style="display:flex; justify-content:space-around">
-        <div class="col-lg-2">
-            {{ form_row(form.surface) }}
-        </div>
-        <div class="col-lg-2">
-            {{ form_row(form.bureaux) }}
-        </div>
-        <div class="col-lg-2">
-            {{ form_row(form.openSpace) }}
-        </div>
-        <div class="col-lg-2">
-            {{ form_row(form.salleReunion) }}
-        </div>
-        <div class="col-lg-2">
-            {{ form_row(form.espaceDetente) }}
-        </div>
-    </div>
+<div id="hidden-row" style="display:none">
+    {{ form_row(form.image1) }}
+    {{ form_row(form.image1Upload) }}
+    {{ form_row(form.image2) }}
+    {{ form_row(form.image2Upload) }}
+    {{ form_row(form.image3) }}
+    {{ form_row(form.image3Upload) }}
+    {{ form_row(form.image4) }}
+    {{ form_row(form.image4Upload) }}
+    {{ form_row(form.image5) }}
+    {{ form_row(form.image5Upload) }}
+</div>
 
-    <div class="row" style="display:flex; justify-content:space-around">
-        <div class="col-lg-8">
-            {{ form_row(form.note, { "attr": { "style" : "height:10rem" }}) }}
+<h3>Images</h3>
+<hr>
+<div style="display:flex; justify-content:space-around; flex-wrap:wrap">
+{% for i in 1..5 %}
+{% set image =  annonce.getImagei(i) %}
+    <div id="image{{i}}" style="padding:20px; border: solid 1px lightgrey; width:240px; margin-bottom:20px">
+        <div style="width:200px">
+        {% if image %}
+                <img src="{{ absolute_url(asset(image)) }}" style="width:200px;border:solid 1px lightgrey" alt="">
+        {% else %}
+                <img src="{{ absolute_url(asset("assets/img/no-image-icon.jpg")) }}" style="width:200px;border:solid 1px lightgrey">
+        {% endif %}
+        </div>
+        <div style="width:200px; text-align:center;">    
+            <p style="height:20px; margin-top:10px"></p>
+        </div>
+        <div style="width:200px; text-align:center">
+            <button class="btn btn-primary edit">{{upload}}</button>
+            <button class="btn btn-danger delete">Supprimer</button>
+            <script>
+                document.querySelector('#image{{i}} .edit').addEventListener('click', function(e){
+                    e.preventDefault();
+                    document.querySelector('#annonce_image{{i}}Upload').click();
+                });
+                document.querySelector('#annonce_image{{i}}Upload').addEventListener('change',function(e){
+                    document.querySelector('#image{{i}} p').textContent = document.querySelector('#annonce_image{{i}}Upload').files[0].name;
+                    var file = document.querySelector('#annonce_image{{i}}Upload').files[0];
+                    var reader = new FileReader();
+                    reader.onload = function(e) {
+                                document.querySelector('#image{{i}} img').setAttribute('src', e.target.result);
+                                };
+                    reader.readAsDataURL(file);
+                    }
+                );
+                document.querySelector('#image{{i}} .delete').addEventListener('click',function(e){
+                    e.preventDefault();
+                    document.querySelector('input#annonce_image{{i}}').value = "";
+                    document.querySelector('#image{{i}} img').setAttribute('src', "{{ absolute_url(asset('assets/img/no-image-icon.jpg')) }}");
+                    document.querySelector('#image{{i}} p').textContent = "";
+                    document.querySelector('#annonce_image{{i}}Upload').value= "";
+                });
+
+            </script>
         </div>
     </div>
+{% endfor %}
+</div>
 
-    <div class="row">
-        <div class="col-lg-2">
-            {{ form_row(form.image1Upload) }}
-        </div>
-        <div class="col-lg-2">
-            {{ form_row(form.image2Upload) }}
-        </div>
-        <div class="col-lg-2">
-            {{ form_row(form.image3Upload) }}
-        </div>
-        <div class="col-lg-2">
-            {{ form_row(form.image4Upload) }}
-        </div>
-        <div class="col-lg-2">
-            {{ form_row(form.image5Upload) }}
-        </div>
-    </div>
-
-    <button class="btn btn-success">Sauvegarder</button>
-    <a class="btn btn-primary" href="{{ path('annonce_index') }}">Retour</a> 
+<button class="btn btn-success">Sauvegarder</button>
+<a class="btn btn-primary" href="{{ path('annonce_index') }}">Retour</a> 
 
 {{ form_end(form) }}
-
-<!-- /wrapper -->
-
-            {# {{ form_start(form, {'attr':{'class': 'form-horizontal style-form'} }) }}
-
-                    <div class="form-group">
-                        <label class="col-sm-2 col-sm-2 control-label">Titre</label>
-                        <div class="col-sm-8">
-                            {{ form_row(form.titre) }}
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-2 col-sm-2 control-label">Description</label>
-                        <div class="col-sm-8">
-                            {{ form_row(form.description) }}
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-2 col-sm-2 control-label">Equipement</label>
-                        <div class="col-sm-8">
-                            {{ form_row(form.equipement) }}
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-md-3">Images</label>
-                        <div class="col-md-9">
-                            <div class="fileupload fileupload-new" data-provides="fileupload">
-                                <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
-                                    <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="">
-                                </div>
-                                <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
-                                <div>
-                                    <span class="btn btn-theme02 btn-file">
-                                        <span class="fileupload-new"><i class="fa fa-paperclip"></i>Votre image</span>
-                                    <span class="fileupload-exists"><i class="fa fa-undo"></i> Change</span>
-                                    {{ form_row(form.images, {'attr':{'class': 'form-control'} }) }}
-                                    </span>
-                                    <a href="advanced_form_components.html#" class="btn btn-theme04 fileupload-exists" data-dismiss="fileupload"><i
-                                            class="fa fa-trash-o"></i> Remove</a>
-                                </div>
-                            </div>
-                            <span class="label label-info">NOTE!</span>
-                            <span>
-                                Attached image thumbnail is
-                                supported in Latest Firefox, Chrome, Opera,
-                                Safari and Internet Explorer 10 only
-                            </span>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-2 col-sm-2 control-label">Type</label>
-                        <div class="col-sm-4">
-                            {{ form_row(form.type, {'attr':{'class': 'form-control'} }) }}
-                        </div>
-                        <label class="col-sm-2 col-sm-2 control-label">Lieux</label>
-                        <div class="col-sm-4">
-                            {{ form_row(form.lieu, {'attr':{'class': 'form-control'} }) }}
-                            
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="form-inline" role="form">
-                            <label class="col-sm-1 col-sm-1 control-label">Surface</label>
-                            <div class=" col-sm-2">
-                                {{ form_row(form.surface, {'attr':{'class': 'form-control'} }) }}
-                            </div>
-
-                            <label class="col-sm-1 col-sm-1 control-label">Loyer</label>
-                            <div class=" col-sm-2">
-                                {{ form_row(form.loyer, {'attr':{'class': 'form-control'} }) }}
-                            </div>
-                            <label class="col-sm-1 col-sm-1 control-label">Charges</label>
-                            <div class=" col-sm-2">
-                                {{ form_row(form.charges, {'attr':{'class': 'form-control'} }) }}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="form-inline ">
-
-                            <label for="" class="col-sm-3 col-sm-3 "> Disponibilité</label>
-                            <div class="">
-                                <div class="switch has-switch">
-                                    <div class="switch-on switch-animate">
-                                        {{ form_row(form.disponibilite, {'attr':{'class': 'form-control'} }) }}<span class="switch-left">OUI</span><label>&nbsp;</label><span class="switch-right">NON</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                <!-- Caractéristisque Local-->
-                
-            </div>
-            <!-- col-lg-12-->
-        </div>
-        <!-- /row -->
-        <h3><i class="fa fa-angle-right"></i>Info pour Simulateur</h3>
-        <div class="form-panel">
-            <div class="row mt">
-                <div class="col-lg-12">
-                    <div class="form-group">
-                        <div class="form-inline" role="form">
-
-                            <label class="col-sm-8 col-sm-offset-4 control-label">Bureau</label>
-                            <div class="col-sm-2 col-sm-offset-4">
-                                {{ form_row(form.bureaux, {'attr':{'class': 'form-control'} }) }}
-                            </div>
-
-                            <label class="col-sm-8 col-sm-offset-4 control-label">Open space</label>
-                            <div class="col-sm-2 col-sm-offset-4">
-                                {{ form_row(form.openSpace, {'attr':{'class': 'form-control'} }) }}
-                            </div>
-
-                            <label class="col-sm-8 col-sm-offset-4 control-label">Salle de Réunion</label>
-                            <div class="col-sm-2 col-sm-offset-4">
-                                    {{ form_row(form.salleReunion, {'attr':{'class': 'form-control'} }) }}
-                            </div>
-
-                            <label class="col-sm-8 col-sm-offset-4 control-label">Cuisine Espace Détente </label>
-                            <div class="col-sm-2 col-sm-offset-4">
-                                {{ form_row(form.espaceDetente, {'attr':{'class': 'form-control'} }) }}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group last-group">
-                        <div class="row mt">
-                            <label for="" class="col-sm-8 col-sm-offset-4 control-label">Hotesse</label>
-                            <div class="col-sm-2 col-sm-offset-4">
-                                <div class="switch has-switch">
-                                    <div class="switch-animate switch-on">{{ form_row(form.accueil, {'attr':{'class': 'form-control'} }) }}<span class="switch-left">ON</span><label>&nbsp;</label><span class="switch-right">OFF</span></div>
-                                </div>
-                            </div>
-                        </div>
-                        <label for="" class="col-sm-8 control-label">Note</label>
-                    {{ form_row(form.note) }}
-                    </div> #}
 
 
 

@@ -130,6 +130,11 @@ class Annonce
     // uploaded file
     public $image5Upload;
     
+    public function getImagei($i)
+    {   
+        $image = 'image' . $i;
+        return $this->$image;
+    }
     public function getId(): ?int
     {
         return $this->id;
@@ -153,7 +158,7 @@ class Annonce
     }
 
     public function setDescription(?string $description): self
-    {
+    {   
         $this->description = $description;
 
         return $this;
