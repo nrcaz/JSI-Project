@@ -72,6 +72,7 @@ $('#div-modal').css({
 let collapse = true;
 
 function modalPop () {
+    
   if(collapse){
     // animation on submit
     document.querySelector('#div-modal').animate([
