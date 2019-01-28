@@ -174,7 +174,7 @@ if (formSim) {
 				</article>
 				`;
                 }
-                document.querySelector(".annonceList").innerHTML = html;
+                document.querySelector("#annonceList").innerHTML = html;
 
                 let demande = `
 			Surface ${document.querySelector("#surfaceMin").value} - ${

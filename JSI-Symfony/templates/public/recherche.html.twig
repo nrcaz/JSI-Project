@@ -14,10 +14,9 @@
                 <!-- Ligne Nb bureau -->
                 <div class="row mt-2 justify-content-center">
                     <div class="form-group col-lg-4 col-md-4 col-sm-2">
-                    <fieldset>
-                    <!-- <label class="control-label" for="readOnlyInput">Votre mobilier</label> -->
-                        <input class="form-control-plaintext" id="readOnlyInput" type="text" placeholder="SURFACE" readonly="">
-                    </fieldset>
+                        <blockquote class="blockquote text-center">
+                            <p class="mb-0 mt-2">SURFACE</p>
+                        </blockquote>
                     </div>
                     <div class="form-group col-lg-3 col-md-3 col-sm-3 d-flex align-items-center">
                         <input type="text" class="form-control" id="surfaceMin" name="surfaceMin" placeholder="Min" style="width:6rem">
@@ -32,14 +31,6 @@
                 <div class="row mt-2 justify-content-center ">
                     <div class="form-group col-lg-2 col-md-2 col-sm-2 d-flex align-items-center">
                         <input type="text" class="form-control" id="nbBureaux" name="nbBureaux" placeholder="Nb" style="width:6rem">
-                        {# <select class="form-control" id="nbBureaux" name="nbBureaux" style="width:6rem">
-                        <option selected disabled value="0">Nb</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        </select> #}
                     </div>
 
                     <div class="form-group col-lg-6 col-md-6 col-sm-4">
@@ -256,7 +247,7 @@
         <section id="annonces">
 
             <h1 id="message">Les annonces correspondantes à votre recherche</h1>
-            <div class="annonceList">
+            <div id="annonceList">
 
             </div>
 
