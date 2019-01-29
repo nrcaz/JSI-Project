@@ -3,15 +3,12 @@
     {% block body %}
 
         <section id="recherche">
-
-        <p>Texte à mettre pour décrire la fonction du formulaire</p>
-
         <div class="container" style="width:80%; border:1px solid grey">
         <h1 style="text-align:center">Votre Recherche</h1>
         <div class="divider"></div>
             <form id="simulation">
                 <hr>
-                <label for="" style="display:block;border;text-align:center;font-size:1.2rem">Surface</label>
+                <label for="" style="display:block;border;text-align:center;font-size:1.2rem">Surface <!-- Popover --><a href="#" title="Conseil" data-toggle="popover" data-trigger="focus" data-content="Remplissez les champs du minimum et du maximum de surface que vous recherchez"><i class="fas fa-question-circle"></i></a></label>
                 
                 <div class="row justify-content-center">
                     <div class="form-group col-md-4">
@@ -21,8 +18,9 @@
                         <input id="surfaceMax" type="text" class="form-control" placeholder="Maximum" pattern="[0-9]*" name="surfaceMax" required>
                     </div>
                 </div>
+
                 <hr>
-                <label for="" style="display:block;border;text-align:center;font-size:1.2rem">Bureaux</label>
+                <label for="" style="display:block;border;text-align:center;font-size:1.2rem">Bureaux <!-- Popover --><a href="#" title="Conseil" data-toggle="popover" data-trigger="focus" data-content="Indiquez nous le nombre de bureau souhaité pour le nombre de personne qui y travailleront"><i class="fas fa-question-circle"></i></a></label>
                 
                 <div class="row justify-content-center">
                     <div class="form-group col-md-4">
@@ -32,8 +30,9 @@
                         <input type="text" class="form-control" placeholder="Nb de personnes par bureau" pattern="[0-9]*">
                     </div>
                 </div>
+                
                 <hr>
-                <label for="" style="display:block;border;text-align:center;font-size:1.2rem">Open Space</label>
+                <label for="" style="display:block;border;text-align:center;font-size:1.2rem">Open Space <!-- Popover --><a href="#" title="Conseil" data-toggle="popover" data-trigger="focus" data-content="Précisez le nombre de salle de réunion ainsi que leurs capacités"><i class="fas fa-question-circle"></i></a></label>
                 
                 <div class="row justify-content-center">
                     <div class="form-group col-md-4">
@@ -43,8 +42,9 @@
                         <input type="text" class="form-control" placeholder="Nb de personnes par open space" pattern="[0-9]*">
                     </div>
                 </div>
+                
                 <hr>
-                <label for="" style="display:block;border;text-align:center;font-size:1.2rem">Salle de réunion</label>
+                <label for="" style="display:block;border;text-align:center;font-size:1.2rem">Salle de réunion  <!-- Popover --><a href="#" title="Conseil" data-toggle="popover" data-trigger="focus" data-content="Indiquez le nombre d'open space et sa capacité souhaité"><i class="fas fa-question-circle"></i></a></label>
                 
                 <div class="row justify-content-center">
                     <div class="form-group col-md-4">
@@ -54,8 +54,9 @@
                         <input type="text" class="form-control" placeholder="Nb de personnes par salle de réunion" pattern="[0-9]*">
                     </div>
                 </div>
+                
                 <hr>
-                <label for="" style="display:block;border;text-align:center;font-size:1.2rem">Cuisine / Espace Détente</label>
+                <label for="" style="display:block;border;text-align:center;font-size:1.2rem">Cuisine / Espace Détente <!-- Popover --><a href="#" title="Conseil" data-toggle="popover" data-trigger="focus" data-content="Indiquez le nombre de cuisine et d'espace détente et leurs capacités souhaité"><i class="fas fa-question-circle"></i></a></label>
                 <div class="row justify-content-center">
                     <div class="form-group col-md-4">
                         <input type="text" class="form-control" placeholder="Nombre de bureaux" pattern="[0-9]*" id="nbEspaceDetente" name="nbEspaceDetente">
@@ -64,6 +65,7 @@
                         <input type="text" class="form-control" placeholder="Nombre de personnes par bureau" pattern="[0-9]*">
                     </div>
                 </div>
+
                 <div class="row justify-content-center">
                     <div class="form-group">
                         <button type="submit" class="btn btn-large btn-success">Valider votre recherche</button>
