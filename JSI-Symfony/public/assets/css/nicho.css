@@ -77,10 +77,8 @@ header #navbarNavAltMarkup {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 1000px;
   /* align-items: stretch; */
   /* border: 1px solid black; */
-  /* height: 637.5px; */
   /* position: relative; */
 }
 #home h1 {
@@ -282,7 +280,17 @@ footer nav i:hover {
   justify-content: center;
   margin: 0 auto 1rem auto;
 }
-
+#annonces > p {
+    width: 100%;
+    text-align: center;
+    color: #1a1a1a;
+    font-size: 1rem;
+}
+#annonces h1 {
+    width: 75%;
+    text-align: center;
+    margin: auto;
+}
 #annonces #annonceList article {
   margin: 2rem 2rem 0 0;
   width: 18rem;
@@ -291,12 +299,29 @@ footer nav i:hover {
 #annonces #annonceList article a {
   margin-top: 1rem;
 }
+#annonces #annonceList article p {
+    height: 6.25rem;
+}
+#annonces #annonceList article figcaption {
+    height: 15rem;
+}
 #annonces #annonceList article figure {
     width: 18rem;
     height: 18rem;
     overflow: hidden;
 }
-
+#annonces .bas {
+    text-align: center;
+    margin-top: 2rem;
+}
+#annonces .bas i {
+    margin-bottom: 20px;
+    color: rgb(255, 128, 64);
+}
+#annonces .fa-phone-square,
+#annonces .fa-envelope {
+font-size: 50px;
+}
 /*****************************/
 
 /****** ANNONCES RECHERCHE
@@ -313,14 +338,10 @@ footer nav i:hover {
 }
 
 #contact_demande {
-<<<<<<< HEAD
     height: 145px;
 }
 #contact_message {
     height: 145px;
-=======
-  height: 185px;
->>>>>>> origin/florian
 }
 
 /* #message {

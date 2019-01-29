@@ -65,7 +65,7 @@
                     </div>
                 </div>
                 <div class="row justify-content-center">
-                    <div class="form-group">
+                    <div class="form-group" style="margin-top:2rem">
                         <button type="submit" class="btn btn-large btn-success">Valider votre recherche</button>
                     </div>
                 </div>
@@ -131,10 +131,24 @@
         <section id="annonces">
 
             <h1 id="message">Les annonces correspondantes à votre recherche</h1>
-            <p>Ce ne sont que quelques exemples de résultats, n'hésitez pas à remplir le formulaire personnalisé afin que l'on puisse travailler davanatage sur votre besoin</p>
+            <p>Ce ne sont que quelques exemples de résultats, <br>n'hésitez pas à remplir le formulaire personnalisé afin que l'on puisse travailler d'avantage sur votre besoin</p>
             <div id="annonceList">
 
             </div>
+        <div class="row justify-content-center bas">
+            {# <div class="col-6">
+                <figure>
+                        <i class="fas fa-phone-square"></i>
+                        <h3>Appelez-nous</h3>
+                </figure>
+            </div> #}
+            <div class="col-6">
+                <figure data-toggle="modal" data-target=".bd-example-modal-lg" style="cursor:pointer">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Contactez-nous</h3>
+                </figure>      
+            </div>
+        </div>
 
         </section>
 
