@@ -296,7 +296,10 @@ footer nav i:hover {
 }
 
 #contact_demande {
-    height: 185px;
+    height: 145px;
+}
+#contact_message {
+    height: 145px;
 }
 
 

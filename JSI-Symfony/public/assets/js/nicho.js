@@ -176,15 +176,7 @@ if (formSim) {
                 }
                 document.querySelector("#annonceList").innerHTML = html;
 
-                let demande = `
-			Surface ${document.querySelector("#surfaceMin").value} - ${
-                    document.querySelector("#surfaceMax").value
-                }
-			| ${document.querySelector("#nbBureaux").value}+ Bureaux
-			| ${document.querySelector("#nbOpenSpace").value}+ Open Space
-			| ${document.querySelector("#nbSalleReunion").value}+ Salles de Reunion
-			| ${document.querySelector("#nbEspaceDetente").value}+ Cuisine / Espace detente
-			`;
+                let demande = `Surface ${document.querySelector("#surfaceMin").value} - ${document.querySelector("#surfaceMax").value} m² \n| ${document.querySelector("#nbBureaux").value ? document.querySelector("#nbBureaux").value : "0"}+ Bureaux \n| ${document.querySelector("#nbOpenSpace").value ? document.querySelector("#nbOpenSpace").value : "0"}+ Open Space \n| ${document.querySelector("#nbSalleReunion").value ? document.querySelector("#nbSalleReunion").value : "0"}+ Salles de Reunion \n| ${document.querySelector("#nbEspaceDetente").value ? document.querySelector("#nbEspaceDetente").value : "0"}+ Cuisine / Espace detente`;
 
                 document.querySelector("#contact_demande").value = demande;
 

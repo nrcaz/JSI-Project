@@ -41,9 +41,15 @@
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
                         <a class="nav-item nav-link" href="{{ url("recherche") }}">Rechercher un bien</a>
+                        {% if accueil is defined %}
                         <a class="nav-item nav-link" href="#services">Services</a>
                         <a class="nav-item nav-link" href="#commercialisation">Commercialisation</a>
                         <a class="nav-item nav-link" href="#contact_home">Contactez-nous</a>
+                        {% else %}
+                        <a class="nav-item nav-link" href="{{ url("accueil") }}/#services">Services</a>
+                        <a class="nav-item nav-link" href="{{ url("accueil") }}/#commercialisation">Commercialisation</a>
+                        <a class="nav-item nav-link" href="{{ url("accueil") }}/#contact_home">Contactez-nous</a>
+                        {% endif %}
                         <a class="nav-item nav-link" href="{{ url("back_office_accueil") }}">Backoffice</a>
                     </div>
                 </div>

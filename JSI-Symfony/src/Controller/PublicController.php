@@ -33,12 +33,13 @@ class PublicController extends AbstractController
             $entityManager->flush();
 
             return $this->render('public/confirmation.html.twig', [
-                'formulaire' => "message"
+                'formulaire' => "message",
             ]);
         }
 
         return $this->render('public/index.html.twig', [
             'formRecherche' => $form->createView(),
+            'accueil' => true
         ]);
     }
 
@@ -70,7 +71,8 @@ class PublicController extends AbstractController
             $entityManager->flush();
 
             return $this->render('public/confirmation.html.twig', [
-                'formulaire' => "demande"]);
+                'formulaire' => "demande",
+            ]);
         }
         return $this->render('public/recherche.html.twig', [
             'formRecherche' => $form->createView(),
@@ -103,7 +105,7 @@ class PublicController extends AbstractController
             $entityManager->flush();
 
             return $this->render('public/confirmation.html.twig', [
-                'formulaire' => "candidature"
+                'formulaire' => "candidature",
             ]);
         }
 
@@ -131,14 +133,15 @@ class PublicController extends AbstractController
             $entityManager->flush();
 
             return $this->render('public/confirmation.html.twig', [
-                'formulaire' => "demande"]);
+                'formulaire' => "demande",
+                ]);
         }
 
         $demande = "Surface " . $annonce->getSurface() . " m² \n| " . $annonce->getBureaux() . " Bureaux \n| " . $annonce->getOpenSpace() . " Open Space \n| " . $annonce->getSalleReunion() . " Salle de Reunion \n| " . $annonce->getEspaceDetente() . " Cuisine / Espace Detente";
         return $this->render('public/annonce.html.twig', [
             'formRecherche' => $form->createView(),
             'annonce' => $annonce,
-            'demandeContent' => $demande
+            'demandeContent' => $demande,
         ]);
     }
 }
