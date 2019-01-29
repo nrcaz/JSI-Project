@@ -237,7 +237,8 @@ footer nav i:hover {
   width: 20rem;
 }
 
-#commercialisation blockquote {
+#commercialisation blockquote,
+#contact_home blockquote {
   width: 100%;
   text-align: center;
   font-family: "Nunito", sans-serif;
@@ -427,7 +428,9 @@ div.modal div.container {
 
 /****** CONTACT / RECRUTEMENT FORM
 /*****************************/
-
+#contact {
+  margin-top: 50px;
+}
 #contact_home label,
 #recrutement label {
   width: 90%;
