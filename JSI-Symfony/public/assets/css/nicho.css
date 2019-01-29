@@ -292,6 +292,7 @@ footer nav i:hover {
 #annonces #annonceList article a {
   margin-top: 1rem;
 }
+
 #annonces #annonceList article figure {
     width: 18rem;
     height: 18rem;
@@ -314,14 +315,10 @@ footer nav i:hover {
 }
 
 #contact_demande {
-<<<<<<< HEAD
     height: 145px;
 }
 #contact_message {
     height: 145px;
-=======
-  height: 185px;
->>>>>>> origin/florian
 }
 
 /* #message {
@@ -355,6 +352,12 @@ div.modal div.container {
   padding-left: 1rem;
   padding-right: 1rem;
 }
+
+.fas {
+    font-size: x-small;
+    color: #ced2d5;
+}
+
 
 /*****************************/
 
