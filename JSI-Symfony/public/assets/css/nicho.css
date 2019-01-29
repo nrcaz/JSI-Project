@@ -272,6 +272,11 @@ footer nav i:hover {
 #annonces #annonceList article a {
     margin-top: 1rem;
 }
+#annonces #annonceList article figure {
+    width: 18rem;
+    height: 18rem;
+    overflow: hidden;
+}
 
 
 /*****************************/
