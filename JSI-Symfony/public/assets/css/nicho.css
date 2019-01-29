@@ -100,7 +100,6 @@ header #navbarNavAltMarkup {
 }
 
 #home .titre {
-  width: 40rem;
   margin: 2rem 0;
   /* border: 1px solid black; */
   border: center;
@@ -165,6 +164,7 @@ footer nav {
 }
 
 footer #references {
+  margin-top: 3rem;
   margin-bottom: 3rem;
   height: 0px;
   overflow: hidden;
@@ -184,6 +184,7 @@ footer .nav-link {
   color: white;
   display: inline;
   transition: all 0.5s;
+  font-size: 1.3rem;
 }
 
 footer nav i:hover {
@@ -236,7 +237,8 @@ footer nav i:hover {
 }
 
 #commercialisation blockquote,
-#contact_home blockquote {
+#contact_home blockquote,
+#recherche blockquote {
   width: 100%;
   text-align: center;
   font-family: "Nunito", sans-serif;
@@ -244,7 +246,9 @@ footer nav i:hover {
   padding: 0 250px;
   font-style: italic;
 }
-
+#recherche blockquote {
+  margin-bottom: 40px;
+}
 @media screen and (max-width: 60rem) {
   #services {
     width: 100%;
@@ -282,15 +286,17 @@ footer nav i:hover {
   margin: 0 auto 1rem auto;
 }
 #annonces > p {
-    width: 100%;
-    text-align: center;
-    color: #1a1a1a;
-    font-size: 1rem;
+  width: 100%;
+  text-align: center;
+  font-size: 1.54rem;
+  font-family: "Nunito", sans-serif;
+  color: rgb(180, 177, 177);
+  font-style: italic;
 }
 #annonces h1 {
-    width: 75%;
-    text-align: center;
-    margin: auto;
+  width: 75%;
+  text-align: center;
+  margin: auto;
 }
 #annonces #annonceList article {
   margin: 2rem 2rem 0 0;
@@ -301,27 +307,27 @@ footer nav i:hover {
   margin-top: 1rem;
 }
 #annonces #annonceList article p {
-    height: 6.25rem;
+  height: 6.25rem;
 }
 #annonces #annonceList article figcaption {
-    height: 15rem;
+  height: 15rem;
 }
 #annonces #annonceList article figure {
-    width: 18rem;
-    height: 18rem;
-    overflow: hidden;
+  width: 18rem;
+  height: 18rem;
+  overflow: hidden;
 }
 #annonces .bas {
-    text-align: center;
-    margin-top: 2rem;
+  text-align: center;
+  margin-top: 2rem;
 }
 #annonces .bas i {
-    margin-bottom: 20px;
-    color: rgb(255, 128, 64);
+  margin-bottom: 20px;
+  color: rgb(255, 128, 64);
 }
 #annonces .fa-phone-square,
 #annonces .fa-envelope {
-font-size: 50px;
+  font-size: 50px;
 }
 /*****************************/
 
@@ -339,10 +345,10 @@ font-size: 50px;
 }
 
 #contact_demande {
-    height: 145px;
+  height: 145px;
 }
 #contact_message {
-    height: 145px;
+  height: 145px;
 }
 
 /* #message {
@@ -378,10 +384,10 @@ div.modal div.container {
 }
 
 .fas {
-    font-size: x-small;
-    color: #ced2d5;
+  font-size: 1.2rem;
+  color: orange;
+  margin-left: 1rem;
 }
-
 
 /*****************************/
 
@@ -490,4 +496,9 @@ div.modal div.container {
 
 #recrutement {
   padding-bottom: 2rem;
+}
+
+/* POP OVER */
+.popover {
+  font-size: 1rem;
 }
