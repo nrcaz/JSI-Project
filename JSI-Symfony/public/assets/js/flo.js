@@ -18,12 +18,11 @@ var HomePage = {
     (section1 = {
       selecteur: "#services",
       elements: [
-        0 = { selecteur: ".view-first img" },
-        1 = { animation: "animation1img" },
-        2 = { ".view-first mask": "animation1mask" },
-        3 = { ".view-first h2": ".animation-h2-p-info" },
-        4 = { ".view-first p": ".animation-h2-p-info" },
-        5 = { ".view-first a.info": ".animation-h2-p-info" }
+        { selecteur: ".view-first img", class: "animation1img" },
+        { selecteur: ".view-first mask", class: "animation1mask" },
+        { selecteur: ".view-first h2", class: "animation-h2-p-info" },
+        { selecteur: ".view-first p", class: "animation-h2-p-info" },
+        { selecteur: ".view-first a.info", class: "animation-h2-p-info" }
       ]
     }),
     (section2 = {
@@ -43,14 +42,15 @@ var HomePage = {
 
   mettreAnimation: function(section) {
     let elements = section.elements;
-    let animations = section.animationType;
     let longueurTab = elements.length;
     let index = 0;
 
     var interval = setInterval(function() {
       elements.forEach(function(element) {
-        // elements[index].classList.add(animation);
-        console.log(element);
+        console.log(
+          "Selecteur : " + element.selecteur + " Class " + element.class
+        );
+        document.querySelector(element.selecteur).classList.add(element.class);
       });
       index++;
       if (index == longueurTab) {
