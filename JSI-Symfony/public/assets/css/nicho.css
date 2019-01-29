@@ -76,9 +76,9 @@ header #navbarNavAltMarkup {
 
 #home {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    height: 637.5px;
+    align-items: stretch;
+    /* border: 1px solid black; */
+    /* height: 637.5px; */
     /* position: relative; */
 }
 
@@ -89,15 +89,42 @@ header #navbarNavAltMarkup {
     width: 850px;
 }
 
-#home h1 {
-    color: black;
-    margin-bottom: 2rem;
+.titre {
+    width: 40rem;
+    margin: 2rem auto;
+    /* border: 1px solid black; */
+    border: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+    background-color: transparent;
 }
 
-#home strong {
-    color: black;
+.titre p {
+    margin: 1rem auto;
     font-weight: 900;
-    margin-bottom: 5rem;
+    color: #1a1a1a;
+}
+
+@media screen and (max-width: 768px) {
+    #home {
+        display: flex;
+        flex-direction: column;
+    }
+    .titre {
+        width: 80%;
+        margin: 2rem auto;
+        /* border: 1px solid black; */
+        border: center;
+        text-align: center;
+        justify-content: center;
+    }
+    .titre p {
+        margin: 0.5rem;
+    }
 }
 
 
@@ -179,7 +206,7 @@ footer nav i:hover {
     justify-content: center;
     margin: 0rem auto 0rem auto;
     padding: 3% 0%;
-    background-color: rgba(255, 233, 145, 0.747);
+    background-color: rgba(187, 216, 235, 0.575);
 }
 
 #methodes h1 {
@@ -241,9 +268,11 @@ footer nav i:hover {
     margin: 2rem 2rem 0 0;
     width: 18rem;
 }
+
 #annonces #annonceList article a {
     margin-top: 1rem;
 }
+
 
 /*****************************/
 
@@ -373,30 +402,37 @@ div.modal div.container {
     text-align: center;
 }
 
+
 /*****************************/
+
+
 /****** CONTACT / RECRUTEMENT FORM
 /*****************************/
-#contact_home label, 
+
+#contact_home label,
 #recrutement label {
     width: 90%;
     margin: auto;
     display: block;
 }
-#contact_home input, 
-#contact_home textarea, 
-#recrutement input, 
+
+#contact_home input,
+#contact_home textarea,
+#recrutement input,
 #recrutement textarea {
     width: 90%;
     transition: 0.25s;
     margin: auto;
 }
-#contact_home input:focus, 
-#contact_home textarea:focus, 
-#recrutement input:focus, 
+
+#contact_home input:focus,
+#contact_home textarea:focus,
+#recrutement input:focus,
 #recrutement textarea:focus {
     width: 100%;
     background-color: white;
 }
+
 #contact_home form button,
 #recrutement form button {
     margin: auto;
