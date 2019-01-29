@@ -73,7 +73,7 @@
 {% for i in 1..5 %}
 {% set image =  annonce.getImagei(i) %}
     <div id="image{{i}}" style="padding:20px; border: solid 1px lightgrey; width:240px; margin-bottom:20px">
-        <div style="width:200px">
+        <div style="width:200px;height:200px;overflow:hidden">
         {% if image %}
                 <img src="{{ absolute_url(asset(image)) }}" style="width:200px;border:solid 1px lightgrey" alt="">
         {% else %}
