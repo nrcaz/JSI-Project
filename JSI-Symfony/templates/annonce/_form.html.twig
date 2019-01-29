@@ -75,9 +75,9 @@
     <div id="image{{i}}" style="padding:20px; border: solid 1px lightgrey; width:240px; margin-bottom:20px">
         <div style="width:200px;height:200px;overflow:hidden">
         {% if image %}
-                <img src="{{ absolute_url(asset(image)) }}" style="width:200px;border:solid 1px lightgrey" alt="">
+                <img src="{{ absolute_url(asset(image)) }}" style="width:200px;height:200px;border:solid 1px lightgrey;object-fit: cover;" alt="">
         {% else %}
-                <img src="{{ absolute_url(asset("assets/img/no-image-icon.jpg")) }}" style="width:200px;border:solid 1px lightgrey">
+                <img src="{{ absolute_url(asset("assets/img/no-image-icon.jpg")) }}" style="width:200px;height:200px;border:solid 1px lightgrey;object-fit: cover;">
         {% endif %}
         </div>
         <div style="width:200px; text-align:center;">    
