@@ -2,10 +2,15 @@
 //// HOME
 /////////////////////
 
+if (innerHeight - $('header').height() > 650) {
+    $('#home').css({
+        height: innerHeight - $('header').height()
+    })
+}
 // parallax
-$('.home-bg').parallax({
-    imageSrc: 'assets/img/city.gif',
-    speed: 0.5
+$(".home-bg").parallax({
+    imageSrc: "assets/img/city.gif",
+    speed: 1,
 });
 
 $('.parallax1').parallax({
