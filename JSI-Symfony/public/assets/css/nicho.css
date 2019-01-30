@@ -306,11 +306,20 @@ footer nav i:hover {
 #annonces #annonceList article a {
 	margin-top: 1rem;
 }
-#annonces #annonceList article p {
-	height: 6.25rem;
-}
 #annonces #annonceList article figcaption {
 	height: 15rem;
+	display: flex;
+	flex-wrap: wrap;
+}
+#annonces #annonceList article figcaption h5 {
+	width: 100%;
+}
+#annonces #annonceList article figcaption p {
+	width: 100%;
+}
+#annonces #annonceList article figcaption a {
+	align-self: flex-end;
+	margin: 0 auto;
 }
 #annonces #annonceList article figure {
 	width: 18rem;
@@ -319,6 +328,8 @@ footer nav i:hover {
 }
 #annonces #annonceList article figure img {
 	object-fit: cover;
+	width: 18rem;
+	height: 18rem;
 }
 #annonces .bas {
 	text-align: center;
