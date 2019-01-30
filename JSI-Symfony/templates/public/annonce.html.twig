@@ -137,7 +137,7 @@
                                     </div>
                                 </div>
                                     {{form_row(formRecherche.message)}}
-                                    {{form_row(formRecherche.demande, {"value": demandeContent, "attr": {"readonly" :  ""}} ) }}
+                                    {{form_row(formRecherche.demande, {"value": demandeContent, "attr": {"readonly" :  ""}, 'label': "Détails de l'annonce (les données ne sont pas modifiables)"} ) }}
                                 <button type="submit" class="btn btn-large btn-success">Envoyer votre demande</button>
                                 {{ form_end(formRecherche) }}
                             </div>

@@ -171,8 +171,6 @@ footer nav {
 footer #references {
   margin-top: 3rem;
   margin-bottom: 3rem;
-  height: 0px;
-  overflow: hidden;
 }
 
 footer #references img {
@@ -244,7 +242,8 @@ footer nav i:hover {
 
 #commercialisation blockquote,
 #contact_home blockquote,
-#recherche blockquote {
+#recherche blockquote,
+#services blockquote {
   width: 100%;
   text-align: center;
   font-family: "Nunito", sans-serif;
