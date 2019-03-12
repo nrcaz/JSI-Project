@@ -39,6 +39,12 @@ h1 {
     text-align: center;
 }
 
+@media screen and (max-width: 24rem) {
+    h1 {
+        font-size: 22px;
+    }
+}
+
 
 /*
 h1 span {
